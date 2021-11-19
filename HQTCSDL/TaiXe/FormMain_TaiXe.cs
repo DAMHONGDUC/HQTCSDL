@@ -5,13 +5,14 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace HQTCSDL
 {
     public partial class FormMain_TaiXe : Form
     {
+        Thread t;
         public FormMain_TaiXe()
         {
             InitializeComponent();
@@ -33,6 +34,7 @@ namespace HQTCSDL
             childForm.Show();
         }
 
+        // xử lí chuyển màu khi click vào button
         private Button currentButton;
         private void ActivateButton(object btnSender)
         {
@@ -60,29 +62,58 @@ namespace HQTCSDL
             }
         }
 
-        private void btn_DSdonhang_TX_Click(object sender, EventArgs e)
+        // xử lí đăng xuất + đăng nhập lại
+        public void open_FormDangNhap(object obj)
         {
-            ActivateButton(sender);
+            Application.Run(new Form_DangNhap());
         }
 
-        private void btn_donhangdanhan_TX_Click(object sender, EventArgs e)
+        private void btn_dangxuat_TX_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            this.Close();
+            t = new Thread(open_FormDangNhap);
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
         }
 
-        private void btn_thongke_TK_Click(object sender, EventArgs e)
+        // xử lí khi load form thì hiện tab tài khoản
+        private void FormMain_TaiXe_Load(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            btn_taikhoan_TX.PerformClick();
         }
 
-        private void btn_taikhoan_TX_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-        }
-
+        // xử lí thoát
         private void btn_thoat_TX_Click(object sender, EventArgs e)
-        {          
+        {
             this.Close();
         }
+
+        // chức năng xem DS đơn hàng
+        private void btn_DSdonhang_TX_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DS_DonHang_TX());
+            ActivateButton(sender);
+        }
+
+        // chức năng xem đơn hàng đã nhận
+        private void btn_donhangdanhan_TX_Click(object sender, EventArgs e)
+        {
+            openChildForm(new DonHangDaNhan_TX());
+            ActivateButton(sender);
+        }
+
+        // chức năng thống kê
+        private void btn_thongke_TK_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ThongKe_TX());
+            ActivateButton(sender);
+        }
+
+        // chức năng tài khoản
+        private void btn_taikhoan_TX_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ThongTinChiTiet_TX());
+            ActivateButton(sender);
+        }        
     }
 }

@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HQTCSDL
 {
-    public partial class ChiNhanh : Form
+    public partial class HopDong_DT : Form
     {
-        public ChiNhanh()
+        public HopDong_DT()
         {
             InitializeComponent();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

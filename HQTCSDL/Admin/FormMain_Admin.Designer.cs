@@ -30,11 +30,10 @@
         {
             this.panelChildForm_AD = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btn_dangxuat_AD = new System.Windows.Forms.Button();
             this.btn_taikkhoan_AD = new System.Windows.Forms.Button();
             this.btn_thoat_AD = new System.Windows.Forms.Button();
-            this.btn_xoataikhoan_AD = new System.Windows.Forms.Button();
-            this.btn_themtaikhoan_AD = new System.Windows.Forms.Button();
-            this.btn_tatcataikhoan_AD = new System.Windows.Forms.Button();
+            this.btn_DStaikhoan_AD = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.lb_tenadmin_AD = new System.Windows.Forms.Label();
@@ -55,17 +54,31 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelMenu.Controls.Add(this.btn_dangxuat_AD);
             this.panelMenu.Controls.Add(this.btn_taikkhoan_AD);
             this.panelMenu.Controls.Add(this.btn_thoat_AD);
-            this.panelMenu.Controls.Add(this.btn_xoataikhoan_AD);
-            this.panelMenu.Controls.Add(this.btn_themtaikhoan_AD);
-            this.panelMenu.Controls.Add(this.btn_tatcataikhoan_AD);
+            this.panelMenu.Controls.Add(this.btn_DStaikhoan_AD);
             this.panelMenu.Controls.Add(this.panel2);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(230, 853);
             this.panelMenu.TabIndex = 4;
+            // 
+            // btn_dangxuat_AD
+            // 
+            this.btn_dangxuat_AD.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_dangxuat_AD.FlatAppearance.BorderSize = 0;
+            this.btn_dangxuat_AD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dangxuat_AD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_dangxuat_AD.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_dangxuat_AD.Location = new System.Drawing.Point(0, 733);
+            this.btn_dangxuat_AD.Name = "btn_dangxuat_AD";
+            this.btn_dangxuat_AD.Size = new System.Drawing.Size(230, 60);
+            this.btn_dangxuat_AD.TabIndex = 8;
+            this.btn_dangxuat_AD.Text = "Đăng xuất";
+            this.btn_dangxuat_AD.UseVisualStyleBackColor = true;
+            this.btn_dangxuat_AD.Click += new System.EventHandler(this.btn_dangxuat_AD_Click);
             // 
             // btn_taikkhoan_AD
             // 
@@ -74,7 +87,7 @@
             this.btn_taikkhoan_AD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_taikkhoan_AD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btn_taikkhoan_AD.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_taikkhoan_AD.Location = new System.Drawing.Point(0, 356);
+            this.btn_taikkhoan_AD.Location = new System.Drawing.Point(0, 236);
             this.btn_taikkhoan_AD.Name = "btn_taikkhoan_AD";
             this.btn_taikkhoan_AD.Size = new System.Drawing.Size(230, 60);
             this.btn_taikkhoan_AD.TabIndex = 7;
@@ -97,50 +110,20 @@
             this.btn_thoat_AD.UseVisualStyleBackColor = true;
             this.btn_thoat_AD.Click += new System.EventHandler(this.btn_thoat_AD_Click);
             // 
-            // btn_xoataikhoan_AD
+            // btn_DStaikhoan_AD
             // 
-            this.btn_xoataikhoan_AD.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_xoataikhoan_AD.FlatAppearance.BorderSize = 0;
-            this.btn_xoataikhoan_AD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_xoataikhoan_AD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_xoataikhoan_AD.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_xoataikhoan_AD.Location = new System.Drawing.Point(0, 296);
-            this.btn_xoataikhoan_AD.Name = "btn_xoataikhoan_AD";
-            this.btn_xoataikhoan_AD.Size = new System.Drawing.Size(230, 60);
-            this.btn_xoataikhoan_AD.TabIndex = 5;
-            this.btn_xoataikhoan_AD.Text = "Xóa tài khoản";
-            this.btn_xoataikhoan_AD.UseVisualStyleBackColor = true;
-            this.btn_xoataikhoan_AD.Click += new System.EventHandler(this.btn_xoataikhoan_AD_Click);
-            // 
-            // btn_themtaikhoan_AD
-            // 
-            this.btn_themtaikhoan_AD.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_themtaikhoan_AD.FlatAppearance.BorderSize = 0;
-            this.btn_themtaikhoan_AD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_themtaikhoan_AD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_themtaikhoan_AD.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_themtaikhoan_AD.Location = new System.Drawing.Point(0, 236);
-            this.btn_themtaikhoan_AD.Name = "btn_themtaikhoan_AD";
-            this.btn_themtaikhoan_AD.Size = new System.Drawing.Size(230, 60);
-            this.btn_themtaikhoan_AD.TabIndex = 2;
-            this.btn_themtaikhoan_AD.Text = "Thêm tài khoản";
-            this.btn_themtaikhoan_AD.UseVisualStyleBackColor = true;
-            this.btn_themtaikhoan_AD.Click += new System.EventHandler(this.btn_themtaikhoan_AD_Click);
-            // 
-            // btn_tatcataikhoan_AD
-            // 
-            this.btn_tatcataikhoan_AD.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_tatcataikhoan_AD.FlatAppearance.BorderSize = 0;
-            this.btn_tatcataikhoan_AD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_tatcataikhoan_AD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_tatcataikhoan_AD.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_tatcataikhoan_AD.Location = new System.Drawing.Point(0, 176);
-            this.btn_tatcataikhoan_AD.Name = "btn_tatcataikhoan_AD";
-            this.btn_tatcataikhoan_AD.Size = new System.Drawing.Size(230, 60);
-            this.btn_tatcataikhoan_AD.TabIndex = 1;
-            this.btn_tatcataikhoan_AD.Text = "Tất cả tài khoản";
-            this.btn_tatcataikhoan_AD.UseVisualStyleBackColor = true;
-            this.btn_tatcataikhoan_AD.Click += new System.EventHandler(this.btn_tatcataikhoan_AD_Click);
+            this.btn_DStaikhoan_AD.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_DStaikhoan_AD.FlatAppearance.BorderSize = 0;
+            this.btn_DStaikhoan_AD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_DStaikhoan_AD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_DStaikhoan_AD.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_DStaikhoan_AD.Location = new System.Drawing.Point(0, 176);
+            this.btn_DStaikhoan_AD.Name = "btn_DStaikhoan_AD";
+            this.btn_DStaikhoan_AD.Size = new System.Drawing.Size(230, 60);
+            this.btn_DStaikhoan_AD.TabIndex = 1;
+            this.btn_DStaikhoan_AD.Text = "Danh sách tài khoản";
+            this.btn_DStaikhoan_AD.UseVisualStyleBackColor = true;
+            this.btn_DStaikhoan_AD.Click += new System.EventHandler(this.btn_DStaikhoan_AD_Click);
             // 
             // panel2
             // 
@@ -195,6 +178,7 @@
             this.Name = "FormMain_Admin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
+            this.Load += new System.EventHandler(this.FormMain_Admin_Load);
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -209,12 +193,11 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btn_taikkhoan_AD;
         private System.Windows.Forms.Button btn_thoat_AD;
-        private System.Windows.Forms.Button btn_xoataikhoan_AD;
-        private System.Windows.Forms.Button btn_themtaikhoan_AD;
-        private System.Windows.Forms.Button btn_tatcataikhoan_AD;
+        private System.Windows.Forms.Button btn_DStaikhoan_AD;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lb_tenadmin_AD;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_dangxuat_AD;
     }
 }

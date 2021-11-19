@@ -19,6 +19,7 @@ namespace HQTCSDL
             InitializeComponent();
         }
 
+
         private void resetvalue_DN()
         {
             txtBox_tendangnhap.Text = "";
@@ -34,6 +35,7 @@ namespace HQTCSDL
             txtBox_matkhau.PasswordChar = '*';
         }
      
+        // xử lí đăng nhập
         private void btn_dangnhap_Click(object sender, EventArgs e)
         {
             string tendangnhap = txtBox_tendangnhap.Text.Trim().ToString();
@@ -84,6 +86,7 @@ namespace HQTCSDL
             t.Start();           
         }
 
+        // xử lí mở form tương ứng từng loại acc      
         public void open_FormMain(object obj)
         {
             switch (user_type)
@@ -116,6 +119,7 @@ namespace HQTCSDL
             }
         }
 
+        // chuyển qua màn hình đăng kí
         private void btn_dangki_Click(object sender, EventArgs e)
         {           
             Form_DangKi form_signup = new Form_DangKi();
@@ -123,6 +127,7 @@ namespace HQTCSDL
             form_signup.ShowDialog();
         }
 
+        // lấy loại user
         private int Get_user_type(string loaiacc)
         {
             int type = -2;
@@ -161,8 +166,25 @@ namespace HQTCSDL
                         break;
                     }
             }
-
             return type;
+        }
+
+        // loại bỏ sự kiện enter 
+        private void txtBox_tendangnhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+            }
+        }
+
+        // loại bỏ sự kiện enter 
+        private void txtBox_matkhau_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true;
+            }
         }
     }
 }

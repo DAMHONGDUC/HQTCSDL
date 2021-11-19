@@ -52,29 +52,107 @@
     <Compile Include="Admin\FormMain_Admin.Designer.cs">
       <DependentUpon>FormMain_Admin.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoiTac\ChiNhanh.cs">
+    <Compile Include="TaiXe\DS_DonHang_TX.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoiTac\ChiNhanh.Designer.cs">
-      <DependentUpon>ChiNhanh.cs</DependentUpon>
+    <Compile Include="TaiXe\DS_DonHang_TX.Designer.cs">
+      <DependentUpon>DS_DonHang_TX.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoiTac\FormMain_DoiTac.cs">
+    <Compile Include="KhachHang\DS_SanPham_KH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoiTac\FormMain_DoiTac.Designer.cs">
-      <DependentUpon>FormMain_DoiTac.cs</DependentUpon>
+    <Compile Include="KhachHang\DS_SanPham_KH.Designer.cs">
+      <DependentUpon>DS_SanPham_KH.cs</DependentUpon>
     </Compile>
-    <Compile Include="DoiTac\HopDong.cs">
+    <Compile Include="KhachHang\DSDoiTac_KH.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DoiTac\HopDong.Designer.cs">
-      <DependentUpon>HopDong.cs</DependentUpon>
+    <Compile Include="KhachHang\DSDoiTac_KH.Designer.cs">
+      <DependentUpon>DSDoiTac_KH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang\DS_DonHang_KH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhachHang\DS_DonHang_KH.Designer.cs">
+      <DependentUpon>DS_DonHang_KH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang\DatHang_KH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhachHang\DatHang_KH.Designer.cs">
+      <DependentUpon>DatHang_KH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaiXe\DonHangDaNhan_TX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaiXe\DonHangDaNhan_TX.Designer.cs">
+      <DependentUpon>DonHangDaNhan_TX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\HopDongChuaDuyet_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\HopDongChuaDuyet_NV.Designer.cs">
+      <DependentUpon>HopDongChuaDuyet_NV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\HopDongDaDuyet_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\HopDongDaDuyet_NV.Designer.cs">
+      <DependentUpon>HopDongDaDuyet_NV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaiXe\CTDH_TX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaiXe\CTDH_TX.Designer.cs">
+      <DependentUpon>CTDH_TX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoiTac\ChiNhanh_DT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiTac\ChiNhanh_DT.Designer.cs">
+      <DependentUpon>ChiNhanh_DT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoiTac\FormMain_DT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiTac\FormMain_DT.Designer.cs">
+      <DependentUpon>FormMain_DT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoiTac\DonHang_DT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiTac\DonHang_DT.Designer.cs">
+      <DependentUpon>DonHang_DT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoiTac\HopDong_DT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiTac\HopDong_DT.Designer.cs">
+      <DependentUpon>HopDong_DT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\DSTaiKHoan_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\DSTaiKHoan_admin.Designer.cs">
+      <DependentUpon>DSTaiKHoan_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\Form_ThemTK_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\Form_ThemTK_admin.Designer.cs">
+      <DependentUpon>Form_ThemTK_admin.cs</DependentUpon>
     </Compile>
     <Compile Include="NhanVien\FormMain_NhanVien.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NhanVien\FormMain_NhanVien.Designer.cs">
       <DependentUpon>FormMain_NhanVien.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoiTac\SanPham_DT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiTac\SanPham_DT.Designer.cs">
+      <DependentUpon>SanPham_DT.cs</DependentUpon>
     </Compile>
     <Compile Include="TaiXe\FormMain_TaiXe.cs">
       <SubType>Form</SubType>
@@ -88,38 +166,122 @@
     <Compile Include="KhachHang\FormMain_KhachHang.Designer.cs">
       <DependentUpon>FormMain_KhachHang.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_DangNhap.cs">
+    <Compile Include="DangNhap. Dang Ki\Form_DangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_DangNhap.Designer.cs">
+    <Compile Include="DangNhap. Dang Ki\Form_DangNhap.Designer.cs">
       <DependentUpon>Form_DangNhap.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_DangKi.cs">
+    <Compile Include="DangNhap. Dang Ki\Form_DangKi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_DangKi.Designer.cs">
+    <Compile Include="DangNhap. Dang Ki\Form_DangKi.Designer.cs">
       <DependentUpon>Form_DangKi.cs</DependentUpon>
     </Compile>
     <Compile Include="Functions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DoiTac\ThemHopDong_DT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiTac\ThemHopDong_DT.Designer.cs">
+      <DependentUpon>ThemHopDong_DT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaiXe\ThongKe_TX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaiXe\ThongKe_TX.Designer.cs">
+      <DependentUpon>ThongKe_TX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TaiXe\ThongTinChiTiet_TX.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TaiXe\ThongTinChiTiet_TX.Designer.cs">
+      <DependentUpon>ThongTinChiTiet_TX.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\ThongTinChiTiet_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\ThongTinChiTiet_NV.Designer.cs">
+      <DependentUpon>ThongTinChiTiet_NV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="KhachHang\ThongTinChiTiet_KH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="KhachHang\ThongTinChiTiet_KH.Designer.cs">
+      <DependentUpon>ThongTinChiTiet_KH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ThongTinChiTiet_admin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\ThongTinChiTiet_admin.Designer.cs">
+      <DependentUpon>ThongTinChiTiet_admin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DoiTac\ThongTinChiTiet_DT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DoiTac\ThongTinChiTiet_DT.Designer.cs">
+      <DependentUpon>ThongTinChiTiet_DT.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Admin\FormMain_Admin.resx">
       <DependentUpon>FormMain_Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoiTac\ChiNhanh.resx">
-      <DependentUpon>ChiNhanh.cs</DependentUpon>
+    <EmbeddedResource Include="TaiXe\DS_DonHang_TX.resx">
+      <DependentUpon>DS_DonHang_TX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoiTac\FormMain_DoiTac.resx">
-      <DependentUpon>FormMain_DoiTac.cs</DependentUpon>
+    <EmbeddedResource Include="KhachHang\DS_SanPham_KH.resx">
+      <DependentUpon>DS_SanPham_KH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DoiTac\HopDong.resx">
-      <DependentUpon>HopDong.cs</DependentUpon>
+    <EmbeddedResource Include="KhachHang\DSDoiTac_KH.resx">
+      <DependentUpon>DSDoiTac_KH.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_DangNhap.resx">
+    <EmbeddedResource Include="KhachHang\DS_DonHang_KH.resx">
+      <DependentUpon>DS_DonHang_KH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHang\DatHang_KH.resx">
+      <DependentUpon>DatHang_KH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaiXe\DonHangDaNhan_TX.resx">
+      <DependentUpon>DonHangDaNhan_TX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\HopDongChuaDuyet_NV.resx">
+      <DependentUpon>HopDongChuaDuyet_NV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\HopDongDaDuyet_NV.resx">
+      <DependentUpon>HopDongDaDuyet_NV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaiXe\CTDH_TX.resx">
+      <DependentUpon>CTDH_TX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoiTac\ChiNhanh_DT.resx">
+      <DependentUpon>ChiNhanh_DT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoiTac\DonHang_DT.resx">
+      <DependentUpon>DonHang_DT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoiTac\FormMain_DT.resx">
+      <DependentUpon>FormMain_DT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DangNhap. Dang Ki\Form_DangNhap.resx">
       <DependentUpon>Form_DangNhap.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_DangKi.resx">
+    <EmbeddedResource Include="DangNhap. Dang Ki\Form_DangKi.resx">
       <DependentUpon>Form_DangKi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoiTac\SanPham_DT.resx">
+      <DependentUpon>SanPham_DT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoiTac\HopDong_DT.resx">
+      <DependentUpon>HopDong_DT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoiTac\ThemHopDong_DT.resx">
+      <DependentUpon>ThemHopDong_DT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\DSTaiKHoan_admin.resx">
+      <DependentUpon>DSTaiKHoan_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\Form_ThemTK_admin.resx">
+      <DependentUpon>Form_ThemTK_admin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHang\FormMain_KhachHang.resx">
       <DependentUpon>FormMain_KhachHang.cs</DependentUpon>
@@ -139,6 +301,24 @@
     </Compile>
     <EmbeddedResource Include="TaiXe\FormMain_TaiXe.resx">
       <DependentUpon>FormMain_TaiXe.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaiXe\ThongKe_TX.resx">
+      <DependentUpon>ThongKe_TX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TaiXe\ThongTinChiTiet_TX.resx">
+      <DependentUpon>ThongTinChiTiet_TX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\ThongTinChiTiet_NV.resx">
+      <DependentUpon>ThongTinChiTiet_NV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="KhachHang\ThongTinChiTiet_KH.resx">
+      <DependentUpon>ThongTinChiTiet_KH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\ThongTinChiTiet_admin.resx">
+      <DependentUpon>ThongTinChiTiet_admin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DoiTac\ThongTinChiTiet_DT.resx">
+      <DependentUpon>ThongTinChiTiet_DT.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

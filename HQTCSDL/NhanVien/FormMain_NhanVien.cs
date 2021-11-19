@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace HQTCSDL
 {
     public partial class FormMain_NhanVien : Form
     {
+        Thread t;
         public FormMain_NhanVien()
         {
             InitializeComponent();
@@ -33,6 +29,7 @@ namespace HQTCSDL
             childForm.Show();
         }
 
+        // xử lí chuyển màu khi click vào button
         private Button currentButton;
         private void ActivateButton(object btnSender)
         {
@@ -60,24 +57,53 @@ namespace HQTCSDL
             }
         }
 
-        private void btn_hopdongdaduyet_NV_Click(object sender, EventArgs e)
+        // xử lí đăng xuất + đăng nhập lại
+        public void open_FormDangNhap(object obj)
         {
-            ActivateButton(sender);
+            Application.Run(new Form_DangNhap());
         }
 
-        private void btn_hopdongchoduyet_NV_Click(object sender, EventArgs e)
+        private void btn_dangxuat_NV_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            this.Close();
+            t = new Thread(open_FormDangNhap);
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
         }
 
-        private void btn_taikhoan_NV_Click(object sender, EventArgs e)
+        // xử lí khi load form thì hiện tab tài khoản
+        private void FormMain_NhanVien_Load(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            btn_taikhoan_NV.PerformClick();
         }
 
+        // xử lí thoát
         private void btn_thoat_NV_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        // chức năng xem hợp đồng đã duyệt
+        private void btn_hopdongdaduyet_NV_Click(object sender, EventArgs e)
+        {
+            openChildForm(new HopDongDaDuyet_NV());
+            ActivateButton(sender);
+        }
+                
+        // chức năng xem hợp đồng chưa duyệt
+        private void btn_hopdongchuaduyet_NV_Click(object sender, EventArgs e)
+        {
+            openChildForm(new HopDongChuaDuyet_NV());
+            ActivateButton(sender);
+        }
+
+        // chức năng tài khoản
+        private void btn_taikhoan_NV_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ThongTinChiTiet_NV());
+            ActivateButton(sender);
+        }
+
+        
     }
 }

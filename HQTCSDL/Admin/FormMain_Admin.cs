@@ -1,23 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace HQTCSDL
 {
     public partial class FormMain_Admin : Form
     {
+        Thread t;
         public FormMain_Admin()
         {
             InitializeComponent();
         }
 
-        // mở 1 form con
+        // xử lí mở form con
         private Form activeform = null;
         private void openChildForm(Form childForm)
         {
@@ -33,6 +29,7 @@ namespace HQTCSDL
             childForm.Show();
         }
 
+        // xử lí chuyển màu khi click vào button
         private Button currentButton;
         private void ActivateButton(object btnSender)
         {
@@ -60,29 +57,46 @@ namespace HQTCSDL
             }
         }
 
-        private void btn_tatcataikhoan_AD_Click(object sender, EventArgs e)
+        // xử lí đăng xuất + đăng nhập lại
+        public void open_FormDangNhap(object obj)
         {
-            ActivateButton(sender);
+            Application.Run(new Form_DangNhap());
         }
 
-        private void btn_themtaikhoan_AD_Click(object sender, EventArgs e)
+        private void btn_dangxuat_AD_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            this.Close();
+            t = new Thread(open_FormDangNhap);
+            t.SetApartmentState(ApartmentState.STA);
+            t.Start();
         }
 
-        private void btn_xoataikhoan_AD_Click(object sender, EventArgs e)
+        // xử lí khi load form thì hiện tab tài khoản
+        private void FormMain_Admin_Load(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            btn_taikkhoan_AD.PerformClick();
         }
 
-        private void btn_taikkhoan_AD_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-        }
-
+        // xử lí thoát
         private void btn_thoat_AD_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        // chức năng quản lí DS tài khoản
+        private void btn_DStaikhoan_AD_Click(object sender, EventArgs e)
+        {
+            ActivateButton(sender);
+            openChildForm(new DSTaiKHoan_admin());
+        }
+
+        // chức năng tài khoản
+        private void btn_taikkhoan_AD_Click(object sender, EventArgs e)
+        {
+            openChildForm(new ThongTinChiTiet_admin());
+            ActivateButton(sender);
+        }
+
+        
     }
 }

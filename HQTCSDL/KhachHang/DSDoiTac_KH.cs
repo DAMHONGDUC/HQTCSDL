@@ -10,11 +10,17 @@ using System.Windows.Forms;
 
 namespace HQTCSDL
 {
-    public partial class HopDong : Form
+    public partial class DSDoiTac_KH : Form
     {
-        public HopDong()
+        public DSDoiTac_KH()
         {
             InitializeComponent();
+        }
+
+        private void btn_XemSP_KH_Click(object sender, EventArgs e)
+        {
+            DS_SanPham_KH ds_sanpham = new DS_SanPham_KH();
+            ds_sanpham.Show();
         }
     }
 }

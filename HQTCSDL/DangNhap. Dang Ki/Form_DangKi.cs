@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace HQTCSDL
@@ -17,18 +10,20 @@ namespace HQTCSDL
             InitializeComponent();
         }
 
+        // xử lí quay lại
         private void btn_quaylai_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // xử lí đăng kí
         private void btn_dangki_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Đăng kí thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             this.Close();
         }
 
-
+        // xử lí cho user chỉ được chọn 1 loại account
         private void cB_DT_CheckedChanged(object sender, EventArgs e)
         {          
             if (cB_DT.Checked == true)

@@ -45,6 +45,7 @@
             this.txtBox_tendangnhap.Name = "txtBox_tendangnhap";
             this.txtBox_tendangnhap.Size = new System.Drawing.Size(377, 40);
             this.txtBox_tendangnhap.TabIndex = 0;
+            this.txtBox_tendangnhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_tendangnhap_KeyDown);
             // 
             // txtBox_matkhau
             // 
@@ -54,6 +55,7 @@
             this.txtBox_matkhau.Name = "txtBox_matkhau";
             this.txtBox_matkhau.Size = new System.Drawing.Size(377, 40);
             this.txtBox_matkhau.TabIndex = 1;
+            this.txtBox_matkhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_matkhau_KeyDown);
             // 
             // btn_dangnhap
             // 
@@ -117,7 +119,7 @@
             this.btn_dangki.UseVisualStyleBackColor = false;
             this.btn_dangki.Click += new System.EventHandler(this.btn_dangki_Click);
             // 
-            // Form_Login
+            // Form_DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -129,7 +131,7 @@
             this.Controls.Add(this.btn_dangnhap);
             this.Controls.Add(this.txtBox_matkhau);
             this.Controls.Add(this.txtBox_tendangnhap);
-            this.Name = "Form_Login";
+            this.Name = "Form_DangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
             this.Load += new System.EventHandler(this.Form_Login_Load);

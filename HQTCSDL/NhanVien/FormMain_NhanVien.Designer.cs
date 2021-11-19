@@ -30,9 +30,10 @@
         {
             this.panelChildForm_NV = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btn_dangxuat_NV = new System.Windows.Forms.Button();
             this.btn_thoat_NV = new System.Windows.Forms.Button();
             this.btn_taikhoan_NV = new System.Windows.Forms.Button();
-            this.btn_hopdongchoduyet_NV = new System.Windows.Forms.Button();
+            this.btn_hopdongchuaduyet_NV = new System.Windows.Forms.Button();
             this.btn_hopdongdaduyet_NV = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -54,9 +55,10 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelMenu.Controls.Add(this.btn_dangxuat_NV);
             this.panelMenu.Controls.Add(this.btn_thoat_NV);
             this.panelMenu.Controls.Add(this.btn_taikhoan_NV);
-            this.panelMenu.Controls.Add(this.btn_hopdongchoduyet_NV);
+            this.panelMenu.Controls.Add(this.btn_hopdongchuaduyet_NV);
             this.panelMenu.Controls.Add(this.btn_hopdongdaduyet_NV);
             this.panelMenu.Controls.Add(this.panel2);
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
@@ -64,6 +66,21 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(230, 953);
             this.panelMenu.TabIndex = 4;
+            // 
+            // btn_dangxuat_NV
+            // 
+            this.btn_dangxuat_NV.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_dangxuat_NV.FlatAppearance.BorderSize = 0;
+            this.btn_dangxuat_NV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dangxuat_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_dangxuat_NV.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_dangxuat_NV.Location = new System.Drawing.Point(0, 833);
+            this.btn_dangxuat_NV.Name = "btn_dangxuat_NV";
+            this.btn_dangxuat_NV.Size = new System.Drawing.Size(230, 60);
+            this.btn_dangxuat_NV.TabIndex = 9;
+            this.btn_dangxuat_NV.Text = "Đăng xuất";
+            this.btn_dangxuat_NV.UseVisualStyleBackColor = true;
+            this.btn_dangxuat_NV.Click += new System.EventHandler(this.btn_dangxuat_NV_Click);
             // 
             // btn_thoat_NV
             // 
@@ -95,20 +112,20 @@
             this.btn_taikhoan_NV.UseVisualStyleBackColor = true;
             this.btn_taikhoan_NV.Click += new System.EventHandler(this.btn_taikhoan_NV_Click);
             // 
-            // btn_hopdongchoduyet_NV
+            // btn_hopdongchuaduyet_NV
             // 
-            this.btn_hopdongchoduyet_NV.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_hopdongchoduyet_NV.FlatAppearance.BorderSize = 0;
-            this.btn_hopdongchoduyet_NV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_hopdongchoduyet_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_hopdongchoduyet_NV.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_hopdongchoduyet_NV.Location = new System.Drawing.Point(0, 236);
-            this.btn_hopdongchoduyet_NV.Name = "btn_hopdongchoduyet_NV";
-            this.btn_hopdongchoduyet_NV.Size = new System.Drawing.Size(230, 60);
-            this.btn_hopdongchoduyet_NV.TabIndex = 2;
-            this.btn_hopdongchoduyet_NV.Text = "Hợp đồng chờ duyệt";
-            this.btn_hopdongchoduyet_NV.UseVisualStyleBackColor = true;
-            this.btn_hopdongchoduyet_NV.Click += new System.EventHandler(this.btn_hopdongchoduyet_NV_Click);
+            this.btn_hopdongchuaduyet_NV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btn_hopdongchuaduyet_NV.FlatAppearance.BorderSize = 0;
+            this.btn_hopdongchuaduyet_NV.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_hopdongchuaduyet_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_hopdongchuaduyet_NV.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_hopdongchuaduyet_NV.Location = new System.Drawing.Point(0, 236);
+            this.btn_hopdongchuaduyet_NV.Name = "btn_hopdongchuaduyet_NV";
+            this.btn_hopdongchuaduyet_NV.Size = new System.Drawing.Size(230, 60);
+            this.btn_hopdongchuaduyet_NV.TabIndex = 2;
+            this.btn_hopdongchuaduyet_NV.Text = "Hợp đồng chưa duyệt";
+            this.btn_hopdongchuaduyet_NV.UseVisualStyleBackColor = true;
+            this.btn_hopdongchuaduyet_NV.Click += new System.EventHandler(this.btn_hopdongchuaduyet_NV_Click);
             // 
             // btn_hopdongdaduyet_NV
             // 
@@ -178,6 +195,7 @@
             this.Name = "FormMain_NhanVien";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhân Viên";
+            this.Load += new System.EventHandler(this.FormMain_NhanVien_Load);
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -192,11 +210,12 @@
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btn_thoat_NV;
         private System.Windows.Forms.Button btn_taikhoan_NV;
-        private System.Windows.Forms.Button btn_hopdongchoduyet_NV;
+        private System.Windows.Forms.Button btn_hopdongchuaduyet_NV;
         private System.Windows.Forms.Button btn_hopdongdaduyet_NV;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lb_tennhanvien_NV;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_dangxuat_NV;
     }
 }

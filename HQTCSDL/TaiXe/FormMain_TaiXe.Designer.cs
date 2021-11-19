@@ -30,6 +30,7 @@
         {
             this.panelChildForm_TX = new System.Windows.Forms.Panel();
             this.panelMenu = new System.Windows.Forms.Panel();
+            this.btn_dangxuat_TX = new System.Windows.Forms.Button();
             this.btn_taikhoan_TX = new System.Windows.Forms.Button();
             this.btn_thoat_TX = new System.Windows.Forms.Button();
             this.btn_thongke_TK = new System.Windows.Forms.Button();
@@ -55,6 +56,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(58)))));
+            this.panelMenu.Controls.Add(this.btn_dangxuat_TX);
             this.panelMenu.Controls.Add(this.btn_taikhoan_TX);
             this.panelMenu.Controls.Add(this.btn_thoat_TX);
             this.panelMenu.Controls.Add(this.btn_thongke_TK);
@@ -66,6 +68,21 @@
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(230, 853);
             this.panelMenu.TabIndex = 6;
+            // 
+            // btn_dangxuat_TX
+            // 
+            this.btn_dangxuat_TX.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btn_dangxuat_TX.FlatAppearance.BorderSize = 0;
+            this.btn_dangxuat_TX.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_dangxuat_TX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_dangxuat_TX.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btn_dangxuat_TX.Location = new System.Drawing.Point(0, 733);
+            this.btn_dangxuat_TX.Name = "btn_dangxuat_TX";
+            this.btn_dangxuat_TX.Size = new System.Drawing.Size(230, 60);
+            this.btn_dangxuat_TX.TabIndex = 9;
+            this.btn_dangxuat_TX.Text = "Đăng xuất";
+            this.btn_dangxuat_TX.UseVisualStyleBackColor = true;
+            this.btn_dangxuat_TX.Click += new System.EventHandler(this.btn_dangxuat_TX_Click);
             // 
             // btn_taikhoan_TX
             // 
@@ -195,6 +212,7 @@
             this.Name = "FormMain_TaiXe";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tài Xế";
+            this.Load += new System.EventHandler(this.FormMain_TaiXe_Load);
             this.panelMenu.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -216,5 +234,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label lb_tentaixe_TX;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button btn_dangxuat_TX;
     }
 }
