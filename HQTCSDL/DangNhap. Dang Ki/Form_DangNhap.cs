@@ -1,10 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
 using System.Threading;
 using System.Windows.Forms;
 
@@ -12,7 +6,8 @@ namespace HQTCSDL
 {
     public partial class Form_DangNhap : Form
     {
-        public int user_type = 4;
+        public int user_type = -2;  
+
         Thread t;
         public Form_DangNhap()
         {
@@ -103,12 +98,12 @@ namespace HQTCSDL
                     }
                 case 2:
                     {
-                        Application.Run(new FormMain_NhanVien());
+                        Application.Run(new FormMain_TaiXe());
                         break;
                     }
                 case 3:
                     {
-                        Application.Run(new FormMain_TaiXe());
+                        Application.Run(new FormMain_NhanVien());
                         break;
                     }
                 case 4:

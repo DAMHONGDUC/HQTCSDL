@@ -7,6 +7,7 @@ namespace HQTCSDL
 {
     public partial class FormMain_DoiTac : Form
     {
+        
         Thread t;
         public FormMain_DoiTac()
         {

@@ -33,7 +33,6 @@
             this.btn_dangxuat_KH = new System.Windows.Forms.Button();
             this.btn_taikhoan_KH = new System.Windows.Forms.Button();
             this.btn_thoat_KH = new System.Windows.Forms.Button();
-            this.btn_giohang_KH = new System.Windows.Forms.Button();
             this.btn_donhangcuatoi_KH = new System.Windows.Forms.Button();
             this.btn_dathang_KH = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -59,7 +58,6 @@
             this.panelMenu.Controls.Add(this.btn_dangxuat_KH);
             this.panelMenu.Controls.Add(this.btn_taikhoan_KH);
             this.panelMenu.Controls.Add(this.btn_thoat_KH);
-            this.panelMenu.Controls.Add(this.btn_giohang_KH);
             this.panelMenu.Controls.Add(this.btn_donhangcuatoi_KH);
             this.panelMenu.Controls.Add(this.btn_dathang_KH);
             this.panelMenu.Controls.Add(this.panel2);
@@ -91,7 +89,7 @@
             this.btn_taikhoan_KH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn_taikhoan_KH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btn_taikhoan_KH.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_taikhoan_KH.Location = new System.Drawing.Point(0, 356);
+            this.btn_taikhoan_KH.Location = new System.Drawing.Point(0, 296);
             this.btn_taikhoan_KH.Name = "btn_taikhoan_KH";
             this.btn_taikhoan_KH.Size = new System.Drawing.Size(230, 60);
             this.btn_taikhoan_KH.TabIndex = 7;
@@ -113,21 +111,6 @@
             this.btn_thoat_KH.Text = "Thoát";
             this.btn_thoat_KH.UseVisualStyleBackColor = true;
             this.btn_thoat_KH.Click += new System.EventHandler(this.btn_thoat_KH_Click);
-            // 
-            // btn_giohang_KH
-            // 
-            this.btn_giohang_KH.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btn_giohang_KH.FlatAppearance.BorderSize = 0;
-            this.btn_giohang_KH.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_giohang_KH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_giohang_KH.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btn_giohang_KH.Location = new System.Drawing.Point(0, 296);
-            this.btn_giohang_KH.Name = "btn_giohang_KH";
-            this.btn_giohang_KH.Size = new System.Drawing.Size(230, 60);
-            this.btn_giohang_KH.TabIndex = 5;
-            this.btn_giohang_KH.Text = "Giỏ hàng";
-            this.btn_giohang_KH.UseVisualStyleBackColor = true;
-            this.btn_giohang_KH.Click += new System.EventHandler(this.btn_giohang_KH_Click);
             // 
             // btn_donhangcuatoi_KH
             // 
@@ -226,7 +209,6 @@
         private System.Windows.Forms.Panel panelChildForm_KH;
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Button btn_thoat_KH;
-        private System.Windows.Forms.Button btn_giohang_KH;
         private System.Windows.Forms.Button btn_donhangcuatoi_KH;
         private System.Windows.Forms.Button btn_dathang_KH;
         private System.Windows.Forms.Panel panel2;
