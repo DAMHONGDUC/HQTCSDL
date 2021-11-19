@@ -88,17 +88,17 @@
     <Compile Include="TaiXe\DonHangDaNhan_TX.Designer.cs">
       <DependentUpon>DonHangDaNhan_TX.cs</DependentUpon>
     </Compile>
-    <Compile Include="NhanVien\HopDongChuaDuyet_NV.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NhanVien\HopDongChuaDuyet_NV.Designer.cs">
-      <DependentUpon>HopDongChuaDuyet_NV.cs</DependentUpon>
-    </Compile>
     <Compile Include="NhanVien\HopDongDaDuyet_NV.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="NhanVien\HopDongDaDuyet_NV.Designer.cs">
       <DependentUpon>HopDongDaDuyet_NV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NhanVien\HopDongChuaDuyet_NV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NhanVien\HopDongChuaDuyet_NV.Designer.cs">
+      <DependentUpon>HopDongChuaDuyet_NV.cs</DependentUpon>
     </Compile>
     <Compile Include="TaiXe\CTDH_TX.cs">
       <SubType>Form</SubType>
@@ -244,11 +244,11 @@
     <EmbeddedResource Include="TaiXe\DonHangDaNhan_TX.resx">
       <DependentUpon>DonHangDaNhan_TX.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NhanVien\HopDongChuaDuyet_NV.resx">
-      <DependentUpon>HopDongChuaDuyet_NV.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="NhanVien\HopDongDaDuyet_NV.resx">
       <DependentUpon>HopDongDaDuyet_NV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NhanVien\HopDongChuaDuyet_NV.resx">
+      <DependentUpon>HopDongChuaDuyet_NV.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TaiXe\CTDH_TX.resx">
       <DependentUpon>CTDH_TX.cs</DependentUpon>

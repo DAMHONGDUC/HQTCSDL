@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HQTCSDL
 {
-    public partial class HopDongDaDuyet_NV : Form
+    public partial class HopDongChuaDuyet_NV : Form
     {
-        public HopDongDaDuyet_NV()
+        public HopDongChuaDuyet_NV()
         {
             InitializeComponent();
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

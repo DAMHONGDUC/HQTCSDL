@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace HQTCSDL
 {
-    public partial class HopDongChuaDuyet_NV : Form
+    public partial class HopDongDaDuyet_NV : Form
     {
-        public HopDongChuaDuyet_NV()
+        public HopDongDaDuyet_NV()
         {
             InitializeComponent();
+        }
+
+        private void HotenTaiXe_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }
