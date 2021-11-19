@@ -17,7 +17,7 @@ namespace HQTCSDL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            //Application.Run(new Form_DangNhap());
+            Application.Run(new Form_DangNhap());
             //Application.Run(new Form_DangKi());
             //Application.Run(new FormMain_Admin());
             //Application.Run(new FormMain_DoiTac());

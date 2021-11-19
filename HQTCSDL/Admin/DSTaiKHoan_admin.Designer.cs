@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dGV_dstaikhoan_AD = new System.Windows.Forms.DataGridView();
             this.btn_themTK_admin = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -43,21 +43,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_dstaikhoan_AD)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dGV_dstaikhoan_AD
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 361);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1282, 388);
-            this.dataGridView1.TabIndex = 4;
+            this.dGV_dstaikhoan_AD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_dstaikhoan_AD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGV_dstaikhoan_AD.Location = new System.Drawing.Point(0, 361);
+            this.dGV_dstaikhoan_AD.Name = "dGV_dstaikhoan_AD";
+            this.dGV_dstaikhoan_AD.RowHeadersWidth = 51;
+            this.dGV_dstaikhoan_AD.RowTemplate.Height = 24;
+            this.dGV_dstaikhoan_AD.Size = new System.Drawing.Size(1282, 388);
+            this.dGV_dstaikhoan_AD.TabIndex = 4;
             // 
             // btn_themTK_admin
             // 
@@ -123,7 +123,7 @@
             this.button2.TabIndex = 56;
             this.button2.Text = "Khóa";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+          
             // 
             // label1
             // 
@@ -214,12 +214,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1282, 853);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dGV_dstaikhoan_AD);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "DSTaiKHoan_admin";
             this.Text = "DSTaiKHoan_admin";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.DSTaiKHoan_admin_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_dstaikhoan_AD)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -229,7 +230,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dGV_dstaikhoan_AD;
         private System.Windows.Forms.Button btn_themTK_admin;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button4;

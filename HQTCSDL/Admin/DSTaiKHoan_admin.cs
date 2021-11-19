@@ -12,6 +12,7 @@ namespace HQTCSDL
 {
     public partial class DSTaiKHoan_admin : Form
     {
+        DataTable tbl_account;
         public DSTaiKHoan_admin()
         {
             InitializeComponent();
@@ -24,9 +25,34 @@ namespace HQTCSDL
             form_themtk.Show();
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void LoadData_DSTaiKhoan() // tải dữ liệu vào DataGridView
         {
+            string sql = "SELECT TENDANGNHAP, MATKHAU, LOAIACC FROM ACCOUNT";
+            tbl_account = Functions.GetDataToTable(sql);
+            dGV_dstaikhoan_AD.DataSource = tbl_account;
 
+            // set Font cho tên cột
+            dGV_dstaikhoan_AD.Font = new Font("Time New Roman", 13);
+            dGV_dstaikhoan_AD.Columns[0].HeaderText = "Tên Đăng Nhập";
+            dGV_dstaikhoan_AD.Columns[1].HeaderText = "Mật Khẩu";
+            dGV_dstaikhoan_AD.Columns[2].HeaderText = "Loại Tài Khoản";        
+
+            // set Font cho dữ liệu hiển thị trong cột
+            dGV_dstaikhoan_AD.DefaultCellStyle.Font = new Font("Time New Roman", 12);
+
+            // set kích thước cột
+            dGV_dstaikhoan_AD.Columns[0].Width = 300;
+            dGV_dstaikhoan_AD.Columns[1].Width = 300;
+            dGV_dstaikhoan_AD.Columns[2].Width = 300;        
+
+            //Không cho người dùng thêm dữ liệu trực tiếp
+            dGV_dstaikhoan_AD.AllowUserToAddRows = false;
+            dGV_dstaikhoan_AD.EditMode = DataGridViewEditMode.EditProgrammatically;          
+        }
+
+        private void DSTaiKHoan_admin_Load(object sender, EventArgs e)
+        {
+            LoadData_DSTaiKhoan();
         }
     }
 }
