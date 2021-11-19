@@ -45,13 +45,13 @@
             this.label6 = new System.Windows.Forms.Label();
             this.txtBox_DIACHI_KH_xemDH = new System.Windows.Forms.TextBox();
             this.txtBox_GIABAN_KH_xemDH = new System.Windows.Forms.TextBox();
-            this.txtBox_TINHTRANG_KH_xemSP = new System.Windows.Forms.TextBox();
             this.txtBox_TenSP_KH_xemDH = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -73,7 +73,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label3.Location = new System.Drawing.Point(969, 217);
+            this.label3.Location = new System.Drawing.Point(969, 215);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(233, 29);
@@ -88,24 +88,27 @@
             this.txtBox_NGAYLAP_KH_xemDH.Name = "txtBox_NGAYLAP_KH_xemDH";
             this.txtBox_NGAYLAP_KH_xemDH.Size = new System.Drawing.Size(268, 35);
             this.txtBox_NGAYLAP_KH_xemDH.TabIndex = 30;
+            this.txtBox_NGAYLAP_KH_xemDH.TextChanged += new System.EventHandler(this.txtBox_NGAYLAP_KH_xemDH_TextChanged);
             // 
             // txtBox_ThanhTien_KH_xemDH
             // 
             this.txtBox_ThanhTien_KH_xemDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_ThanhTien_KH_xemDH.Location = new System.Drawing.Point(276, 399);
+            this.txtBox_ThanhTien_KH_xemDH.Location = new System.Drawing.Point(276, 397);
             this.txtBox_ThanhTien_KH_xemDH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_ThanhTien_KH_xemDH.Name = "txtBox_ThanhTien_KH_xemDH";
             this.txtBox_ThanhTien_KH_xemDH.Size = new System.Drawing.Size(268, 35);
             this.txtBox_ThanhTien_KH_xemDH.TabIndex = 29;
+            this.txtBox_ThanhTien_KH_xemDH.TextChanged += new System.EventHandler(this.txtBox_ThanhTien_KH_xemDH_TextChanged);
             // 
             // txtBox_SL_KH_xemDH
             // 
             this.txtBox_SL_KH_xemDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_SL_KH_xemDH.Location = new System.Drawing.Point(276, 325);
+            this.txtBox_SL_KH_xemDH.Location = new System.Drawing.Point(276, 323);
             this.txtBox_SL_KH_xemDH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_SL_KH_xemDH.Name = "txtBox_SL_KH_xemDH";
             this.txtBox_SL_KH_xemDH.Size = new System.Drawing.Size(268, 35);
             this.txtBox_SL_KH_xemDH.TabIndex = 28;
+            this.txtBox_SL_KH_xemDH.TextChanged += new System.EventHandler(this.txtBox_SL_KH_xemDH_TextChanged);
             // 
             // txtBox_HTTT_KH_xemDH
             // 
@@ -115,6 +118,7 @@
             this.txtBox_HTTT_KH_xemDH.Name = "txtBox_HTTT_KH_xemDH";
             this.txtBox_HTTT_KH_xemDH.Size = new System.Drawing.Size(268, 35);
             this.txtBox_HTTT_KH_xemDH.TabIndex = 27;
+            this.txtBox_HTTT_KH_xemDH.TextChanged += new System.EventHandler(this.txtBox_HTTT_KH_xemDH_TextChanged);
             // 
             // label12
             // 
@@ -136,6 +140,7 @@
             this.txtBox_TongTien_KH_xemDH.Name = "txtBox_TongTien_KH_xemDH";
             this.txtBox_TongTien_KH_xemDH.Size = new System.Drawing.Size(268, 35);
             this.txtBox_TongTien_KH_xemDH.TabIndex = 25;
+            this.txtBox_TongTien_KH_xemDH.TextChanged += new System.EventHandler(this.txtBox_TongTien_KH_xemDH_TextChanged);
             // 
             // label11
             // 
@@ -192,13 +197,14 @@
             this.txtBox_PhiVanChuyen_KH_xemDH.Name = "txtBox_PhiVanChuyen_KH_xemDH";
             this.txtBox_PhiVanChuyen_KH_xemDH.Size = new System.Drawing.Size(268, 35);
             this.txtBox_PhiVanChuyen_KH_xemDH.TabIndex = 18;
+            this.txtBox_PhiVanChuyen_KH_xemDH.TextChanged += new System.EventHandler(this.txtBox_PhiVanChuyen_KH_xemDH_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label7.Location = new System.Drawing.Point(271, 365);
+            this.label7.Location = new System.Drawing.Point(271, 363);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(126, 29);
@@ -210,7 +216,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label6.Location = new System.Drawing.Point(276, 291);
+            this.label6.Location = new System.Drawing.Point(276, 289);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(161, 29);
@@ -220,29 +226,22 @@
             // txtBox_DIACHI_KH_xemDH
             // 
             this.txtBox_DIACHI_KH_xemDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_DIACHI_KH_xemDH.Location = new System.Drawing.Point(628, 175);
+            this.txtBox_DIACHI_KH_xemDH.Location = new System.Drawing.Point(632, 175);
             this.txtBox_DIACHI_KH_xemDH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_DIACHI_KH_xemDH.Name = "txtBox_DIACHI_KH_xemDH";
             this.txtBox_DIACHI_KH_xemDH.Size = new System.Drawing.Size(268, 35);
             this.txtBox_DIACHI_KH_xemDH.TabIndex = 15;
+            this.txtBox_DIACHI_KH_xemDH.TextChanged += new System.EventHandler(this.txtBox_DIACHI_KH_xemDH_TextChanged);
             // 
             // txtBox_GIABAN_KH_xemDH
             // 
             this.txtBox_GIABAN_KH_xemDH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_GIABAN_KH_xemDH.Location = new System.Drawing.Point(276, 251);
+            this.txtBox_GIABAN_KH_xemDH.Location = new System.Drawing.Point(276, 249);
             this.txtBox_GIABAN_KH_xemDH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_GIABAN_KH_xemDH.Name = "txtBox_GIABAN_KH_xemDH";
             this.txtBox_GIABAN_KH_xemDH.Size = new System.Drawing.Size(268, 35);
             this.txtBox_GIABAN_KH_xemDH.TabIndex = 10;
-            // 
-            // txtBox_TINHTRANG_KH_xemSP
-            // 
-            this.txtBox_TINHTRANG_KH_xemSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_TINHTRANG_KH_xemSP.Location = new System.Drawing.Point(965, 251);
-            this.txtBox_TINHTRANG_KH_xemSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.txtBox_TINHTRANG_KH_xemSP.Name = "txtBox_TINHTRANG_KH_xemSP";
-            this.txtBox_TINHTRANG_KH_xemSP.Size = new System.Drawing.Size(268, 35);
-            this.txtBox_TINHTRANG_KH_xemSP.TabIndex = 9;
+            this.txtBox_GIABAN_KH_xemDH.TextChanged += new System.EventHandler(this.txtBox_GIABAN_KH_xemDH_TextChanged);
             // 
             // txtBox_TenSP_KH_xemDH
             // 
@@ -252,13 +251,14 @@
             this.txtBox_TenSP_KH_xemDH.Name = "txtBox_TenSP_KH_xemDH";
             this.txtBox_TenSP_KH_xemDH.Size = new System.Drawing.Size(268, 35);
             this.txtBox_TenSP_KH_xemDH.TabIndex = 7;
+            this.txtBox_TenSP_KH_xemDH.TextChanged += new System.EventHandler(this.txtBox_TenSP_KH_xemDH_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label5.Location = new System.Drawing.Point(271, 217);
+            this.label5.Location = new System.Drawing.Point(271, 215);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 29);
@@ -302,6 +302,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.txtBox_NGAYLAP_KH_xemDH);
@@ -319,7 +320,6 @@
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.txtBox_DIACHI_KH_xemDH);
             this.panel1.Controls.Add(this.txtBox_GIABAN_KH_xemDH);
-            this.panel1.Controls.Add(this.txtBox_TINHTRANG_KH_xemSP);
             this.panel1.Controls.Add(this.txtBox_TenSP_KH_xemDH);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label2);
@@ -330,6 +330,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1442, 504);
             this.panel1.TabIndex = 8;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(974, 249);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(268, 35);
+            this.textBox1.TabIndex = 33;
             // 
             // DS_DonHang_KH
             // 
@@ -367,12 +377,12 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txtBox_DIACHI_KH_xemDH;
         private System.Windows.Forms.TextBox txtBox_GIABAN_KH_xemDH;
-        private System.Windows.Forms.TextBox txtBox_TINHTRANG_KH_xemSP;
         private System.Windows.Forms.TextBox txtBox_TenSP_KH_xemDH;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

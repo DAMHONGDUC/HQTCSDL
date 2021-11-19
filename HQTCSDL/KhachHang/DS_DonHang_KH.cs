@@ -16,5 +16,60 @@ namespace HQTCSDL
         {
             InitializeComponent();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtBox_TenSP_KH_xemDH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBox_GIABAN_KH_xemDH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBox_SL_KH_xemDH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBox_ThanhTien_KH_xemDH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBox_DIACHI_KH_xemDH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBox_PhiVanChuyen_KH_xemDH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBox_TongTien_KH_xemDH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBox_HTTT_KH_xemDH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBox_NGAYLAP_KH_xemDH_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtBox_TINHTRANG_KH_xemSP_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

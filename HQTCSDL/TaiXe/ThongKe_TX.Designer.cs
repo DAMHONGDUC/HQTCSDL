@@ -69,7 +69,7 @@
             // textBox4
             // 
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(703, 256);
+            this.textBox4.Location = new System.Drawing.Point(703, 255);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(424, 35);
@@ -80,7 +80,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label6.Location = new System.Drawing.Point(696, 225);
+            this.label6.Location = new System.Drawing.Point(696, 210);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(121, 29);
             this.label6.TabIndex = 26;
@@ -89,7 +89,7 @@
             // textBox3
             // 
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(931, 145);
+            this.textBox3.Location = new System.Drawing.Point(931, 159);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(196, 35);
@@ -100,7 +100,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label5.Location = new System.Drawing.Point(953, 114);
+            this.label5.Location = new System.Drawing.Point(926, 114);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(64, 29);
             this.label5.TabIndex = 24;
@@ -109,7 +109,7 @@
             // textBox2
             // 
             this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(701, 145);
+            this.textBox2.Location = new System.Drawing.Point(701, 159);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(170, 35);
@@ -129,7 +129,7 @@
             // textBox1
             // 
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(230, 145);
+            this.textBox1.Location = new System.Drawing.Point(230, 159);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(256, 35);
@@ -138,7 +138,7 @@
             // SDTTaiXe
             // 
             this.SDTTaiXe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SDTTaiXe.Location = new System.Drawing.Point(230, 256);
+            this.SDTTaiXe.Location = new System.Drawing.Point(230, 255);
             this.SDTTaiXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.SDTTaiXe.Name = "SDTTaiXe";
             this.SDTTaiXe.Size = new System.Drawing.Size(256, 35);
@@ -149,7 +149,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label4.Location = new System.Drawing.Point(226, 225);
+            this.label4.Location = new System.Drawing.Point(226, 210);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(173, 29);
             this.label4.TabIndex = 19;

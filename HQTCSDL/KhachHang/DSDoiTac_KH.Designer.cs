@@ -66,19 +66,19 @@
             // btn_XemSP_KH
             // 
             this.btn_XemSP_KH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_XemSP_KH.Location = new System.Drawing.Point(1017, 148);
+            this.btn_XemSP_KH.Location = new System.Drawing.Point(987, 148);
             this.btn_XemSP_KH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_XemSP_KH.Name = "btn_XemSP_KH";
-            this.btn_XemSP_KH.Size = new System.Drawing.Size(235, 142);
+            this.btn_XemSP_KH.Size = new System.Drawing.Size(248, 142);
             this.btn_XemSP_KH.TabIndex = 11;
-            this.btn_XemSP_KH.Text = "Xem danh sach sản phẩm của đối tác này";
+            this.btn_XemSP_KH.Text = "Xem danh sách sản phẩm của đối tác này";
             this.btn_XemSP_KH.UseVisualStyleBackColor = true;
             this.btn_XemSP_KH.Click += new System.EventHandler(this.btn_XemSP_KH_Click);
             // 
             // txtBox_LoaiHang_KH_xemDT
             // 
             this.txtBox_LoaiHang_KH_xemDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_LoaiHang_KH_xemDT.Location = new System.Drawing.Point(597, 255);
+            this.txtBox_LoaiHang_KH_xemDT.Location = new System.Drawing.Point(597, 254);
             this.txtBox_LoaiHang_KH_xemDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_LoaiHang_KH_xemDT.Name = "txtBox_LoaiHang_KH_xemDT";
             this.txtBox_LoaiHang_KH_xemDT.Size = new System.Drawing.Size(268, 35);
@@ -87,7 +87,7 @@
             // txtBox_ChiNhanh_KH_xemDT
             // 
             this.txtBox_ChiNhanh_KH_xemDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_ChiNhanh_KH_xemDT.Location = new System.Drawing.Point(597, 153);
+            this.txtBox_ChiNhanh_KH_xemDT.Location = new System.Drawing.Point(597, 162);
             this.txtBox_ChiNhanh_KH_xemDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_ChiNhanh_KH_xemDT.Name = "txtBox_ChiNhanh_KH_xemDT";
             this.txtBox_ChiNhanh_KH_xemDT.Size = new System.Drawing.Size(268, 35);
@@ -96,7 +96,7 @@
             // txtBox_DiaChi_KH_xemDT
             // 
             this.txtBox_DiaChi_KH_xemDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_DiaChi_KH_xemDT.Location = new System.Drawing.Point(141, 255);
+            this.txtBox_DiaChi_KH_xemDT.Location = new System.Drawing.Point(141, 254);
             this.txtBox_DiaChi_KH_xemDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_DiaChi_KH_xemDT.Name = "txtBox_DiaChi_KH_xemDT";
             this.txtBox_DiaChi_KH_xemDT.Size = new System.Drawing.Size(268, 35);
@@ -105,7 +105,7 @@
             // txtBox_TenDT_KH_xemDT
             // 
             this.txtBox_TenDT_KH_xemDT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_TenDT_KH_xemDT.Location = new System.Drawing.Point(141, 153);
+            this.txtBox_TenDT_KH_xemDT.Location = new System.Drawing.Point(141, 162);
             this.txtBox_TenDT_KH_xemDT.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_TenDT_KH_xemDT.Name = "txtBox_TenDT_KH_xemDT";
             this.txtBox_TenDT_KH_xemDT.Size = new System.Drawing.Size(268, 35);
@@ -116,7 +116,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label5.Location = new System.Drawing.Point(592, 221);
+            this.label5.Location = new System.Drawing.Point(592, 211);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(118, 29);
@@ -140,7 +140,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label3.Location = new System.Drawing.Point(136, 221);
+            this.label3.Location = new System.Drawing.Point(136, 211);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 29);

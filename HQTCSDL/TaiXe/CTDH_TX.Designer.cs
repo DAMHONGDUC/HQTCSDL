@@ -92,7 +92,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(50, 59);
+            this.textBox1.Location = new System.Drawing.Point(50, 65);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(256, 35);
@@ -100,7 +100,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(444, 159);
+            this.textBox2.Location = new System.Drawing.Point(444, 157);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(256, 35);
@@ -109,7 +109,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(439, 122);
+            this.label8.Location = new System.Drawing.Point(439, 114);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(126, 29);
             this.label8.TabIndex = 13;
@@ -117,7 +117,7 @@
             // 
             // BienSoXeTaiXe
             // 
-            this.BienSoXeTaiXe.Location = new System.Drawing.Point(50, 159);
+            this.BienSoXeTaiXe.Location = new System.Drawing.Point(50, 157);
             this.BienSoXeTaiXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BienSoXeTaiXe.Name = "BienSoXeTaiXe";
             this.BienSoXeTaiXe.Size = new System.Drawing.Size(256, 35);
@@ -126,7 +126,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 122);
+            this.label6.Location = new System.Drawing.Point(45, 114);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 29);
             this.label6.TabIndex = 8;
@@ -134,7 +134,7 @@
             // 
             // DiaChiTaiXe
             // 
-            this.DiaChiTaiXe.Location = new System.Drawing.Point(444, 59);
+            this.DiaChiTaiXe.Location = new System.Drawing.Point(444, 65);
             this.DiaChiTaiXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.DiaChiTaiXe.Name = "DiaChiTaiXe";
             this.DiaChiTaiXe.Size = new System.Drawing.Size(256, 35);

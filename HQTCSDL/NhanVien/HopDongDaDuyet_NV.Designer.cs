@@ -45,9 +45,9 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.HotenTaiXe = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.HotenTaiXe.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -88,7 +88,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(438, 179);
+            this.label4.Location = new System.Drawing.Point(438, 182);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(157, 29);
             this.label4.TabIndex = 22;
@@ -97,7 +97,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(45, 179);
+            this.label7.Location = new System.Drawing.Point(45, 182);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(108, 29);
             this.label7.TabIndex = 20;
@@ -105,7 +105,7 @@
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(443, 128);
+            this.textBox2.Location = new System.Drawing.Point(443, 137);
             this.textBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(256, 35);
@@ -138,7 +138,7 @@
             this.button1.Location = new System.Drawing.Point(869, 108);
             this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(199, 55);
+            this.button1.Size = new System.Drawing.Size(205, 64);
             this.button1.TabIndex = 4;
             this.button1.Text = "Xác nhận";
             this.button1.UseVisualStyleBackColor = true;
@@ -146,7 +146,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(439, 99);
+            this.label3.Location = new System.Drawing.Point(439, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(227, 29);
             this.label3.TabIndex = 18;
@@ -154,7 +154,7 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(50, 53);
+            this.textBox1.Location = new System.Drawing.Point(50, 59);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(256, 35);
@@ -162,7 +162,7 @@
             // 
             // BienSoXeTaiXe
             // 
-            this.BienSoXeTaiXe.Location = new System.Drawing.Point(50, 130);
+            this.BienSoXeTaiXe.Location = new System.Drawing.Point(50, 139);
             this.BienSoXeTaiXe.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.BienSoXeTaiXe.Name = "BienSoXeTaiXe";
             this.BienSoXeTaiXe.Size = new System.Drawing.Size(256, 35);
@@ -171,7 +171,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(45, 99);
+            this.label6.Location = new System.Drawing.Point(45, 102);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(217, 29);
             this.label6.TabIndex = 8;
@@ -230,17 +230,17 @@
             this.HotenTaiXe.TabIndex = 3;
             this.HotenTaiXe.TabStop = false;
             // 
-            // panel1
+            // dateTimePicker2
             // 
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.HotenTaiXe);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1442, 356);
-            this.panel1.TabIndex = 7;
+            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(50, 219);
+            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dateTimePicker2.MinimumSize = new System.Drawing.Size(4, 33);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(256, 35);
+            this.dateTimePicker2.TabIndex = 33;
+            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
             // 
             // dateTimePicker1
             // 
@@ -253,17 +253,17 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(256, 35);
             this.dateTimePicker1.TabIndex = 32;
             // 
-            // dateTimePicker2
+            // panel1
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(50, 221);
-            this.dateTimePicker2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dateTimePicker2.MinimumSize = new System.Drawing.Size(4, 33);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(256, 35);
-            this.dateTimePicker2.TabIndex = 33;
-            this.dateTimePicker2.ValueChanged += new System.EventHandler(this.dateTimePicker2_ValueChanged);
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.HotenTaiXe);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1442, 356);
+            this.panel1.TabIndex = 7;
             // 
             // HopDongChuaDuyet_NV
             // 

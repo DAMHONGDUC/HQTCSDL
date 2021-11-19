@@ -70,10 +70,10 @@
             // btn_Muangay_KH_xemSP
             // 
             this.btn_Muangay_KH_xemSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Muangay_KH_xemSP.Location = new System.Drawing.Point(946, 231);
+            this.btn_Muangay_KH_xemSP.Location = new System.Drawing.Point(967, 251);
             this.btn_Muangay_KH_xemSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_Muangay_KH_xemSP.Name = "btn_Muangay_KH_xemSP";
-            this.btn_Muangay_KH_xemSP.Size = new System.Drawing.Size(235, 142);
+            this.btn_Muangay_KH_xemSP.Size = new System.Drawing.Size(227, 69);
             this.btn_Muangay_KH_xemSP.TabIndex = 13;
             this.btn_Muangay_KH_xemSP.Text = "Mua ngay";
             this.btn_Muangay_KH_xemSP.UseVisualStyleBackColor = true;
@@ -94,10 +94,10 @@
             // btn_DatHang_KH
             // 
             this.btn_DatHang_KH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_DatHang_KH.Location = new System.Drawing.Point(946, 58);
+            this.btn_DatHang_KH.Location = new System.Drawing.Point(967, 119);
             this.btn_DatHang_KH.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btn_DatHang_KH.Name = "btn_DatHang_KH";
-            this.btn_DatHang_KH.Size = new System.Drawing.Size(235, 142);
+            this.btn_DatHang_KH.Size = new System.Drawing.Size(227, 69);
             this.btn_DatHang_KH.TabIndex = 11;
             this.btn_DatHang_KH.Text = "Thêm vào giỏ hàng";
             this.btn_DatHang_KH.UseVisualStyleBackColor = true;
@@ -105,7 +105,7 @@
             // txtBox_GIABAN_KH_xemSP
             // 
             this.txtBox_GIABAN_KH_xemSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_GIABAN_KH_xemSP.Location = new System.Drawing.Point(597, 285);
+            this.txtBox_GIABAN_KH_xemSP.Location = new System.Drawing.Point(597, 284);
             this.txtBox_GIABAN_KH_xemSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_GIABAN_KH_xemSP.Name = "txtBox_GIABAN_KH_xemSP";
             this.txtBox_GIABAN_KH_xemSP.Size = new System.Drawing.Size(268, 35);
@@ -114,7 +114,7 @@
             // txtBox_DIACHI_KH_xemSP
             // 
             this.txtBox_DIACHI_KH_xemSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_DIACHI_KH_xemSP.Location = new System.Drawing.Point(597, 153);
+            this.txtBox_DIACHI_KH_xemSP.Location = new System.Drawing.Point(597, 172);
             this.txtBox_DIACHI_KH_xemSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_DIACHI_KH_xemSP.Name = "txtBox_DIACHI_KH_xemSP";
             this.txtBox_DIACHI_KH_xemSP.Size = new System.Drawing.Size(268, 35);
@@ -123,7 +123,7 @@
             // txtBox_SOLUONG_KH_xemSP
             // 
             this.txtBox_SOLUONG_KH_xemSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_SOLUONG_KH_xemSP.Location = new System.Drawing.Point(141, 285);
+            this.txtBox_SOLUONG_KH_xemSP.Location = new System.Drawing.Point(141, 284);
             this.txtBox_SOLUONG_KH_xemSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_SOLUONG_KH_xemSP.Name = "txtBox_SOLUONG_KH_xemSP";
             this.txtBox_SOLUONG_KH_xemSP.Size = new System.Drawing.Size(268, 35);
@@ -132,7 +132,7 @@
             // txtBox_TenSP_KH_xemSP
             // 
             this.txtBox_TenSP_KH_xemSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBox_TenSP_KH_xemSP.Location = new System.Drawing.Point(141, 153);
+            this.txtBox_TenSP_KH_xemSP.Location = new System.Drawing.Point(141, 172);
             this.txtBox_TenSP_KH_xemSP.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtBox_TenSP_KH_xemSP.Name = "txtBox_TenSP_KH_xemSP";
             this.txtBox_TenSP_KH_xemSP.Size = new System.Drawing.Size(268, 35);
@@ -143,7 +143,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label5.Location = new System.Drawing.Point(593, 251);
+            this.label5.Location = new System.Drawing.Point(593, 231);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(96, 29);
@@ -167,7 +167,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label3.Location = new System.Drawing.Point(136, 251);
+            this.label3.Location = new System.Drawing.Point(136, 231);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(154, 29);
