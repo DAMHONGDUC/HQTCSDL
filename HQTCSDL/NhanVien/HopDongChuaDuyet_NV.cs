@@ -38,11 +38,11 @@ namespace HQTCSDL
             dGV_NhanVien_HDCD.DefaultCellStyle.Font = new Font("Time New Roman", 12);
 
             // set kích thước cột
-            dGV_NhanVien_HDCD.Columns[0].Width = 300;
-            dGV_NhanVien_HDCD.Columns[1].Width = 300;
-            dGV_NhanVien_HDCD.Columns[2].Width = 300;
-            dGV_NhanVien_HDCD.Columns[3].Width = 300;
-            dGV_NhanVien_HDCD.Columns[4].Width = 300;
+            dGV_NhanVien_HDCD.Columns[0].Width = 200;
+            dGV_NhanVien_HDCD.Columns[1].Width = 200;
+            dGV_NhanVien_HDCD.Columns[2].Width = 200;
+            dGV_NhanVien_HDCD.Columns[3].Width = 200;
+            dGV_NhanVien_HDCD.Columns[4].Width = 200;
 
             //Không cho người dùng thêm dữ liệu trực tiếp
             dGV_NhanVien_HDCD.AllowUserToAddRows = false;

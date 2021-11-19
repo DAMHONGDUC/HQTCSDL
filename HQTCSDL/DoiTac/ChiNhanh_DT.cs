@@ -12,69 +12,43 @@ namespace HQTCSDL
 {
     public partial class ChiNhanh_DT : Form
     {
+        DataTable tbl_DoiTac_CN;
         public ChiNhanh_DT()
         {
             InitializeComponent();
         }
 
+       
+        private void LoadData_CN()//dữ liệu vào DataGridView
+        {
+            string sql = "SELECT CN.TENCHINHANH, CN.DIACHI" +
+                " FROM CHINHANH CN";
+            tbl_DoiTac_CN = Functions.GetDataToTable(sql);
+            dGV_DoiTac_CN.DataSource = tbl_DoiTac_CN;
+
+            // set Font cho tên cột
+            dGV_DoiTac_CN.Font = new Font("Time New Roman", 13);
+            dGV_DoiTac_CN.Columns[0].HeaderText = "Tên chi nhánh";
+            dGV_DoiTac_CN.Columns[1].HeaderText = "Địa chỉ";
+
+
+            // set Font cho dữ liệu hiển thị trong cột
+            dGV_DoiTac_CN.DefaultCellStyle.Font = new Font("Time New Roman", 12);
+
+            // set kích thước cột
+            dGV_DoiTac_CN.Columns[0].Width = 300;
+            dGV_DoiTac_CN.Columns[1].Width = 300;
+
+
+            //Không cho người dùng thêm dữ liệu trực tiếp
+            dGV_DoiTac_CN.AllowUserToAddRows = false;
+            dGV_DoiTac_CN.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
+
         private void ChiNhanh_DT_Load(object sender, EventArgs e)
         {
-
+            LoadData_CN();
         }
 
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtBox_masothue_DT_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
     }
 }
