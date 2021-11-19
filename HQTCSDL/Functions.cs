@@ -2,18 +2,18 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Data.Sql;
 
 namespace HQTCSDL
 {
     class Functions
     {
         //Khai báo đối tượng kết nối  
-        public static SqlConnection Con;
-
+        public static SqlConnection Con;    
         public static void Connect(string ConnectString)
-        {
+        {           
             Con = new SqlConnection();
-            Con.ConnectionString = "Data Source=DESKTOP-0QKBNDR;Initial Catalog=QL_DH_GH;Integrated Security=True";
+            Con.ConnectionString = ConnectString;         
 
             //Mở kết nối
             Con.Open();
@@ -42,43 +42,44 @@ namespace HQTCSDL
         // lấy ConnectString với mỗi loại user
         public static string get_ConnectString(int type )
         {
+            //string servername = "";
             string s = "";
             switch(type)
             {
                 // vô danh
                 case -2:
                     {
-                        s = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_VODANH;Password=12345";
+                        s = @"Data Source=.\SQLEXPRESS;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_VODANH;Password=12345";
                         break;
                     }             
                 // đối tác
                 case 0:
                     {
-                        s = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_DOITAC;Password=12345";
+                        s = @"Data Source=.\SQLEXPRESS;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_DOITAC;Password=12345";
                         break;
                     }
                 // khách hàng
                 case 1:
                     {
-                        s = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_KHACHHANG;Password=12345";
+                        s = @"Data Source=.\SQLEXPRESS;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_KHACHHANG;Password=12345";
                         break;
                     }
                 // tài xế
                 case 2:
                     {
-                        s = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_TAIXE;Password=12345";
+                        s = @"Data Source=D.\SQLEXPRESS;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_TAIXE;Password=12345";
                         break;
                     }
                 // nhân viên
                 case 3:
                     {
-                        s = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_NHANVIEN;Password=12345";
+                        s = @"Data Source=.\SQLEXPRESS;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_NHANVIEN;Password=12345";
                         break;
                     }
                 // admin
                 case 4:
                     {
-                        s = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_ADMIN;Password=12345";
+                        s = @"Data Source=.\SQLEXPRESS;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_ADMIN;Password=12345";
                         break;
                     }
             }

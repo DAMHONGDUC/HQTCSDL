@@ -6,7 +6,7 @@ namespace HQTCSDL
 {
     public partial class Form_DangNhap : Form
     {
-        public int user_type = -2;  
+        public int user_type = -2;
 
         Thread t;
         public Form_DangNhap()
