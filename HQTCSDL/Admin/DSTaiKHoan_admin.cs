@@ -69,5 +69,11 @@ namespace HQTCSDL
             txtBox_matkhau_DSTK.Text = dGV_dstaikhoan_AD.CurrentRow.Cells["MATKHAU"].Value.ToString();
             txtBox_loaitaikhoan_DSTK.Text = dGV_dstaikhoan_AD.CurrentRow.Cells["LOAIACC"].Value.ToString();          
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ThongTinChiTiet_DT thongtinchitiet_DT = new ThongTinChiTiet_DT();
+            thongtinchitiet_DT.Show();
+        }
     }
 }

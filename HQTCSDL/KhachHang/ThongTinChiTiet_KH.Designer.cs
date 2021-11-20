@@ -147,6 +147,7 @@
             // 
             // txtBox_acc_ACCKH
             // 
+            this.txtBox_acc_ACCKH.Enabled = false;
             this.txtBox_acc_ACCKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txtBox_acc_ACCKH.Location = new System.Drawing.Point(265, 164);
             this.txtBox_acc_ACCKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);

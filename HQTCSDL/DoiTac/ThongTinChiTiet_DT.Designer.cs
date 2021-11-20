@@ -177,7 +177,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(268, 30);
             this.textBox2.TabIndex = 12;
-            this.textBox2.Text = "devnguyen";
+            this.textBox2.Text = "rambo";
             // 
             // label10
             // 

@@ -55,12 +55,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dGV_donhang_DT = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_donhang_DT)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.textBox11);
             this.panel1.Controls.Add(this.textBox10);
             this.panel1.Controls.Add(this.textBox9);
@@ -334,13 +336,22 @@
             // dGV_donhang_DT
             // 
             this.dGV_donhang_DT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_donhang_DT.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGV_donhang_DT.Location = new System.Drawing.Point(0, 590);
             this.dGV_donhang_DT.Name = "dGV_donhang_DT";
             this.dGV_donhang_DT.RowHeadersWidth = 51;
             this.dGV_donhang_DT.RowTemplate.Height = 24;
             this.dGV_donhang_DT.Size = new System.Drawing.Size(1282, 263);
             this.dGV_donhang_DT.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.Location = new System.Drawing.Point(1101, 276);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(115, 35);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "Cập nhật";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // DonHang_DT
             // 
@@ -389,5 +400,6 @@
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.DataGridView dGV_donhang_DT;
+        private System.Windows.Forms.Button button1;
     }
 }

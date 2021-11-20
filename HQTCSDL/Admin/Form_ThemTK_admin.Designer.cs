@@ -40,6 +40,10 @@
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btn_quaylai = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cB_TX
@@ -95,6 +99,7 @@
             this.textBox3.Location = new System.Drawing.Point(42, 360);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
+            this.textBox3.PasswordChar = '*';
             this.textBox3.Size = new System.Drawing.Size(391, 40);
             this.textBox3.TabIndex = 27;
             // 
@@ -115,6 +120,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
             this.label3.Location = new System.Drawing.Point(105, 40);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(241, 38);
@@ -151,6 +157,7 @@
             this.textBox2.Location = new System.Drawing.Point(42, 256);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
+            this.textBox2.PasswordChar = '*';
             this.textBox2.Size = new System.Drawing.Size(391, 40);
             this.textBox2.TabIndex = 22;
             // 
@@ -176,6 +183,54 @@
             this.btn_quaylai.Text = "Quay Lại";
             this.btn_quaylai.UseVisualStyleBackColor = false;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label6.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label6.Location = new System.Drawing.Point(38, 129);
+            this.label6.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(141, 24);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "Tên đăng nhập";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label7.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label7.Location = new System.Drawing.Point(38, 226);
+            this.label7.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 24);
+            this.label7.TabIndex = 24;
+            this.label7.Text = "Mật khẩu";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label8.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label8.Location = new System.Drawing.Point(38, 330);
+            this.label8.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(173, 24);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Xác nhận mật khẩu";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label9.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label9.Location = new System.Drawing.Point(38, 436);
+            this.label9.Margin = new System.Windows.Forms.Padding(3, 0, 3, 3);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(170, 24);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Chọn loại tài khoản";
+            // 
             // Form_ThemTK_admin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -185,12 +240,16 @@
             this.Controls.Add(this.btn_quaylai);
             this.Controls.Add(this.cB_TX);
             this.Controls.Add(this.cB_KH);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.label5);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.btn_dangki);
             this.Controls.Add(this.label3);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.label2);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.textBox1);
@@ -215,5 +274,9 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btn_quaylai;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label9;
     }
 }

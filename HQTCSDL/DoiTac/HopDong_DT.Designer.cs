@@ -33,6 +33,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.txtBox_tinhtrang_HDDL = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
+            this.dTP_ngaylap_HDDL = new System.Windows.Forms.DateTimePicker();
+            this.dTP_ngayketthuc_HDHL = new System.Windows.Forms.DateTimePicker();
             this.txtBox_thoigianhieuluc_HDDL = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -45,10 +47,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.dGV_DoiTac_HD = new System.Windows.Forms.DataGridView();
-            this.dTP_ngayketthuc_HDHL = new System.Windows.Forms.DateTimePicker();
-            this.dTP_ngaylap_HDDL = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_DoiTac_HD)).BeginInit();
@@ -117,6 +116,26 @@
             this.label10.Size = new System.Drawing.Size(100, 25);
             this.label10.TabIndex = 32;
             this.label10.Text = "Tình trạng";
+            // 
+            // dTP_ngaylap_HDDL
+            // 
+            this.dTP_ngaylap_HDDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dTP_ngaylap_HDDL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dTP_ngaylap_HDDL.Location = new System.Drawing.Point(762, 216);
+            this.dTP_ngaylap_HDDL.MinimumSize = new System.Drawing.Size(4, 33);
+            this.dTP_ngaylap_HDDL.Name = "dTP_ngaylap_HDDL";
+            this.dTP_ngaylap_HDDL.Size = new System.Drawing.Size(253, 33);
+            this.dTP_ngaylap_HDDL.TabIndex = 31;
+            // 
+            // dTP_ngayketthuc_HDHL
+            // 
+            this.dTP_ngayketthuc_HDHL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dTP_ngayketthuc_HDHL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dTP_ngayketthuc_HDHL.Location = new System.Drawing.Point(762, 304);
+            this.dTP_ngayketthuc_HDHL.MinimumSize = new System.Drawing.Size(4, 33);
+            this.dTP_ngayketthuc_HDHL.Name = "dTP_ngayketthuc_HDHL";
+            this.dTP_ngayketthuc_HDHL.Size = new System.Drawing.Size(253, 33);
+            this.dTP_ngayketthuc_HDHL.TabIndex = 30;
             // 
             // txtBox_thoigianhieuluc_HDDL
             // 
@@ -219,7 +238,6 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 751);
             this.panel2.Name = "panel2";
@@ -229,22 +247,12 @@
             // button3
             // 
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.Location = new System.Drawing.Point(841, 24);
+            this.button3.Location = new System.Drawing.Point(518, 21);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(188, 45);
             this.button3.TabIndex = 47;
             this.button3.Text = "Gia hạn";
             this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.Location = new System.Drawing.Point(248, 24);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(188, 45);
-            this.button2.TabIndex = 46;
-            this.button2.Text = "Kích hoạt";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // dGV_DoiTac_HD
             // 
@@ -257,26 +265,6 @@
             this.dGV_DoiTac_HD.Size = new System.Drawing.Size(1282, 283);
             this.dGV_DoiTac_HD.TabIndex = 6;
             this.dGV_DoiTac_HD.Click += new System.EventHandler(this.dGV_DoiTac_HD_Click);
-            // 
-            // dTP_ngayketthuc_HDHL
-            // 
-            this.dTP_ngayketthuc_HDHL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dTP_ngayketthuc_HDHL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dTP_ngayketthuc_HDHL.Location = new System.Drawing.Point(762, 304);
-            this.dTP_ngayketthuc_HDHL.MinimumSize = new System.Drawing.Size(4, 33);
-            this.dTP_ngayketthuc_HDHL.Name = "dTP_ngayketthuc_HDHL";
-            this.dTP_ngayketthuc_HDHL.Size = new System.Drawing.Size(253, 33);
-            this.dTP_ngayketthuc_HDHL.TabIndex = 30;
-            // 
-            // dTP_ngaylap_HDDL
-            // 
-            this.dTP_ngaylap_HDDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dTP_ngaylap_HDDL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dTP_ngaylap_HDDL.Location = new System.Drawing.Point(762, 216);
-            this.dTP_ngaylap_HDDL.MinimumSize = new System.Drawing.Size(4, 33);
-            this.dTP_ngaylap_HDDL.Name = "dTP_ngaylap_HDDL";
-            this.dTP_ngaylap_HDDL.Size = new System.Drawing.Size(253, 33);
-            this.dTP_ngaylap_HDDL.TabIndex = 31;
             // 
             // HopDong_DT
             // 
@@ -317,7 +305,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dGV_DoiTac_HD;
         private System.Windows.Forms.DateTimePicker dTP_ngaylap_HDDL;
         private System.Windows.Forms.DateTimePicker dTP_ngayketthuc_HDHL;
