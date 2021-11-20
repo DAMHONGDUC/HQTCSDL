@@ -62,13 +62,13 @@
             // 
             // textBox4
             // 
-            this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.textBox4.Location = new System.Drawing.Point(223, 369);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(268, 30);
             this.textBox4.TabIndex = 16;
+            this.textBox4.Text = "******";
             // 
             // label3
             // 
@@ -94,13 +94,13 @@
             // 
             // textBox1
             // 
-            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.textBox1.Location = new System.Drawing.Point(223, 285);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(268, 30);
             this.textBox1.TabIndex = 13;
+            this.textBox1.Text = "******";
             // 
             // textBox2
             // 
@@ -111,6 +111,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(268, 30);
             this.textBox2.TabIndex = 12;
+            this.textBox2.Text = "jisoo";
             // 
             // label10
             // 

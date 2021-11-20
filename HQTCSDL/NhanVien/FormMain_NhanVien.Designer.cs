@@ -169,11 +169,11 @@
             this.lb_tennhanvien_NV.AutoSize = true;
             this.lb_tennhanvien_NV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lb_tennhanvien_NV.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lb_tennhanvien_NV.Location = new System.Drawing.Point(40, 126);
+            this.lb_tennhanvien_NV.Location = new System.Drawing.Point(57, 117);
             this.lb_tennhanvien_NV.Name = "lb_tennhanvien_NV";
-            this.lb_tennhanvien_NV.Size = new System.Drawing.Size(137, 25);
+            this.lb_tennhanvien_NV.Size = new System.Drawing.Size(100, 25);
             this.lb_tennhanvien_NV.TabIndex = 0;
-            this.lb_tennhanvien_NV.Text = "Tên nhân viên";
+            this.lb_tennhanvien_NV.Text = "Nhân viên";
             // 
             // pictureBox1
             // 

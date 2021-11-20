@@ -85,24 +85,7 @@
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.HorizontalScrollbar = true;
             this.checkedListBox1.Items.AddRange(new object[] {
-            "chi nhánh 1 - 48, Bùi Thị Xuân, Quận 5, TP HCM",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1",
-            "chi nhánh 1"});
+            "Hai Bà Trưng - Q5, TP HCM"});
             this.checkedListBox1.Location = new System.Drawing.Point(0, 0);
             this.checkedListBox1.Name = "checkedListBox1";
             this.checkedListBox1.Size = new System.Drawing.Size(647, 388);

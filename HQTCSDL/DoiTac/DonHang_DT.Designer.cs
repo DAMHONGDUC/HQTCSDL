@@ -54,9 +54,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dGV_donhang_DT = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_donhang_DT)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -331,16 +331,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "ĐƠN HÀNG";
             // 
-            // dataGridView1
+            // dGV_donhang_DT
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(1282, 853);
-            this.dataGridView1.TabIndex = 7;
+            this.dGV_donhang_DT.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_donhang_DT.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGV_donhang_DT.Location = new System.Drawing.Point(0, 590);
+            this.dGV_donhang_DT.Name = "dGV_donhang_DT";
+            this.dGV_donhang_DT.RowHeadersWidth = 51;
+            this.dGV_donhang_DT.RowTemplate.Height = 24;
+            this.dGV_donhang_DT.Size = new System.Drawing.Size(1282, 263);
+            this.dGV_donhang_DT.TabIndex = 6;
             // 
             // DonHang_DT
             // 
@@ -348,13 +348,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1282, 853);
+            this.Controls.Add(this.dGV_donhang_DT);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.dataGridView1);
             this.Name = "DonHang_DT";
             this.Text = "DonHang_DT";
+            this.Load += new System.EventHandler(this.DonHang_DT_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_donhang_DT)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -380,7 +381,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtBox_tongtien_DH;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBox5;
@@ -388,5 +388,6 @@
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.TextBox textBox11;
         private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.DataGridView dGV_donhang_DT;
     }
 }

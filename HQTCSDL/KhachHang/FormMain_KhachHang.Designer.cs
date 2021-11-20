@@ -169,11 +169,11 @@
             this.lb_tenkhachhang_KH.AutoSize = true;
             this.lb_tenkhachhang_KH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lb_tenkhachhang_KH.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lb_tenkhachhang_KH.Location = new System.Drawing.Point(41, 127);
+            this.lb_tenkhachhang_KH.Location = new System.Drawing.Point(55, 123);
             this.lb_tenkhachhang_KH.Name = "lb_tenkhachhang_KH";
-            this.lb_tenkhachhang_KH.Size = new System.Drawing.Size(154, 25);
+            this.lb_tenkhachhang_KH.Size = new System.Drawing.Size(118, 25);
             this.lb_tenkhachhang_KH.TabIndex = 0;
-            this.lb_tenkhachhang_KH.Text = "Tên khách hàng";
+            this.lb_tenkhachhang_KH.Text = "Khách hàng";
             // 
             // pictureBox1
             // 

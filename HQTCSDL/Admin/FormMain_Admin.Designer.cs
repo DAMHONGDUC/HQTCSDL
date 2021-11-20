@@ -152,7 +152,7 @@
             this.lb_tenadmin_AD.AutoSize = true;
             this.lb_tenadmin_AD.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lb_tenadmin_AD.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lb_tenadmin_AD.Location = new System.Drawing.Point(79, 130);
+            this.lb_tenadmin_AD.Location = new System.Drawing.Point(79, 120);
             this.lb_tenadmin_AD.Name = "lb_tenadmin_AD";
             this.lb_tenadmin_AD.Size = new System.Drawing.Size(68, 25);
             this.lb_tenadmin_AD.TabIndex = 0;

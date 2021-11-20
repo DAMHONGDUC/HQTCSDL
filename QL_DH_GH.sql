@@ -469,3 +469,4 @@ VALUES
 	('NV001','NV001',N'TRẦN THIỆN THANH BẢO','0124853679',N'Tp.HCM','bray@gmail.com'),
 	('NV111','NV111',N'VŨ ĐỨC THIỆN','0123587496','Tp. Hà Nội', 'rhymastic@gmail.com')
 GO
+

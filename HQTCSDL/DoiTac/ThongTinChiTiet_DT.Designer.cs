@@ -43,6 +43,8 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btn_save_ACCKH = new System.Windows.Forms.Button();
+            this.btn_update_ACCKH = new System.Windows.Forms.Button();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -52,8 +54,6 @@
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btn_save_ACCKH = new System.Windows.Forms.Button();
-            this.btn_update_ACCKH = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -139,13 +139,13 @@
             // 
             // textBox4
             // 
-            this.textBox4.Enabled = false;
             this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.textBox4.Location = new System.Drawing.Point(88, 370);
             this.textBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(268, 30);
             this.textBox4.TabIndex = 16;
+            this.textBox4.Text = "*****";
             // 
             // label3
             // 
@@ -160,13 +160,13 @@
             // 
             // textBox1
             // 
-            this.textBox1.Enabled = false;
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.textBox1.Location = new System.Drawing.Point(88, 286);
             this.textBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(268, 30);
             this.textBox1.TabIndex = 13;
+            this.textBox1.Text = "*****";
             // 
             // textBox2
             // 
@@ -177,6 +177,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(268, 30);
             this.textBox2.TabIndex = 12;
+            this.textBox2.Text = "devnguyen";
             // 
             // label10
             // 
@@ -234,6 +235,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1282, 669);
             this.panel1.TabIndex = 5;
+            // 
+            // btn_save_ACCKH
+            // 
+            this.btn_save_ACCKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_save_ACCKH.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_save_ACCKH.Location = new System.Drawing.Point(736, 575);
+            this.btn_save_ACCKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_save_ACCKH.Name = "btn_save_ACCKH";
+            this.btn_save_ACCKH.Size = new System.Drawing.Size(223, 47);
+            this.btn_save_ACCKH.TabIndex = 67;
+            this.btn_save_ACCKH.Text = "Lưu";
+            this.btn_save_ACCKH.UseVisualStyleBackColor = true;
+            // 
+            // btn_update_ACCKH
+            // 
+            this.btn_update_ACCKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_update_ACCKH.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_update_ACCKH.Location = new System.Drawing.Point(365, 575);
+            this.btn_update_ACCKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btn_update_ACCKH.Name = "btn_update_ACCKH";
+            this.btn_update_ACCKH.Size = new System.Drawing.Size(223, 47);
+            this.btn_update_ACCKH.TabIndex = 68;
+            this.btn_update_ACCKH.Text = "Cập nhật mật khẩu";
+            this.btn_update_ACCKH.UseVisualStyleBackColor = true;
             // 
             // textBox5
             // 
@@ -325,30 +350,6 @@
             this.label1.Size = new System.Drawing.Size(287, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "THÔNG TIN CHI TIẾT";
-            // 
-            // btn_save_ACCKH
-            // 
-            this.btn_save_ACCKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_save_ACCKH.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_save_ACCKH.Location = new System.Drawing.Point(736, 575);
-            this.btn_save_ACCKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_save_ACCKH.Name = "btn_save_ACCKH";
-            this.btn_save_ACCKH.Size = new System.Drawing.Size(223, 47);
-            this.btn_save_ACCKH.TabIndex = 67;
-            this.btn_save_ACCKH.Text = "Lưu";
-            this.btn_save_ACCKH.UseVisualStyleBackColor = true;
-            // 
-            // btn_update_ACCKH
-            // 
-            this.btn_update_ACCKH.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_update_ACCKH.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btn_update_ACCKH.Location = new System.Drawing.Point(365, 575);
-            this.btn_update_ACCKH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btn_update_ACCKH.Name = "btn_update_ACCKH";
-            this.btn_update_ACCKH.Size = new System.Drawing.Size(223, 47);
-            this.btn_update_ACCKH.TabIndex = 68;
-            this.btn_update_ACCKH.Text = "Cập nhật mật khẩu";
-            this.btn_update_ACCKH.UseVisualStyleBackColor = true;
             // 
             // ThongTinChiTiet_DT
             // 

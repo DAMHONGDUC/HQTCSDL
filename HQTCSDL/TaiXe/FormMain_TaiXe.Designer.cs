@@ -186,11 +186,11 @@
             this.lb_tentaixe_TX.AutoSize = true;
             this.lb_tentaixe_TX.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lb_tentaixe_TX.ForeColor = System.Drawing.Color.Gainsboro;
-            this.lb_tentaixe_TX.Location = new System.Drawing.Point(66, 120);
+            this.lb_tentaixe_TX.Location = new System.Drawing.Point(78, 113);
             this.lb_tentaixe_TX.Name = "lb_tentaixe_TX";
-            this.lb_tentaixe_TX.Size = new System.Drawing.Size(98, 25);
+            this.lb_tentaixe_TX.Size = new System.Drawing.Size(66, 25);
             this.lb_tentaixe_TX.TabIndex = 0;
-            this.lb_tentaixe_TX.Text = "Tên tài xế";
+            this.lb_tentaixe_TX.Text = "Tài xế";
             // 
             // pictureBox1
             // 

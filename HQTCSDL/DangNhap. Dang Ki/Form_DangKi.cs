@@ -50,5 +50,11 @@ namespace HQTCSDL
                 cB_DT.Checked = false;
             }
         }
+
+        private void Form_DangKi_Load(object sender, EventArgs e)
+        {
+            txtBox_matkhau_DK.PasswordChar = '*';
+            txtBox_xacnhanmatkhau_DK.PasswordChar = '*';
+        }
     }
 }
