@@ -17,8 +17,7 @@ namespace HQTCSDL
         {
             InitializeComponent();
         }
-
-       
+        
         private void LoadData_CN()//dữ liệu vào DataGridView
         {
             string sql = "SELECT CN.TENCHINHANH, CN.DIACHI" +
@@ -49,5 +48,18 @@ namespace HQTCSDL
             LoadData_CN();
         }
 
+        private void dGV_DoiTac_CN_Click(object sender, EventArgs e)
+        {
+            //Nếu không có dữ liệu
+            if (tbl_DoiTac_CN.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // set giá trị cho các mục            
+            txtBox_tenchinhanh_CN.Text = dGV_DoiTac_CN.CurrentRow.Cells["TENCHINHANH"].Value.ToString();
+            txtBox_diachi_CN.Text = dGV_DoiTac_CN.CurrentRow.Cells["DIACHI"].Value.ToString();          
+        }
     }
 }

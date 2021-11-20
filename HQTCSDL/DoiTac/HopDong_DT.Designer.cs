@@ -31,26 +31,24 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBox_tinhtrang_HDDL = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dTP_ngaylap_HD = new System.Windows.Forms.DateTimePicker();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtBox_thoigianhieuluc_HDDL = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.txtBox_doanhsoban_DT = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtBox_sochinhanh_HDDL = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBox_nguoidaidien_HDDL = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBox_masothue_DT = new System.Windows.Forms.TextBox();
+            this.txtBox_masothue_HDDL = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dGV_DoiTac_HD = new System.Windows.Forms.DataGridView();
+            this.dTP_ngayketthuc_HDHL = new System.Windows.Forms.DateTimePicker();
+            this.dTP_ngaylap_HDDL = new System.Windows.Forms.DateTimePicker();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_DoiTac_HD)).BeginInit();
@@ -70,21 +68,19 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtBox_tinhtrang_HDDL);
             this.panel1.Controls.Add(this.label10);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.dTP_ngaylap_HD);
-            this.panel1.Controls.Add(this.textBox8);
+            this.panel1.Controls.Add(this.dTP_ngaylap_HDDL);
+            this.panel1.Controls.Add(this.dTP_ngayketthuc_HDHL);
+            this.panel1.Controls.Add(this.txtBox_thoigianhieuluc_HDDL);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
             this.panel1.Controls.Add(this.label7);
-            this.panel1.Controls.Add(this.txtBox_doanhsoban_DT);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txtBox_sochinhanh_HDDL);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtBox_nguoidaidien_HDDL);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtBox_masothue_DT);
+            this.panel1.Controls.Add(this.txtBox_masothue_HDDL);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -103,52 +99,32 @@
             this.button1.Text = "Xem";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtBox_tinhtrang_HDDL
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(256, 391);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 30);
-            this.textBox1.TabIndex = 33;
+            this.txtBox_tinhtrang_HDDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_tinhtrang_HDDL.Location = new System.Drawing.Point(256, 306);
+            this.txtBox_tinhtrang_HDDL.Name = "txtBox_tinhtrang_HDDL";
+            this.txtBox_tinhtrang_HDDL.Size = new System.Drawing.Size(253, 30);
+            this.txtBox_tinhtrang_HDDL.TabIndex = 33;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label10.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label10.Location = new System.Drawing.Point(253, 363);
+            this.label10.Location = new System.Drawing.Point(253, 278);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(100, 25);
             this.label10.TabIndex = 32;
             this.label10.Text = "Tình trạng";
             // 
-            // dateTimePicker1
+            // txtBox_thoigianhieuluc_HDDL
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(762, 216);
-            this.dateTimePicker1.MinimumSize = new System.Drawing.Size(4, 33);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(253, 33);
-            this.dateTimePicker1.TabIndex = 31;
-            // 
-            // dTP_ngaylap_HD
-            // 
-            this.dTP_ngaylap_HD.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dTP_ngaylap_HD.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dTP_ngaylap_HD.Location = new System.Drawing.Point(762, 304);
-            this.dTP_ngaylap_HD.MinimumSize = new System.Drawing.Size(4, 33);
-            this.dTP_ngaylap_HD.Name = "dTP_ngaylap_HD";
-            this.dTP_ngaylap_HD.Size = new System.Drawing.Size(253, 33);
-            this.dTP_ngaylap_HD.TabIndex = 30;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox8.Location = new System.Drawing.Point(762, 392);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(253, 30);
-            this.textBox8.TabIndex = 17;
+            this.txtBox_thoigianhieuluc_HDDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_thoigianhieuluc_HDDL.Location = new System.Drawing.Point(762, 392);
+            this.txtBox_thoigianhieuluc_HDDL.Name = "txtBox_thoigianhieuluc_HDDL";
+            this.txtBox_thoigianhieuluc_HDDL.Size = new System.Drawing.Size(253, 30);
+            this.txtBox_thoigianhieuluc_HDDL.TabIndex = 17;
             // 
             // label9
             // 
@@ -183,32 +159,13 @@
             this.label7.TabIndex = 12;
             this.label7.Text = "Ngày lập";
             // 
-            // txtBox_doanhsoban_DT
+            // txtBox_sochinhanh_HDDL
             // 
-            this.txtBox_doanhsoban_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBox_doanhsoban_DT.Location = new System.Drawing.Point(256, 304);
-            this.txtBox_doanhsoban_DT.Name = "txtBox_doanhsoban_DT";
-            this.txtBox_doanhsoban_DT.Size = new System.Drawing.Size(253, 30);
-            this.txtBox_doanhsoban_DT.TabIndex = 11;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label6.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label6.Location = new System.Drawing.Point(253, 276);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(134, 25);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Doanh số bán";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox3.Location = new System.Drawing.Point(762, 131);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(253, 30);
-            this.textBox3.TabIndex = 7;
+            this.txtBox_sochinhanh_HDDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_sochinhanh_HDDL.Location = new System.Drawing.Point(762, 131);
+            this.txtBox_sochinhanh_HDDL.Name = "txtBox_sochinhanh_HDDL";
+            this.txtBox_sochinhanh_HDDL.Size = new System.Drawing.Size(253, 30);
+            this.txtBox_sochinhanh_HDDL.TabIndex = 7;
             // 
             // label4
             // 
@@ -221,13 +178,13 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "Số chi nhánh";
             // 
-            // textBox2
+            // txtBox_nguoidaidien_HDDL
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox2.Location = new System.Drawing.Point(256, 217);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(253, 30);
-            this.textBox2.TabIndex = 5;
+            this.txtBox_nguoidaidien_HDDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_nguoidaidien_HDDL.Location = new System.Drawing.Point(256, 217);
+            this.txtBox_nguoidaidien_HDDL.Name = "txtBox_nguoidaidien_HDDL";
+            this.txtBox_nguoidaidien_HDDL.Size = new System.Drawing.Size(253, 30);
+            this.txtBox_nguoidaidien_HDDL.TabIndex = 5;
             // 
             // label3
             // 
@@ -240,13 +197,13 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Người đại diện";
             // 
-            // txtBox_masothue_DT
+            // txtBox_masothue_HDDL
             // 
-            this.txtBox_masothue_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBox_masothue_DT.Location = new System.Drawing.Point(256, 130);
-            this.txtBox_masothue_DT.Name = "txtBox_masothue_DT";
-            this.txtBox_masothue_DT.Size = new System.Drawing.Size(253, 30);
-            this.txtBox_masothue_DT.TabIndex = 3;
+            this.txtBox_masothue_HDDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_masothue_HDDL.Location = new System.Drawing.Point(256, 130);
+            this.txtBox_masothue_HDDL.Name = "txtBox_masothue_HDDL";
+            this.txtBox_masothue_HDDL.Size = new System.Drawing.Size(253, 30);
+            this.txtBox_masothue_HDDL.TabIndex = 3;
             // 
             // label2
             // 
@@ -299,6 +256,27 @@
             this.dGV_DoiTac_HD.RowTemplate.Height = 24;
             this.dGV_DoiTac_HD.Size = new System.Drawing.Size(1282, 283);
             this.dGV_DoiTac_HD.TabIndex = 6;
+            this.dGV_DoiTac_HD.Click += new System.EventHandler(this.dGV_DoiTac_HD_Click);
+            // 
+            // dTP_ngayketthuc_HDHL
+            // 
+            this.dTP_ngayketthuc_HDHL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dTP_ngayketthuc_HDHL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dTP_ngayketthuc_HDHL.Location = new System.Drawing.Point(762, 304);
+            this.dTP_ngayketthuc_HDHL.MinimumSize = new System.Drawing.Size(4, 33);
+            this.dTP_ngayketthuc_HDHL.Name = "dTP_ngayketthuc_HDHL";
+            this.dTP_ngayketthuc_HDHL.Size = new System.Drawing.Size(253, 33);
+            this.dTP_ngayketthuc_HDHL.TabIndex = 30;
+            // 
+            // dTP_ngaylap_HDDL
+            // 
+            this.dTP_ngaylap_HDDL.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dTP_ngaylap_HDDL.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dTP_ngaylap_HDDL.Location = new System.Drawing.Point(762, 216);
+            this.dTP_ngaylap_HDDL.MinimumSize = new System.Drawing.Size(4, 33);
+            this.dTP_ngaylap_HDDL.Name = "dTP_ngaylap_HDDL";
+            this.dTP_ngaylap_HDDL.Size = new System.Drawing.Size(253, 33);
+            this.dTP_ngaylap_HDDL.TabIndex = 31;
             // 
             // HopDong_DT
             // 
@@ -325,25 +303,23 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBox_masothue_DT;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtBox_masothue_HDDL;
+        private System.Windows.Forms.TextBox txtBox_sochinhanh_HDDL;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBox_nguoidaidien_HDDL;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtBox_thoigianhieuluc_HDDL;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtBox_doanhsoban_DT;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dTP_ngaylap_HD;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBox_tinhtrang_HDDL;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridView dGV_DoiTac_HD;
+        private System.Windows.Forms.DateTimePicker dTP_ngaylap_HDDL;
+        private System.Windows.Forms.DateTimePicker dTP_ngayketthuc_HDHL;
     }
 }

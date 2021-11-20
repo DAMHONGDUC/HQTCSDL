@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.txtBox_masothue_DT = new System.Windows.Forms.TextBox();
+            this.txtBox_giaban_SP = new System.Windows.Forms.TextBox();
+            this.txtBox_soluong_SP = new System.Windows.Forms.TextBox();
+            this.txtBox_tensanpham_SP = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbBox_chinhnhanh_SP = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -62,13 +62,13 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.txtBox_masothue_DT);
+            this.panel1.Controls.Add(this.txtBox_giaban_SP);
+            this.panel1.Controls.Add(this.txtBox_soluong_SP);
+            this.panel1.Controls.Add(this.txtBox_tensanpham_SP);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.cbBox_chinhnhanh_SP);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -77,29 +77,29 @@
             this.panel1.Size = new System.Drawing.Size(1282, 305);
             this.panel1.TabIndex = 2;
             // 
-            // textBox2
+            // txtBox_giaban_SP
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox2.Location = new System.Drawing.Point(802, 199);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(190, 30);
-            this.textBox2.TabIndex = 14;
+            this.txtBox_giaban_SP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_giaban_SP.Location = new System.Drawing.Point(802, 199);
+            this.txtBox_giaban_SP.Name = "txtBox_giaban_SP";
+            this.txtBox_giaban_SP.Size = new System.Drawing.Size(190, 30);
+            this.txtBox_giaban_SP.TabIndex = 14;
             // 
-            // textBox1
+            // txtBox_soluong_SP
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(802, 118);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 30);
-            this.textBox1.TabIndex = 13;
+            this.txtBox_soluong_SP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_soluong_SP.Location = new System.Drawing.Point(802, 118);
+            this.txtBox_soluong_SP.Name = "txtBox_soluong_SP";
+            this.txtBox_soluong_SP.Size = new System.Drawing.Size(190, 30);
+            this.txtBox_soluong_SP.TabIndex = 13;
             // 
-            // txtBox_masothue_DT
+            // txtBox_tensanpham_SP
             // 
-            this.txtBox_masothue_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBox_masothue_DT.Location = new System.Drawing.Point(415, 199);
-            this.txtBox_masothue_DT.Name = "txtBox_masothue_DT";
-            this.txtBox_masothue_DT.Size = new System.Drawing.Size(190, 30);
-            this.txtBox_masothue_DT.TabIndex = 12;
+            this.txtBox_tensanpham_SP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_tensanpham_SP.Location = new System.Drawing.Point(415, 199);
+            this.txtBox_tensanpham_SP.Name = "txtBox_tensanpham_SP";
+            this.txtBox_tensanpham_SP.Size = new System.Drawing.Size(190, 30);
+            this.txtBox_tensanpham_SP.TabIndex = 12;
             // 
             // label5
             // 
@@ -134,16 +134,16 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Tên sản phẩm";
             // 
-            // comboBox1
+            // cbBox_chinhnhanh_SP
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(415, 118);
-            this.comboBox1.MaxDropDownItems = 100;
-            this.comboBox1.MaximumSize = new System.Drawing.Size(190, 0);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(190, 33);
-            this.comboBox1.TabIndex = 5;
+            this.cbBox_chinhnhanh_SP.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cbBox_chinhnhanh_SP.FormattingEnabled = true;
+            this.cbBox_chinhnhanh_SP.Location = new System.Drawing.Point(415, 118);
+            this.cbBox_chinhnhanh_SP.MaxDropDownItems = 100;
+            this.cbBox_chinhnhanh_SP.MaximumSize = new System.Drawing.Size(190, 0);
+            this.cbBox_chinhnhanh_SP.Name = "cbBox_chinhnhanh_SP";
+            this.cbBox_chinhnhanh_SP.Size = new System.Drawing.Size(190, 33);
+            this.cbBox_chinhnhanh_SP.TabIndex = 5;
             // 
             // label2
             // 
@@ -218,6 +218,7 @@
             this.dGV_DoiTac_SP.RowTemplate.Height = 24;
             this.dGV_DoiTac_SP.Size = new System.Drawing.Size(1282, 435);
             this.dGV_DoiTac_SP.TabIndex = 4;
+            this.dGV_DoiTac_SP.Click += new System.EventHandler(this.dGV_DoiTac_SP_Click);
             // 
             // SanPham_DT
             // 
@@ -247,10 +248,10 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtBox_masothue_DT;
+        private System.Windows.Forms.ComboBox cbBox_chinhnhanh_SP;
+        private System.Windows.Forms.TextBox txtBox_giaban_SP;
+        private System.Windows.Forms.TextBox txtBox_soluong_SP;
+        private System.Windows.Forms.TextBox txtBox_tensanpham_SP;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dGV_DoiTac_SP;
         private System.Windows.Forms.Button button4;

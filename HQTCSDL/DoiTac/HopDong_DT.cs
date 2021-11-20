@@ -22,7 +22,8 @@ namespace HQTCSDL
             string sql = "SELECT HD.MADT,HD.MAHD,HD.NGAYLAP," +
                 "HD.NGAYKETTHUC,HD.SLCHINHANH,HD.DADUYET " +
                 "FROM HOPDONG HD WHERE HD.DADUYET = 1";
-            tbl_DoiTac_HD = Functions.GetDataToTable(sql);
+           
+            tbl_DoiTac_HD = Functions.GetDataToTable(sql);           
             dGV_DoiTac_HD.DataSource = tbl_DoiTac_HD;
 
             // set Font cho tên cột
@@ -56,6 +57,22 @@ namespace HQTCSDL
         private void HopDong_DT_Load(object sender, EventArgs e)
         {
             LoadData_CN();
+        }
+
+        private void dGV_DoiTac_HD_Click(object sender, EventArgs e)
+        {
+            //Nếu không có dữ liệu
+            if (tbl_DoiTac_HD.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // set giá trị cho các mục            
+            txtBox_tinhtrang_HDDL.Text = dGV_DoiTac_HD.CurrentRow.Cells["DADUYET"].Value.ToString();
+            txtBox_sochinhanh_HDDL.Text = dGV_DoiTac_HD.CurrentRow.Cells["SLCHINHANH"].Value.ToString();
+            dTP_ngaylap_HDDL.Text = dGV_DoiTac_HD.CurrentRow.Cells["NGAYLAP"].Value.ToString();
+            dTP_ngayketthuc_HDHL.Text = dGV_DoiTac_HD.CurrentRow.Cells["NGAYKETTHUC"].Value.ToString();
         }
     }
 }

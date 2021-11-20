@@ -37,11 +37,11 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtBox_masothue_DT = new System.Windows.Forms.TextBox();
+            this.txtBox_matkhau_DSTK = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBox_tendangnhap_DSTK = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBox_loaitaikhoan_DSTK = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_dstaikhoan_AD)).BeginInit();
             this.panel2.SuspendLayout();
@@ -58,6 +58,7 @@
             this.dGV_dstaikhoan_AD.RowTemplate.Height = 24;
             this.dGV_dstaikhoan_AD.Size = new System.Drawing.Size(1282, 388);
             this.dGV_dstaikhoan_AD.TabIndex = 4;
+            this.dGV_dstaikhoan_AD.Click += new System.EventHandler(this.dGV_dstaikhoan_AD_Click);
             // 
             // btn_themTK_admin
             // 
@@ -123,7 +124,6 @@
             this.button2.TabIndex = 56;
             this.button2.Text = "Khóa";
             this.button2.UseVisualStyleBackColor = true;
-          
             // 
             // label1
             // 
@@ -147,13 +147,13 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Mật khẩu";
             // 
-            // txtBox_masothue_DT
+            // txtBox_matkhau_DSTK
             // 
-            this.txtBox_masothue_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBox_masothue_DT.Location = new System.Drawing.Point(495, 202);
-            this.txtBox_masothue_DT.Name = "txtBox_masothue_DT";
-            this.txtBox_masothue_DT.Size = new System.Drawing.Size(253, 30);
-            this.txtBox_masothue_DT.TabIndex = 9;
+            this.txtBox_matkhau_DSTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_matkhau_DSTK.Location = new System.Drawing.Point(495, 202);
+            this.txtBox_matkhau_DSTK.Name = "txtBox_matkhau_DSTK";
+            this.txtBox_matkhau_DSTK.Size = new System.Drawing.Size(253, 30);
+            this.txtBox_matkhau_DSTK.TabIndex = 9;
             // 
             // label3
             // 
@@ -166,22 +166,22 @@
             this.label3.TabIndex = 10;
             this.label3.Text = "Tên đăng nhập";
             // 
-            // textBox1
+            // txtBox_tendangnhap_DSTK
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(495, 120);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 30);
-            this.textBox1.TabIndex = 11;
+            this.txtBox_tendangnhap_DSTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_tendangnhap_DSTK.Location = new System.Drawing.Point(495, 120);
+            this.txtBox_tendangnhap_DSTK.Name = "txtBox_tendangnhap_DSTK";
+            this.txtBox_tendangnhap_DSTK.Size = new System.Drawing.Size(253, 30);
+            this.txtBox_tendangnhap_DSTK.TabIndex = 11;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtBox_loaitaikhoan_DSTK);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtBox_tendangnhap_DSTK);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtBox_masothue_DT);
+            this.panel1.Controls.Add(this.txtBox_matkhau_DSTK);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -190,13 +190,13 @@
             this.panel1.Size = new System.Drawing.Size(1282, 361);
             this.panel1.TabIndex = 2;
             // 
-            // textBox2
+            // txtBox_loaitaikhoan_DSTK
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox2.Location = new System.Drawing.Point(495, 284);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(253, 30);
-            this.textBox2.TabIndex = 13;
+            this.txtBox_loaitaikhoan_DSTK.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_loaitaikhoan_DSTK.Location = new System.Drawing.Point(495, 284);
+            this.txtBox_loaitaikhoan_DSTK.Name = "txtBox_loaitaikhoan_DSTK";
+            this.txtBox_loaitaikhoan_DSTK.Size = new System.Drawing.Size(253, 30);
+            this.txtBox_loaitaikhoan_DSTK.TabIndex = 13;
             // 
             // label4
             // 
@@ -237,11 +237,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtBox_masothue_DT;
+        private System.Windows.Forms.TextBox txtBox_matkhau_DSTK;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBox_tendangnhap_DSTK;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBox_loaitaikhoan_DSTK;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button2;

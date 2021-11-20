@@ -20,8 +20,9 @@ namespace HQTCSDL
         private void LoadData_SP()//dữ liệu vào DataGridView
         {
             string sql = "SELECT SP.MASP,SP.MADT,SP.MASP,SP.TENSP," +
-                "SP.SOLUONG,SP.CHINHANH " +
-                "FROM SANPHAM SP";
+                "SP.SOLUONG,SP.CHINHANH, SP.GIABAN, CN.TENCHINHANH " +
+                "FROM SANPHAM SP, CHINHANH CN " +
+                "WHERE CN.MACHINHANH = SP.CHINHANH";
             tbl_DoiTac_SP = Functions.GetDataToTable(sql);
             dGV_DoiTac_SP.DataSource = tbl_DoiTac_SP;
 
@@ -51,6 +52,22 @@ namespace HQTCSDL
         private void SanPham_DT_Load(object sender, EventArgs e)
         {
             LoadData_SP();
+        }
+
+        private void dGV_DoiTac_SP_Click(object sender, EventArgs e)
+        {
+            //Nếu không có dữ liệu
+            if (tbl_DoiTac_SP.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // set giá trị cho các mục            
+            cbBox_chinhnhanh_SP.Text = dGV_DoiTac_SP.CurrentRow.Cells["TENCHINHANH"].Value.ToString();
+            txtBox_tensanpham_SP.Text = dGV_DoiTac_SP.CurrentRow.Cells["TENSP"].Value.ToString();
+            txtBox_soluong_SP.Text = dGV_DoiTac_SP.CurrentRow.Cells["SOLUONG"].Value.ToString();
+            txtBox_giaban_SP.Text = dGV_DoiTac_SP.CurrentRow.Cells["GIABAN"].Value.ToString();
         }
     }
 }

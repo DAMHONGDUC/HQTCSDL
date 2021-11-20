@@ -54,5 +54,20 @@ namespace HQTCSDL
         {
             LoadData_DSTaiKhoan();
         }
+
+        private void dGV_dstaikhoan_AD_Click(object sender, EventArgs e)
+        {
+            //Nếu không có dữ liệu
+            if (tbl_account.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // set giá trị cho các mục 
+            txtBox_tendangnhap_DSTK.Text = dGV_dstaikhoan_AD.CurrentRow.Cells["TENDANGNHAP"].Value.ToString();
+            txtBox_matkhau_DSTK.Text = dGV_dstaikhoan_AD.CurrentRow.Cells["MATKHAU"].Value.ToString();
+            txtBox_loaitaikhoan_DSTK.Text = dGV_dstaikhoan_AD.CurrentRow.Cells["LOAIACC"].Value.ToString();          
+        }
     }
 }

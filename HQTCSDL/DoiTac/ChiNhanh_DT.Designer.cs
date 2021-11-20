@@ -30,9 +30,9 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBox_tenchinhanh_CN = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtBox_masothue_DT = new System.Windows.Forms.TextBox();
+            this.txtBox_diachi_CN = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -58,9 +58,9 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtBox_tenchinhanh_CN);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.txtBox_masothue_DT);
+            this.panel1.Controls.Add(this.txtBox_diachi_CN);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -69,13 +69,13 @@
             this.panel1.Size = new System.Drawing.Size(1282, 267);
             this.panel1.TabIndex = 3;
             // 
-            // textBox1
+            // txtBox_tenchinhanh_CN
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(521, 102);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(253, 30);
-            this.textBox1.TabIndex = 7;
+            this.txtBox_tenchinhanh_CN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_tenchinhanh_CN.Location = new System.Drawing.Point(521, 102);
+            this.txtBox_tenchinhanh_CN.Name = "txtBox_tenchinhanh_CN";
+            this.txtBox_tenchinhanh_CN.Size = new System.Drawing.Size(253, 30);
+            this.txtBox_tenchinhanh_CN.TabIndex = 7;
             // 
             // label3
             // 
@@ -88,13 +88,13 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Tên";
             // 
-            // txtBox_masothue_DT
+            // txtBox_diachi_CN
             // 
-            this.txtBox_masothue_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBox_masothue_DT.Location = new System.Drawing.Point(521, 167);
-            this.txtBox_masothue_DT.Name = "txtBox_masothue_DT";
-            this.txtBox_masothue_DT.Size = new System.Drawing.Size(253, 30);
-            this.txtBox_masothue_DT.TabIndex = 5;
+            this.txtBox_diachi_CN.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_diachi_CN.Location = new System.Drawing.Point(521, 167);
+            this.txtBox_diachi_CN.Name = "txtBox_diachi_CN";
+            this.txtBox_diachi_CN.Size = new System.Drawing.Size(253, 30);
+            this.txtBox_diachi_CN.TabIndex = 5;
             // 
             // label2
             // 
@@ -169,6 +169,7 @@
             this.dGV_DoiTac_CN.RowTemplate.Height = 24;
             this.dGV_DoiTac_CN.Size = new System.Drawing.Size(1282, 475);
             this.dGV_DoiTac_CN.TabIndex = 5;
+            this.dGV_DoiTac_CN.Click += new System.EventHandler(this.dGV_DoiTac_CN_Click);
             // 
             // ChiNhanh_DT
             // 
@@ -194,11 +195,11 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtBox_masothue_DT;
+        private System.Windows.Forms.TextBox txtBox_diachi_CN;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dGV_DoiTac_CN;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBox_tenchinhanh_CN;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
