@@ -30,7 +30,6 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dGV_NhanVien_HDCD = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -45,8 +44,9 @@
             this.DiaChiTaiXe = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_NhanVien_HDCD)).BeginInit();
+            this.dGV_NhanVien_HDCD = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_NhanVien_HDCD)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -68,18 +68,6 @@
             this.label1.Size = new System.Drawing.Size(347, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "HỢP ĐỒNG CHƯA DUYỆT";
-            // 
-            // dGV_NhanVien_HDCD
-            // 
-            this.dGV_NhanVien_HDCD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_NhanVien_HDCD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGV_NhanVien_HDCD.Location = new System.Drawing.Point(0, 408);
-            this.dGV_NhanVien_HDCD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dGV_NhanVien_HDCD.Name = "dGV_NhanVien_HDCD";
-            this.dGV_NhanVien_HDCD.RowHeadersWidth = 62;
-            this.dGV_NhanVien_HDCD.RowTemplate.Height = 28;
-            this.dGV_NhanVien_HDCD.Size = new System.Drawing.Size(1282, 432);
-            this.dGV_NhanVien_HDCD.TabIndex = 7;
             // 
             // panel1
             // 
@@ -238,21 +226,32 @@
             this.label2.TabIndex = 36;
             this.label2.Text = "Mã hợp đồng";
             // 
+            // dGV_NhanVien_HDCD
+            // 
+            this.dGV_NhanVien_HDCD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_NhanVien_HDCD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGV_NhanVien_HDCD.Location = new System.Drawing.Point(0, 408);
+            this.dGV_NhanVien_HDCD.Name = "dGV_NhanVien_HDCD";
+            this.dGV_NhanVien_HDCD.RowHeadersWidth = 51;
+            this.dGV_NhanVien_HDCD.RowTemplate.Height = 24;
+            this.dGV_NhanVien_HDCD.Size = new System.Drawing.Size(1282, 402);
+            this.dGV_NhanVien_HDCD.TabIndex = 11;
+            // 
             // HopDongDaDuyet_NV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1282, 840);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dGV_NhanVien_HDCD);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "HopDongDaDuyet_NV";
             this.Text = "HopDongDaDuyet_NV";
             this.Load += new System.EventHandler(this.HopDongDaDuyet_NV_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_NhanVien_HDCD)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_NhanVien_HDCD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -261,7 +260,6 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dGV_NhanVien_HDCD;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Button button1;
@@ -276,5 +274,6 @@
         private System.Windows.Forms.TextBox DiaChiTaiXe;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dGV_NhanVien_HDCD;
     }
 }

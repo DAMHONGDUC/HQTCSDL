@@ -47,13 +47,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtBox_masothue_DT = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dGV_DoiTac_HD = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.dGV_DoiTac_HD = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_DoiTac_HD)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_DoiTac_HD)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -259,25 +259,14 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Mã số thuế";
             // 
-            // dGV_DoiTac_HD
-            // 
-            this.dGV_DoiTac_HD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_DoiTac_HD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGV_DoiTac_HD.Location = new System.Drawing.Point(0, 468);
-            this.dGV_DoiTac_HD.Name = "dGV_DoiTac_HD";
-            this.dGV_DoiTac_HD.RowHeadersWidth = 51;
-            this.dGV_DoiTac_HD.RowTemplate.Height = 24;
-            this.dGV_DoiTac_HD.Size = new System.Drawing.Size(1282, 372);
-            this.dGV_DoiTac_HD.TabIndex = 4;
-            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel2.Location = new System.Drawing.Point(0, 740);
+            this.panel2.Location = new System.Drawing.Point(0, 751);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1282, 100);
+            this.panel2.Size = new System.Drawing.Size(1282, 89);
             this.panel2.TabIndex = 5;
             // 
             // button3
@@ -300,22 +289,33 @@
             this.button2.Text = "Kích hoạt";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // dGV_DoiTac_HD
+            // 
+            this.dGV_DoiTac_HD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_DoiTac_HD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGV_DoiTac_HD.Location = new System.Drawing.Point(0, 468);
+            this.dGV_DoiTac_HD.Name = "dGV_DoiTac_HD";
+            this.dGV_DoiTac_HD.RowHeadersWidth = 51;
+            this.dGV_DoiTac_HD.RowTemplate.Height = 24;
+            this.dGV_DoiTac_HD.Size = new System.Drawing.Size(1282, 283);
+            this.dGV_DoiTac_HD.TabIndex = 6;
+            // 
             // HopDong_DT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1282, 840);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dGV_DoiTac_HD);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "HopDong_DT";
             this.Text = "HopDong_DT";
             this.Load += new System.EventHandler(this.HopDong_DT_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_DoiTac_HD)).EndInit();
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_DoiTac_HD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -341,9 +341,9 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dGV_DoiTac_HD;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridView dGV_DoiTac_HD;
     }
 }

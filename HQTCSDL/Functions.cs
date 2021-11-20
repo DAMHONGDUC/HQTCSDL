@@ -2,12 +2,14 @@
 using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
-using System.Data.Sql;
 
 namespace HQTCSDL
 {
     class Functions
     {
+        // server chính xác
+        private static string exactly_server_name = @"DESKTOP-T4KCE3L\SQLEXPRESS";
+        
         //Khai báo đối tượng kết nối  
         public static SqlConnection Con;
         public static void Connect(string ConnectString)
@@ -18,11 +20,14 @@ namespace HQTCSDL
             //Mở kết nối
             Con.Open();
 
-            ////Kiểm tra kết nối
-            //if (Con.State == ConnectionState.Open)
-            //    MessageBox.Show("Kết nối DB thành công");
-            //else MessageBox.Show("Không thể kết nối với DB");
+            //Kiểm tra kết nối
+            if (Con.State == ConnectionState.Open)
+            {              
+                //MessageBox.Show("Kết nối DB thành công");
+            }
+            else MessageBox.Show("Không thể kết nối với DB");
         }
+
         public static void Disconnect()
         {
             if (Con.State == ConnectionState.Open)
@@ -41,45 +46,44 @@ namespace HQTCSDL
 
         // lấy ConnectString với mỗi loại user
         public static string get_ConnectString(int type)
-        {
-            //string servername = "";
+        {           
             string s = "";
             switch (type)
             {
                 // vô danh
                 case -2:
                     {
-                        s = @"Data Source=.\SQLEXPRESS;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_VODANH;Password=12345";
+                        s = @"Data Source="+ exactly_server_name + ";Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_VODANH;Password=12345";
                         break;
                     }
                 // đối tác
                 case 0:
                     {
-                        s = @"Data Source=.\SQLEXPRESS;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_DOITAC;Password=12345";
+                        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_DOITAC;Password=12345";
                         break;
                     }
                 // khách hàng
                 case 1:
                     {
-                        s = @"Data Source=.\SQLEXPRESS;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_KHACHHANG;Password=12345";
+                        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_KHACHHANG;Password=12345";
                         break;
                     }
                 // tài xế
                 case 2:
                     {
-                        s = @"Data Source=.\SQLEXPRESS;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_TAIXE;Password=12345";
+                        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_TAIXE;Password=12345";
                         break;
                     }
                 // nhân viên
                 case 3:
                     {
-                        s = @"Data Source=.\SQLEXPRESS;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_NHANVIEN;Password=12345";
+                        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_NHANVIEN;Password=12345";
                         break;
                     }
                 // admin
                 case 4:
                     {
-                        s = @"Data Source=.\SQLEXPRESS;Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_ADMIN;Password=12345";
+                        s = @"Data Source=" + exactly_server_name + ";Initial Catalog=QL_DH_GH;Persist Security Info=True;User ID=QL_DH_GH_ADMIN;Password=12345";
                         break;
                     }
             }

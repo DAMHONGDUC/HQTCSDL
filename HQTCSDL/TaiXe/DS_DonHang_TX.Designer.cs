@@ -30,7 +30,6 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dGV_TaiXe_DSDH = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -53,8 +52,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_TaiXe_DSDH)).BeginInit();
+            this.dGV_TaiXe_DSDH = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_TaiXe_DSDH)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -76,18 +76,6 @@
             this.label1.Size = new System.Drawing.Size(329, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "DANH SÁCH ĐƠN HÀNG";
-            // 
-            // dGV_TaiXe_DSDH
-            // 
-            this.dGV_TaiXe_DSDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_TaiXe_DSDH.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGV_TaiXe_DSDH.Location = new System.Drawing.Point(0, 426);
-            this.dGV_TaiXe_DSDH.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dGV_TaiXe_DSDH.Name = "dGV_TaiXe_DSDH";
-            this.dGV_TaiXe_DSDH.RowHeadersWidth = 62;
-            this.dGV_TaiXe_DSDH.RowTemplate.Height = 28;
-            this.dGV_TaiXe_DSDH.Size = new System.Drawing.Size(1282, 414);
-            this.dGV_TaiXe_DSDH.TabIndex = 7;
             // 
             // button1
             // 
@@ -334,21 +322,32 @@
             this.label2.TabIndex = 26;
             this.label2.Text = "Mã đơn hàng";
             // 
+            // dGV_TaiXe_DSDH
+            // 
+            this.dGV_TaiXe_DSDH.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_TaiXe_DSDH.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGV_TaiXe_DSDH.Location = new System.Drawing.Point(0, 426);
+            this.dGV_TaiXe_DSDH.Name = "dGV_TaiXe_DSDH";
+            this.dGV_TaiXe_DSDH.RowHeadersWidth = 51;
+            this.dGV_TaiXe_DSDH.RowTemplate.Height = 24;
+            this.dGV_TaiXe_DSDH.Size = new System.Drawing.Size(1282, 383);
+            this.dGV_TaiXe_DSDH.TabIndex = 9;
+            // 
             // DS_DonHang_TX
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1282, 840);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dGV_TaiXe_DSDH);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "DS_DonHang_TX";
             this.Text = "DS_DonHang_TX";
             this.Load += new System.EventHandler(this.DS_DonHang_TX_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_TaiXe_DSDH)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_TaiXe_DSDH)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -357,7 +356,6 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dGV_TaiXe_DSDH;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ComboBox comboBox1;
@@ -380,5 +378,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dGV_TaiXe_DSDH;
     }
 }

@@ -36,9 +36,8 @@ namespace HQTCSDL
             dGV_DoiTac_CN.DefaultCellStyle.Font = new Font("Time New Roman", 12);
 
             // set kích thước cột
-            dGV_DoiTac_CN.Columns[0].Width = 300;
-            dGV_DoiTac_CN.Columns[1].Width = 300;
-
+            dGV_DoiTac_CN.Columns[0].Width = 450;
+            dGV_DoiTac_CN.Columns[1].Width = 450;
 
             //Không cho người dùng thêm dữ liệu trực tiếp
             dGV_DoiTac_CN.AllowUserToAddRows = false;

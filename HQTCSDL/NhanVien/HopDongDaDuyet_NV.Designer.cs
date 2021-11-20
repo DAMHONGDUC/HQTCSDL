@@ -30,7 +30,6 @@
         {
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dGV_NhanVien_HDDD = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -47,8 +46,9 @@
             this.DiaChiTaiXe = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_NhanVien_HDDD)).BeginInit();
+            this.dGV_NhanVien_HDDD = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_NhanVien_HDDD)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -70,18 +70,6 @@
             this.label1.Size = new System.Drawing.Size(307, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "HỢP ĐỒNG ĐÃ DUYỆT";
-            // 
-            // dGV_NhanVien_HDDD
-            // 
-            this.dGV_NhanVien_HDDD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGV_NhanVien_HDDD.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dGV_NhanVien_HDDD.Location = new System.Drawing.Point(0, 429);
-            this.dGV_NhanVien_HDDD.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dGV_NhanVien_HDDD.Name = "dGV_NhanVien_HDDD";
-            this.dGV_NhanVien_HDDD.RowHeadersWidth = 62;
-            this.dGV_NhanVien_HDDD.RowTemplate.Height = 28;
-            this.dGV_NhanVien_HDDD.Size = new System.Drawing.Size(1282, 411);
-            this.dGV_NhanVien_HDDD.TabIndex = 8;
             // 
             // panel1
             // 
@@ -263,21 +251,32 @@
             this.label2.TabIndex = 34;
             this.label2.Text = "Mã hợp đồng";
             // 
+            // dGV_NhanVien_HDDD
+            // 
+            this.dGV_NhanVien_HDDD.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGV_NhanVien_HDDD.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dGV_NhanVien_HDDD.Location = new System.Drawing.Point(0, 429);
+            this.dGV_NhanVien_HDDD.Name = "dGV_NhanVien_HDDD";
+            this.dGV_NhanVien_HDDD.RowHeadersWidth = 51;
+            this.dGV_NhanVien_HDDD.RowTemplate.Height = 24;
+            this.dGV_NhanVien_HDDD.Size = new System.Drawing.Size(1282, 364);
+            this.dGV_NhanVien_HDDD.TabIndex = 10;
+            // 
             // HopDongChuaDuyet_NV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1282, 840);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.dGV_NhanVien_HDDD);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "HopDongChuaDuyet_NV";
             this.Text = "HopDongChuaDuyet_NV";
             this.Load += new System.EventHandler(this.HopDongChuaDuyet_NV_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dGV_NhanVien_HDDD)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGV_NhanVien_HDDD)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -286,7 +285,6 @@
 
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dGV_NhanVien_HDDD;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
@@ -303,5 +301,6 @@
         private System.Windows.Forms.TextBox DiaChiTaiXe;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridView dGV_NhanVien_HDDD;
     }
 }

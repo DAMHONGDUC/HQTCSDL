@@ -24,6 +24,7 @@ namespace HQTCSDL
         private void Form_Login_Load(object sender, EventArgs e)
         {
             //Mở kết nối
+            //Functions.Connect(user_type);
             Functions.Connect(Functions.get_ConnectString(user_type));
 
             resetvalue_DN();

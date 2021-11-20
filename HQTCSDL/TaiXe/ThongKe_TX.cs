@@ -36,8 +36,8 @@ namespace HQTCSDL
             dGV_TaiXe_TK.DefaultCellStyle.Font = new Font("Time New Roman", 12);
 
             // set kích thước cột
-            dGV_TaiXe_TK.Columns[0].Width = 500;
-            dGV_TaiXe_TK.Columns[1].Width = 500;
+            dGV_TaiXe_TK.Columns[0].Width = 450;
+            dGV_TaiXe_TK.Columns[1].Width = 450;
 
             //Không cho người dùng thêm dữ liệu trực tiếp
             dGV_TaiXe_TK.AllowUserToAddRows = false;

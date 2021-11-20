@@ -45,7 +45,7 @@ namespace HQTCSDL
             dGv_KH_DSDT.Columns[0].Width = 220;
             dGv_KH_DSDT.Columns[1].Width = 220;
             dGv_KH_DSDT.Columns[2].Width = 220;
-            dGv_KH_DSDT.Columns[3].Width = 220;
+            dGv_KH_DSDT.Columns[3].Width = 230;
 
             //Không cho người dùng thêm dữ liệu trực tiếp
             dGv_KH_DSDT.AllowUserToAddRows = false;
