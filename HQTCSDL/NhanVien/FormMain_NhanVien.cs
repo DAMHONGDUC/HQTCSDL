@@ -8,9 +8,14 @@ namespace HQTCSDL
     public partial class FormMain_NhanVien : Form
     {
         Thread t;
-        public FormMain_NhanVien()
+        string TENDANGNHAP;
+        string MATKHAU;
+
+        public FormMain_NhanVien(string tendangnhap, string matkhau)
         {
             InitializeComponent();
+            TENDANGNHAP = tendangnhap;
+            MATKHAU = matkhau;
         }
 
         // mở 1 form con
@@ -100,7 +105,7 @@ namespace HQTCSDL
         // chức năng tài khoản
         private void btn_taikhoan_NV_Click(object sender, EventArgs e)
         {
-            openChildForm(new ThongTinChiTiet_NV());
+            openChildForm(new ThongTinChiTiet_NV(TENDANGNHAP, MATKHAU));
             ActivateButton(sender);
         }
 

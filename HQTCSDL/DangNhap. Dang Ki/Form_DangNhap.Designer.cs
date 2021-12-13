@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.txtBox_tendangnhap = new System.Windows.Forms.TextBox();
-            this.txtBox_matkhau = new System.Windows.Forms.TextBox();
             this.btn_dangnhap = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btn_dangki = new System.Windows.Forms.Button();
+            this.txtBox_matkhau = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtBox_tendangnhap
@@ -46,16 +46,6 @@
             this.txtBox_tendangnhap.Size = new System.Drawing.Size(377, 40);
             this.txtBox_tendangnhap.TabIndex = 0;
             this.txtBox_tendangnhap.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_tendangnhap_KeyDown);
-            // 
-            // txtBox_matkhau
-            // 
-            this.txtBox_matkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBox_matkhau.Location = new System.Drawing.Point(34, 264);
-            this.txtBox_matkhau.Multiline = true;
-            this.txtBox_matkhau.Name = "txtBox_matkhau";
-            this.txtBox_matkhau.Size = new System.Drawing.Size(377, 40);
-            this.txtBox_matkhau.TabIndex = 1;
-            this.txtBox_matkhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_matkhau_KeyDown);
             // 
             // btn_dangnhap
             // 
@@ -120,6 +110,17 @@
             this.btn_dangki.UseVisualStyleBackColor = false;
             this.btn_dangki.Click += new System.EventHandler(this.btn_dangki_Click);
             // 
+            // txtBox_matkhau
+            // 
+            this.txtBox_matkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_matkhau.Location = new System.Drawing.Point(34, 264);
+            this.txtBox_matkhau.Multiline = true;
+            this.txtBox_matkhau.Name = "txtBox_matkhau";
+            this.txtBox_matkhau.PasswordChar = '*';
+            this.txtBox_matkhau.Size = new System.Drawing.Size(377, 40);
+            this.txtBox_matkhau.TabIndex = 1;
+            this.txtBox_matkhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtBox_matkhau_KeyDown);
+            // 
             // Form_DangNhap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -145,11 +146,11 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtBox_tendangnhap;
-        private System.Windows.Forms.TextBox txtBox_matkhau;
         private System.Windows.Forms.Button btn_dangnhap;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_dangki;
+        private System.Windows.Forms.TextBox txtBox_matkhau;
     }
 }

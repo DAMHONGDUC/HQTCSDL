@@ -6,7 +6,10 @@ namespace HQTCSDL
 {
     public partial class Form_DangNhap : Form
     {
-        public int user_type = -2;  
+        public int user_type = -2;
+        String MAACC;
+        string tendangnhap;
+        string matkhau;
 
         Thread t;
         public Form_DangNhap()
@@ -27,15 +30,14 @@ namespace HQTCSDL
             //Functions.Connect(user_type);
             Functions.Connect(Functions.get_ConnectString(user_type));
 
-            resetvalue_DN();
-            txtBox_matkhau.PasswordChar = '*';
+            resetvalue_DN();         
         }
      
         // xử lí đăng nhập
         private void btn_dangnhap_Click(object sender, EventArgs e)
         {
-            string tendangnhap = txtBox_tendangnhap.Text.Trim().ToString();
-            string matkhau = txtBox_matkhau.Text.Trim().ToString();
+            tendangnhap = txtBox_tendangnhap.Text.Trim().ToString();
+            matkhau = txtBox_matkhau.Text.Trim().ToString();
 
             // nếu chưa có dữ liệu 
             if (tendangnhap.Length == 0 | matkhau.Length == 0)
@@ -50,7 +52,7 @@ namespace HQTCSDL
                 "WHERE TENDANGNHAP = '" + tendangnhap + "' " +
                 "AND MATKHAU = '" + matkhau + "'";
             String loaiacc = Functions.GetFieldValues(sql);
-
+         
             // nếu tên đăng nhập hoặc mật khẩu sai
             if (loaiacc.Length == 0)
             {
@@ -68,6 +70,13 @@ namespace HQTCSDL
                 MessageBox.Show("Tài khoản này đã bị khóa !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+
+            // lấy MAACC
+            sql = "SELECT MAACC " +
+                "FROM ACCOUNT " +
+                "WHERE TENDANGNHAP = '" + tendangnhap + "' " +
+                "AND MATKHAU = '" + matkhau + "'";
+            MAACC = Functions.GetFieldValues(sql);
 
             // ngắt kết nối vô danh
             Functions.Disconnect();
@@ -104,7 +113,7 @@ namespace HQTCSDL
                     }
                 case 3:
                     {
-                        Application.Run(new FormMain_NhanVien());
+                        Application.Run(new FormMain_NhanVien(tendangnhap,matkhau));
                         break;
                     }
                 case 4:

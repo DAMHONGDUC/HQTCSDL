@@ -74,7 +74,7 @@ namespace HQTCSDL
         // xử lí khi load form thì hiện tab tài khoản
         private void FormMain_Admin_Load(object sender, EventArgs e)
         {
-            btn_taikkhoan_AD.PerformClick();
+            btn_DStaikhoan_AD.PerformClick();
         }
 
         // xử lí thoát
