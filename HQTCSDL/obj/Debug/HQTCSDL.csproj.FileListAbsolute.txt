@@ -271,8 +271,6 @@ C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSD
 C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.DS_DonHang_KH.resources
 C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.DatHang_KH.resources
 C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.DonHangDaNhan_TX.resources
-C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.HopDongChuaDuyet_NV.resources
-C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.HopDongDaDuyet_NV.resources
 C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.CTDH_TX.resources
 C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.DSTaiKHoan_admin.resources
 C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.Form_ThemTK_admin.resources
@@ -283,3 +281,5 @@ C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSD
 C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.ThongTinChiTiet_admin.resources
 C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.ThongTinChiTiet_DT.resources
 C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.ChiNhanh_ThuocHopDong.resources
+C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.HopDongChuaDuyet_NV.resources
+C:\Users\Dam Hong Duc\Desktop\Đồ án HQTCSDL\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.HopDongDaDuyet_NV.resources

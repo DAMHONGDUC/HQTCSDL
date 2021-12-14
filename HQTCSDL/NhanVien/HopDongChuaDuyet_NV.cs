@@ -10,48 +10,175 @@ using System.Windows.Forms;
 
 namespace HQTCSDL
 {
-    public partial class HopDongDaDuyet_NV : Form
+    public partial class HopDongChuaDuyet_NV : Form
     {
         DataTable tbl_HDCD;
-        public HopDongDaDuyet_NV()
+        public HopDongChuaDuyet_NV()
         {
-            InitializeComponent();
+            InitializeComponent();          
         }
 
-        private void LoadData_HDCD()//dữ liệu vào DataGridView
+        private void Reset_value()
         {
-            string sql = "SELECT HD.MAHD,HD.MADT,HD.SLCHINHANH, HD.PTHOAHONG,HD.NGAYLAP" +
-                " FROM HOPDONG HD" +
-                " WHERE HD.DADUYET = 0;";
+            dTP_ngaylap_HHCDNV.CustomFormat = "";
+            txtBox_mahd_HHCDNV.Text = "";
+            txtBox_slchinhanh_HHCDNV.Text = "";
+            dTP_ngaylap_HHCDNV.Text = "";
+            txtBox_madt_HHCDNV.Text = "";
+            txtBox_tendt_HHCDNV.Text = "";
+            txtBox_nguoidaidien_HHCDNV.Text = "";
+            txtBox_pthoahong_HHCDNV.Text = "";
+            txtBox_thoihanhd_HHCDNV.Text = "";
+        }
+        private string Get_ngayketthuc(string ngaybd, string thoihanhd) // set up ngày kết thúc dựa trên ngày bắt đầu và thời hạn hợp đồng
+        {
+            string kq = "";
+            string[] elements = ngaybd.Split('-');
+            string[] elements2 = elements[2].Split(' ');
+            int year = Int32.Parse(elements[0]);         
+            int year_end = year + Int32.Parse(thoihanhd);
+
+            kq = elements[1] + "-" + elements2[0] + "-" + year_end.ToString();
+            return kq;
+        }
+
+        private void LoadData_HDCD() //dữ liệu vào DataGridView
+        {        
+            string sql = "SELECT HD.MAHD, HD.MADT, DT.TENDT, DT.NGUOIDAIDIEN, " +
+                "HD.SLCHINHANH, HD.PTHOAHONG, HD.NGAYLAP, " +
+                "HD.THOIHANHD" +
+                " FROM HOPDONG HD, DOITAC DT" +
+                " WHERE HD.DADUYET = 0 " +
+                "AND HD.MADT = DT.MADT";
             tbl_HDCD = Functions.GetDataToTable(sql);
-            dGV_NhanVien_HDCD.DataSource = tbl_HDCD;
+            dGV_HDCD_NV.DataSource = tbl_HDCD;
 
             // set Font cho tên cột
-            dGV_NhanVien_HDCD.Font = new Font("Time New Roman", 13);
-            dGV_NhanVien_HDCD.Columns[0].HeaderText = "Mã hợp đồng";
-            dGV_NhanVien_HDCD.Columns[1].HeaderText = "Mã đối tác";
-            dGV_NhanVien_HDCD.Columns[2].HeaderText = "Số lượng chi nhánh";
-            dGV_NhanVien_HDCD.Columns[3].HeaderText = "Phần trăm hoa hồng";
-            dGV_NhanVien_HDCD.Columns[4].HeaderText = "Ngày lập";
+            dGV_HDCD_NV.Font = new Font("Time New Roman", 13);
+            dGV_HDCD_NV.Columns[0].HeaderText = "Mã hợp đồng";
+            dGV_HDCD_NV.Columns[1].HeaderText = "Mã đối tác";
+            dGV_HDCD_NV.Columns[2].HeaderText = "Tên đối tác";
+            dGV_HDCD_NV.Columns[3].HeaderText = "Người đại diện";
+            dGV_HDCD_NV.Columns[4].HeaderText = "Số lượng chi nhánh";
+            dGV_HDCD_NV.Columns[5].HeaderText = "Phần trăm hoa hồng";
+            dGV_HDCD_NV.Columns[6].HeaderText = "Ngày lập";
+            dGV_HDCD_NV.Columns[7].HeaderText = "Thời hạn hợp đồng";
 
             // set Font cho dữ liệu hiển thị trong cột
-            dGV_NhanVien_HDCD.DefaultCellStyle.Font = new Font("Time New Roman", 12);
+            dGV_HDCD_NV.DefaultCellStyle.Font = new Font("Time New Roman", 12);
 
             // set kích thước cột
-            dGV_NhanVien_HDCD.Columns[0].Width = 200;
-            dGV_NhanVien_HDCD.Columns[1].Width = 200;
-            dGV_NhanVien_HDCD.Columns[2].Width = 200;
-            dGV_NhanVien_HDCD.Columns[3].Width = 200;
-            dGV_NhanVien_HDCD.Columns[4].Width = 200;
+            dGV_HDCD_NV.Columns[0].Width = 200;
+            dGV_HDCD_NV.Columns[1].Width = 200;
+            dGV_HDCD_NV.Columns[2].Width = 200;
+            dGV_HDCD_NV.Columns[3].Width = 200;
+            dGV_HDCD_NV.Columns[4].Width = 200;
+            dGV_HDCD_NV.Columns[5].Width = 200;
+            dGV_HDCD_NV.Columns[6].Width = 200;
+            dGV_HDCD_NV.Columns[7].Width = 200;
 
             //Không cho người dùng thêm dữ liệu trực tiếp
-            dGV_NhanVien_HDCD.AllowUserToAddRows = false;
-            dGV_NhanVien_HDCD.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dGV_HDCD_NV.AllowUserToAddRows = false;
+            dGV_HDCD_NV.EditMode = DataGridViewEditMode.EditProgrammatically;
+        }
+    
+        private void HopDongChuaDuyet_NV_Load(object sender, EventArgs e)
+        {
+            dTP_ngaylap_HHCDNV.CustomFormat = " ";
+            LoadData_HDCD();
         }
 
-        private void HopDongDaDuyet_NV_Load(object sender, EventArgs e)
+        private void dGV_HDCD_NV_Click(object sender, EventArgs e) // xử lí khi click vào datagridview
         {
-            LoadData_HDCD();
+            //Nếu không có dữ liệu
+            if (tbl_HDCD.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // set giá trị cho các mục 
+            dTP_ngaylap_HHCDNV.CustomFormat = "yyyy-MM-dd";
+            txtBox_mahd_HHCDNV.Text = dGV_HDCD_NV.CurrentRow.Cells["MAHD"].Value.ToString();
+            txtBox_slchinhanh_HHCDNV.Text = dGV_HDCD_NV.CurrentRow.Cells["SLCHINHANH"].Value.ToString();
+            dTP_ngaylap_HHCDNV.Text = dGV_HDCD_NV.CurrentRow.Cells["NGAYLAP"].Value.ToString();
+            txtBox_madt_HHCDNV.Text = dGV_HDCD_NV.CurrentRow.Cells["MADT"].Value.ToString();
+            txtBox_tendt_HHCDNV.Text = dGV_HDCD_NV.CurrentRow.Cells["TENDT"].Value.ToString();
+            txtBox_nguoidaidien_HHCDNV.Text = dGV_HDCD_NV.CurrentRow.Cells["NGUOIDAIDIEN"].Value.ToString();
+            txtBox_pthoahong_HHCDNV.Text = dGV_HDCD_NV.CurrentRow.Cells["PTHOAHONG"].Value.ToString();
+            txtBox_thoihanhd_HHCDNV.Text = dGV_HDCD_NV.CurrentRow.Cells["THOIHANHD"].Value.ToString();
+        }
+
+        private void btn_duyethd_HHCDNV_Click(object sender, EventArgs e) // xử lí duyệt hợp đồng
+        {
+            // TH nếu chưa chọn hợp đồng nào 
+            if (txtBox_mahd_HHCDNV.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn chưa chọn hợp đồng nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // hỏi người dùng có muốn duyệt không
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn duyệt hợp đồng này không?" +
+                "", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+
+            // nếu đã thỏa hết các điều kiện 
+            try
+            {
+                DateTime today = DateTime.Today; //yyyy - MM - dd
+                string sql = "UPDATE HOPDONG " +
+                "SET DADUYET = '1', NGAYBATDAU = '" + today.ToString("MM/dd/yyyy") + "', " +
+                "NGAYKETTHUC = '" + Get_ngayketthuc(today.ToString(), txtBox_thoihanhd_HHCDNV.Text.Trim().ToString()) + "' " + 
+                "WHERE MAHD = '" + txtBox_mahd_HHCDNV.Text.Trim().ToString() + "'";
+                Functions.RunSQL(sql);
+              
+                MessageBox.Show("Duyệt hợp đồng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData_HDCD();
+                Reset_value();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Duyệt hợp đồng Thất bại, mã lỗi: " + ex.Message); // This will display all the error in your statement.
+            }
+        }
+
+        private void btn_loaibohd_HHCDNV_Click(object sender, EventArgs e) // xử lí loại bỏ hợp đồng
+        {
+            // TH nếu chưa chọn hợp đồng nào 
+            if (txtBox_mahd_HHCDNV.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn chưa chọn hợp đồng nào!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // hỏi người dùng có muốn loại bỏ hợp đồng này không
+            DialogResult dialogResult = MessageBox.Show("Bạn có chắc chắn muốn loại bỏ hợp đồng này không?" +
+                "", "Thông báo", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.No)
+            {
+                return;
+            }
+
+            // nếu đã thỏa hết các điều kiện 
+            try
+            {              
+                string sql = "UPDATE HOPDONG " +
+                "SET DADUYET = '2' " +              
+                "WHERE MAHD = '" + txtBox_mahd_HHCDNV.Text.Trim().ToString() + "'";
+                Functions.RunSQL(sql);
+
+                MessageBox.Show("Loại bỏ hợp đồng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LoadData_HDCD();
+                Reset_value();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Loại bỏ hợp đồng Thất bại, mã lỗi: " + ex.Message); // This will display all the error in your statement.
+            }
         }
     }
 }
