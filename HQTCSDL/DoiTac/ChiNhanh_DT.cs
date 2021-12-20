@@ -61,5 +61,7 @@ namespace HQTCSDL
             txtBox_tenchinhanh_CN.Text = dGV_DoiTac_CN.CurrentRow.Cells["TENCHINHANH"].Value.ToString();
             txtBox_diachi_CN.Text = dGV_DoiTac_CN.CurrentRow.Cells["DIACHI"].Value.ToString();          
         }
+
+        
     }
 }

@@ -12,8 +12,7 @@ namespace HQTCSDL
 {
     public partial class DonHangDaNhan_TX : Form
     {
-        DataTable tbl_TaiXe_DHDN1;
-        DataTable tbl_TaiXe_DHDN2;
+        DataTable tbl_TaiXe_DHDN;
         public DonHangDaNhan_TX()
         {
             InitializeComponent();
@@ -21,16 +20,12 @@ namespace HQTCSDL
         
         private void LoadData_DHDN()//dữ liệu vào DataGridView
         {
-            string sql1 = "SELECT DH.MADH,KH.HOTEN,KH.SDT,DH.NGAYLAP,DH.PHIVANCHUYEN," +
-                "DH.HINHTHUCTHANHTOAN,DH.SOLUONGSP,DH.DIACHIGH,DH.TONGPHISP,DH.TONGPHI " +
+            string sql = "SELECT DH.MADH, KH.HOTEN, KH.SDT,DH.NGAYLAP, DH.PHIVANCHUYEN," +
+                "DH.HINHTHUCTHANHTOAN, DH.SOLUONGSP,DH.DIACHIGH,DH.TINHTRANG, DH.TONGPHISP,DH.TONGPHI " +
                 "FROM DONHANG DH,KHACHHANG KH WHERE DH.TINHTRANG = 1 and DH.MAKH = KH.MAKH";
-            string sql2 = "SELECT DH.MADH,KH.HOTEN,KH.SDT,DH.NGAYLAP," +
-                "DH.PHIVANCHUYEN," +
-                "DH.SOLUONGSP,DH.DIACHIGH,DH.TONGPHI " +
-                "FROM DONHANG DH,KHACHHANG KH" +
-                " WHERE DH.TINHTRANG = 1 and DH.MAKH = KH.MAKH";
-            tbl_TaiXe_DHDN2 = Functions.GetDataToTable(sql2);
-            dGV_TaiXe_DHDN.DataSource = tbl_TaiXe_DHDN2;
+
+            tbl_TaiXe_DHDN = Functions.GetDataToTable(sql);
+            dGV_TaiXe_DHDN.DataSource = tbl_TaiXe_DHDN;
 
             // set Font cho tên cột
             dGV_TaiXe_DHDN.Font = new Font("Time New Roman", 13);

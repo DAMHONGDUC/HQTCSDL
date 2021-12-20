@@ -15,8 +15,8 @@ namespace HQTCSDL
         public static void Connect(string ConnectString)
         {
             Con = new SqlConnection();
-            Con.ConnectionString = ConnectString;
-
+            //Con.ConnectionString = ConnectString;
+            Con.ConnectionString = "Data Source=DESKTOP-0QKBNDR;Initial Catalog=QL_DH_GH;Integrated Security=True"; ;
             //Mở kết nối
             Con.Open();
 
