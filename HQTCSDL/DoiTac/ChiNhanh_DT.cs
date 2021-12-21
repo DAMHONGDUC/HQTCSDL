@@ -13,15 +13,17 @@ namespace HQTCSDL
     public partial class ChiNhanh_DT : Form
     {
         DataTable tbl_DoiTac_CN;
-        public ChiNhanh_DT()
+        string dt;
+        public ChiNhanh_DT(string madt)
         {
             InitializeComponent();
+            dt = madt;
         }
         
         private void LoadData_CN()//dữ liệu vào DataGridView
         {
             string sql = "SELECT CN.TENCHINHANH, CN.DIACHI" +
-                " FROM CHINHANH CN";
+                " FROM CHINHANH CN WHERE CN.MADT = " + "'" + dt + "'";
             tbl_DoiTac_CN = Functions.GetDataToTable(sql);
             dGV_DoiTac_CN.DataSource = tbl_DoiTac_CN;
 
@@ -48,9 +50,52 @@ namespace HQTCSDL
             LoadData_CN();
         }
 
+
+
+        private void btn_DT_ThemCN_Click(object sender, EventArgs e)
+        {
+            txtBox_tenchinhanh_CN.Text = "";
+            txtBox_diachi_CN.Text = "";
+        }
+
+        private void btn_DT_LuuCN_Click(object sender, EventArgs e)
+        {
+            // TH người dùng chưa nhập đầy đủ dữ liệu chưa
+            if (txtBox_tenchinhanh_CN.Text.Trim().Length == 0 | txtBox_diachi_CN.Text.Trim().Length == 0)
+            {
+                MessageBox.Show("Bạn cần phải nhập đầy đủ dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            // nếu đã thỏa hết các điều kiện ở trên
+            try
+            {
+                string sql = "SELECT TOP 1 MACHINHANH FROM CHINHANH ORDER BY MACHINHANH DESC";
+                string macn = Functions.GetFieldValues(sql);
+                string[] elements = macn.Split('N');
+                int maso = Int32.Parse(elements[1]) + 1;
+                macn = "CN" + maso.ToString();
+
+                sql = "INSERT INTO CHINHANH VALUES ( " +
+                "'" + macn + "','" +
+                txtBox_tenchinhanh_CN.Text.Trim() + "','" +
+                dt.Trim() + "','" +
+                txtBox_diachi_CN.Text.Trim() + "')";
+                Functions.RunSQL(sql);
+
+                MessageBox.Show("Cập nhật thông tin thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                txtBox_tenchinhanh_CN.Text = "";
+                txtBox_diachi_CN.Text = "";
+                LoadData_CN();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Cập nhật thông tin thất bại, mã lỗi: " + ex.Message); // This will display all the error in your statement.
+            }
+        }
+
         private void dGV_DoiTac_CN_Click(object sender, EventArgs e)
         {
-            //Nếu không có dữ liệu
             if (tbl_DoiTac_CN.Rows.Count == 0)
             {
                 MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -59,9 +104,8 @@ namespace HQTCSDL
 
             // set giá trị cho các mục            
             txtBox_tenchinhanh_CN.Text = dGV_DoiTac_CN.CurrentRow.Cells["TENCHINHANH"].Value.ToString();
-            txtBox_diachi_CN.Text = dGV_DoiTac_CN.CurrentRow.Cells["DIACHI"].Value.ToString();          
-        }
+            txtBox_diachi_CN.Text = dGV_DoiTac_CN.CurrentRow.Cells["DIACHI"].Value.ToString();
 
-        
+        }
     }
 }

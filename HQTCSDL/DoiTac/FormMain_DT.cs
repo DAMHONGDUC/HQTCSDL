@@ -9,9 +9,16 @@ namespace HQTCSDL
     {
         
         Thread t;
-        public FormMain_DoiTac()
+        string maacc = "";
+        string madt = "";
+        public FormMain_DoiTac(string maacc)
         {
             InitializeComponent();
+
+            string sql = "SELECT DT.MADT FROM DOITAC DT " +
+                " WHERE DT.MAACC = '" + maacc + "'";
+            madt = Functions.GetFieldValues(sql).Trim();
+            //madt = "DT111";
         }
 
         // mở 1 form con
@@ -101,7 +108,7 @@ namespace HQTCSDL
         // chức năng quản lí chi nhánh
         private void btn_chinhanh_DT_Click(object sender, EventArgs e)
         {
-            openChildForm(new ChiNhanh_DT());
+            openChildForm(new ChiNhanh_DT(madt));
             ActivateButton(sender);
         }
 
