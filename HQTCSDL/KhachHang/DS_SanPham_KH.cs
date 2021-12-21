@@ -63,5 +63,21 @@ namespace HQTCSDL
         {
             LoadData_DSSP();
         }
+
+        private void dGv_KH_DSSP_Click(object sender, EventArgs e)
+        {
+            //Nếu không có dữ liệu
+            if (tbl_DSSP_KH.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // set giá trị cho các mục 
+            txtBox_TenSP_KH_xemSP.Text = dGv_KH_DSSP.CurrentRow.Cells["TENSP"].Value.ToString();
+            txtBox_SOLUONG_KH_xemSP.Text = dGv_KH_DSSP.CurrentRow.Cells["SOLUONG"].Value.ToString();
+            txtBox_DIACHI_KH_xemSP.Text = dGv_KH_DSSP.CurrentRow.Cells["DIACHI"].Value.ToString();
+            txtBox_GIABAN_KH_xemSP.Text = dGv_KH_DSSP.CurrentRow.Cells["GIABAN"].Value.ToString();
+        }
     }
 }

@@ -65,5 +65,28 @@ namespace HQTCSDL
         {
             LoadData_DSDonhang();
         }
+
+
+        private void dGv_KH_DSDonhang_Click(object sender, EventArgs e)
+        {
+            if (tbl_DSDonhang_KH.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // set giá trị cho các mục 
+            txtBox_TenSP_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["TENSP"].Value.ToString();
+            txtBox_GIABAN_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["GIABAN"].Value.ToString();
+            txtBox_SL_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["SOLUONG"].Value.ToString();
+            txtBox_ThanhTien_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["THANHTIEN"].Value.ToString();
+            txtBox_HTTT_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["HINHTHUCTHANHTOAN"].Value.ToString();
+            txtBox_TongTien_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["TONGPHI"].Value.ToString();
+            txtBox_PhiVanChuyen_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["PHIVANCHUYEN"].Value.ToString();
+            txtBox_DIACHI_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["DIACHIGH"].Value.ToString();
+            dTp_NGAYLAP_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["NGAYLAP"].Value.ToString();
+            txtBox_TTDH_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["TINHTRANG"].Value.ToString();
+        }
     }
+  
 }

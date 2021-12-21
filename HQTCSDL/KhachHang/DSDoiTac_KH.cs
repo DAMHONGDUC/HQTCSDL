@@ -56,5 +56,21 @@ namespace HQTCSDL
         {
             LoadData_DSDT();
         }
+
+        private void dGv_KH_DSDT_Click(object sender, EventArgs e)
+        {
+            if (tbl_DSDoitac_KH.Rows.Count == 0)
+            {
+                MessageBox.Show("Không có dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+
+            // set giá trị cho các mục 
+            txtBox_TenDT_KH_xemDT.Text = dGv_KH_DSDT.CurrentRow.Cells["TENDT"].Value.ToString();
+            txtBox_DiaChi_KH_xemDT.Text = dGv_KH_DSDT.CurrentRow.Cells["DIACHI"].Value.ToString();
+            txtBox_ChiNhanh_KH_xemDT.Text = dGv_KH_DSDT.CurrentRow.Cells["SOCHINHANH"].Value.ToString();
+            txtBox_LoaiHang_KH_xemDT.Text = dGv_KH_DSDT.CurrentRow.Cells["LOAIHANG"].Value.ToString();
+
+        }
     }
 }
