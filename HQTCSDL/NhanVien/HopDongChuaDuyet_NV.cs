@@ -7,15 +7,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace HQTCSDL
 {
     public partial class HopDongChuaDuyet_NV : Form
     {
+        string MANV;
         DataTable tbl_HDCD;
-        public HopDongChuaDuyet_NV()
+        public HopDongChuaDuyet_NV(string manv)
         {
-            InitializeComponent();          
+            InitializeComponent();
+            MANV = manv;
         }
 
         private void Reset_value()
@@ -109,6 +113,26 @@ namespace HQTCSDL
             txtBox_thoihanhd_HHCDNV.Text = dGV_HDCD_NV.CurrentRow.Cells["THOIHANHD"].Value.ToString();
         }
 
+        private void Run_SP_DuyetHopDong(string ngaybd, string ngaykt, string manv, string mahd)
+        {
+            SqlCommand cmd = new SqlCommand("Sp_NV_DuyetHopDong", Functions.Con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            // set kiểu dữ liệu
+            cmd.Parameters.Add("@NGAYBATDAU", SqlDbType.Date);
+            cmd.Parameters.Add("@NGAYKETTHUC", SqlDbType.Date);
+            cmd.Parameters.Add("@MANV", SqlDbType.VarChar, 15);
+            cmd.Parameters.Add("@MAHD", SqlDbType.VarChar, 15);
+
+            // set giá trị
+            cmd.Parameters["@NGAYBATDAU"].Value = ngaybd;
+            cmd.Parameters["@NGAYKETTHUC"].Value = ngaykt;
+            cmd.Parameters["@MANV"].Value = manv;
+            cmd.Parameters["@MAHD"].Value = mahd;
+
+            int result = cmd.ExecuteNonQuery();          
+        }
+
         private void btn_duyethd_HHCDNV_Click(object sender, EventArgs e) // xử lí duyệt hợp đồng
         {
             // TH nếu chưa chọn hợp đồng nào 
@@ -130,12 +154,15 @@ namespace HQTCSDL
             try
             {
                 DateTime today = DateTime.Today; //yyyy - MM - dd
-                string sql = "UPDATE HOPDONG " +
-                "SET DADUYET = '1', NGAYBATDAU = '" + today.ToString("MM/dd/yyyy") + "', " +
-                "NGAYKETTHUC = '" + Get_ngayketthuc(today.ToString(), txtBox_thoihanhd_HHCDNV.Text.Trim().ToString()) + "' " + 
-                "WHERE MAHD = '" + txtBox_mahd_HHCDNV.Text.Trim().ToString() + "'";
-                Functions.RunSQL(sql);
-              
+                //string sql = "UPDATE HOPDONG " +
+                //"SET DADUYET = '1', NGAYBATDAU = '" + today.ToString("MM/dd/yyyy") + "', " +
+                //"NGAYKETTHUC = '" + Get_ngayketthuc(today.ToString(), txtBox_thoihanhd_HHCDNV.Text.Trim().ToString()) + "' " + 
+                //"WHERE MAHD = '" + txtBox_mahd_HHCDNV.Text.Trim().ToString() + "'";
+                //Functions.RunSQL(sql);
+
+                Run_SP_DuyetHopDong(today.ToString("MM/dd/yyyy"), Get_ngayketthuc(today.ToString(), txtBox_thoihanhd_HHCDNV.Text.Trim().ToString())
+                    , MANV, txtBox_mahd_HHCDNV.Text.Trim().ToString());
+
                 MessageBox.Show("Duyệt hợp đồng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadData_HDCD();
                 Reset_value();
@@ -144,6 +171,22 @@ namespace HQTCSDL
             {
                 MessageBox.Show("Duyệt hợp đồng Thất bại, mã lỗi: " + ex.Message); // This will display all the error in your statement.
             }
+        }
+
+        private void Run_SP_LoaiBoHopDong(string manv, string mahd)
+        {
+            SqlCommand cmd = new SqlCommand("Sp_NV_LoaiBoHopDong", Functions.Con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            // set kiểu dữ liệu        
+            cmd.Parameters.Add("@MANV", SqlDbType.VarChar, 15);
+            cmd.Parameters.Add("@MAHD", SqlDbType.VarChar, 15);
+
+            // set giá trị        
+            cmd.Parameters["@MANV"].Value = manv;
+            cmd.Parameters["@MAHD"].Value = mahd;
+
+            int result = cmd.ExecuteNonQuery();
         }
 
         private void btn_loaibohd_HHCDNV_Click(object sender, EventArgs e) // xử lí loại bỏ hợp đồng
@@ -165,11 +208,8 @@ namespace HQTCSDL
 
             // nếu đã thỏa hết các điều kiện 
             try
-            {              
-                string sql = "UPDATE HOPDONG " +
-                "SET DADUYET = '2' " +              
-                "WHERE MAHD = '" + txtBox_mahd_HHCDNV.Text.Trim().ToString() + "'";
-                Functions.RunSQL(sql);
+            {            
+                Run_SP_LoaiBoHopDong(MANV, txtBox_mahd_HHCDNV.Text.Trim().ToString());
 
                 MessageBox.Show("Loại bỏ hợp đồng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadData_HDCD();

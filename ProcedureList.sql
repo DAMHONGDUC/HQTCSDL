@@ -1,8 +1,11 @@
-﻿USE QL_DH_GH
+USE QL_DH_GH
 GO
 
 --DROP PROC Sp_DangNhap
 --DROP PROC Sp_NV_DuyetHopDong
+--DROP PROC Sp_NV_LoaiBoHopDong
+--DROP PROC Sp_NV_DoiMK
+--DROP PROC Sp_NV_DoiThongTinTK
 
 -- Xử lí đăng nhập tài khoản
 CREATE PROC Sp_DangNhap
@@ -83,9 +86,7 @@ GO
 
 -- Nhân viên loại bỏ hợp đồng (không duyệt hợp đồng)
 CREATE 
-PROC Sp_NV_LoaiBoHopDong
-	@NGAYBATDAU DATE,
-	@NGAYKETTHUC DATE,
+PROC Sp_NV_LoaiBoHopDong	
 	@MANV VARCHAR(15),
 	@MAHD VARCHAR(15)
 AS
@@ -117,25 +118,19 @@ END
 GO
 
 --Đổi mật khẩu tài khoản nhân viên
-CREATE PROC Sp_NV_DoiMatKhau
-	@MANV VARCHAR(15),
+CREATE PROC Sp_NV_DoiMK
+	@MAACC VARCHAR(15),
 	@MATKHAU VARCHAR(50)
 AS
 BEGIN
 	--kiểm tra mã nhân viên có tồn tại hay không
 	IF NOT EXISTS (SELECT * 
-				FROM NHANVIEN
-				WHERE MANV = @MANV )
+				FROM ACCOUNT
+				WHERE MAACC = @MAACC)
 	BEGIN
-		PRINT CAST(@MANV AS VARCHAR(15)) + N' Không Tồn Tại'
+		PRINT CAST(@MAACC AS VARCHAR(15)) + N' Không Tồn Tại'
 		RETURN 0
-	END
-
-	-- lấy MAACC
-	DECLARE @MAACC VARCHAR(15)
-	SET @MAACC = (SELECT MAACC
-				FROM NHANVIEN
-				WHERE MANV = @MANV)
+	END	
 
 	-- xử lí Update mật khẩu
 	UPDATE ACCOUNT
@@ -144,6 +139,35 @@ BEGIN
 	RETURN 1
 END
 GO
+
+
+--Đổi thông tin tài khoản nhân viên
+CREATE PROC Sp_NV_DoiThongTinTK
+	@MANV VARCHAR(15),
+	@TENNV NVARCHAR(50),
+	@SDT VARCHAR(15) ,
+	@DIACHI NVARCHAR(50),
+	@EMAIL VARCHAR(50) 
+AS
+BEGIN
+	--kiểm tra mã nhân viên có tồn tại hay không
+	IF NOT EXISTS (SELECT * 
+				FROM NHANVIEN
+				WHERE MANV = @MANV)
+	BEGIN
+		PRINT CAST(@MANV AS VARCHAR(15)) + N' Không Tồn Tại'
+		RETURN 0
+	END	
+
+	-- xử lí Update
+	UPDATE NHANVIEN
+	SET TENNV = @TENNV, SDT = @SDT, DIACHI = @DIACHI, EMAIL = @EMAIL
+	WHERE MANV = @MANV	
+	RETURN 1
+END
+GO
+
+--------------------PROCEDURE-PHẦN CỦA Huy
 --Khách hàng mua sản phẩm
 CREATE 
 --ALTER
@@ -171,4 +195,22 @@ AS
 		RETURN 1;
 	END 
 
+GO
+
+----PROCEDURE CỦA MINH
+--PROCEDURE ĐỐI TÁC THÊM CHI NHÁNH
+CREATE PROCEDURE sp_DT_ThemChiNhanh @madt VARCHAR(15), @machinhanh VARCHAR(15), @diachi NVARCHAR(50), @ten NVARCHAR(50), @res int output
+AS
+	--Kiểm tra địa chỉ có trùng hay không
+	IF(EXISTS(SELECT * FROM CHINHANH WHERE MADT = @MADT AND DIACHI = @diachi))
+			RETURN @res = -1
+
+	-- Kiểm tra mã chi nhánh có trùng hay không
+	IF(EXISTS(SELECT * FROM CHINHANH WHERE MACHINHANH = @machinhanh))
+			RETURN @res = -1
+	
+	INSERT INTO CHINHANH(MACHINHANH, MADT, TENCHINHANH, DIACHI)
+	VALUES
+		(@machinhanh, @madt, @ten, @diachi)
+	return @res = 1
 GO
