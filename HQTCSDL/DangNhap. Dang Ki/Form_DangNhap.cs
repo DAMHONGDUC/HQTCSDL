@@ -1,13 +1,16 @@
 ﻿using System;
 using System.Threading;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace HQTCSDL
 {
     public partial class Form_DangNhap : Form
     {
         public int user_type = -2;
-        String MAACC;
+        string MAACC;
+        string LOAIACC;
         string tendangnhap;
         string matkhau;
 
@@ -32,6 +35,27 @@ namespace HQTCSDL
 
             resetvalue_DN();         
         }
+
+        private void Run_SP_DangNhap()
+        {                  
+            SqlCommand cmd = new SqlCommand("Sp_DangNhap", Functions.Con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            // set kiểu dữ liệu
+            cmd.Parameters.Add("@TENDANGNHAP", SqlDbType.VarChar, 50);
+            cmd.Parameters.Add("@MATKHAU", SqlDbType.VarChar, 50);
+            cmd.Parameters.Add("@MAACC", SqlDbType.VarChar, 15).Direction = ParameterDirection.Output;
+            cmd.Parameters.Add("@LOAIACC", SqlDbType.Int).Direction = ParameterDirection.Output;
+
+            // set giá trị
+            cmd.Parameters["@TENDANGNHAP"].Value = tendangnhap;
+            cmd.Parameters["@MATKHAU"].Value = matkhau;
+
+            cmd.ExecuteNonQuery();
+
+            MAACC = Convert.ToString(cmd.Parameters["@MAACC"].Value);
+            LOAIACC = Convert.ToString(cmd.Parameters["@LOAIACC"].Value);
+        }
      
         // xử lí đăng nhập
         private void btn_dangnhap_Click(object sender, EventArgs e)
@@ -46,23 +70,19 @@ namespace HQTCSDL
                 return;
             }
 
-            // kiểm tra tên đăng nhập và mật khẩu
-            string sql = "SELECT LOAIACC " +
-                "FROM ACCOUNT " +
-                "WHERE TENDANGNHAP = '" + tendangnhap + "' " +
-                "AND MATKHAU = '" + matkhau + "'";
-            String loaiacc = Functions.GetFieldValues(sql);
-         
+            // chạy SP đăng nhập, lấy MAACC, LOAIACC
+            Run_SP_DangNhap();
+          
             // nếu tên đăng nhập hoặc mật khẩu sai
-            if (loaiacc.Length == 0)
+            if (LOAIACC.Length == 0)
             {
                 MessageBox.Show("Tên đăng nhập hoặc mật khẩu không chính xác !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //resetvalue_DN();
                 return;
             }
            
-            // lấy loại acc
-            user_type = Get_user_type(loaiacc);
+            // chuyển loại acc sang int
+            user_type = Int32.Parse(LOAIACC);
 
             // nếu acc này bị khóa
             if (user_type == -1)
@@ -70,14 +90,7 @@ namespace HQTCSDL
                 MessageBox.Show("Tài khoản này đã bị khóa !!!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-
-            // lấy MAACC
-            sql = "SELECT MAACC " +
-                "FROM ACCOUNT " +
-                "WHERE TENDANGNHAP = '" + tendangnhap + "' " +
-                "AND MATKHAU = '" + matkhau + "'";
-            MAACC = Functions.GetFieldValues(sql);
-
+          
             // ngắt kết nối vô danh
             Functions.Disconnect();
             
@@ -131,49 +144,7 @@ namespace HQTCSDL
             form_signup.StartPosition = FormStartPosition.CenterParent;       
             form_signup.ShowDialog();
         }
-
-        // lấy loại user
-        private int Get_user_type(string loaiacc)
-        {
-            int type = -2;
-            
-            switch (loaiacc)
-            {
-                case "-1":
-                    {
-                        type = -1;
-                        break;
-                    }
-
-                case "0":
-                    {
-                        type = 0;
-                        break;
-                    }
-                case "1":
-                    {
-                        type = 1;
-                        break;
-                    }
-                case "2":
-                    {
-                        type = 2;
-                        break;
-                    }
-                case "3":
-                    {
-                        type = 3;
-                        break;
-                    }
-                case "4":
-                    {
-                        type = 4;
-                        break;
-                    }
-            }
-            return type;
-        }
-
+          
         // loại bỏ sự kiện enter 
         private void txtBox_tendangnhap_KeyDown(object sender, KeyEventArgs e)
         {
