@@ -10,12 +10,24 @@ namespace HQTCSDL
         Thread t;
         string TENDANGNHAP;
         string MATKHAU;
+        string MANV;
 
         public FormMain_NhanVien(string tendangnhap, string matkhau)
         {
             InitializeComponent();
             TENDANGNHAP = tendangnhap;
             MATKHAU = matkhau;
+            Get_MANV();
+        }
+
+        private void Get_MANV()
+        {
+            string sql = "SELECT NV.MANV " +
+                "FROM NHANVIEN NV, ACCOUNT A " +
+                "WHERE A.TENDANGNHAP = '" + TENDANGNHAP + "' " +
+                "AND A.MATKHAU = '" + MATKHAU + "' " +
+                "AND NV.MAACC = A.MAACC";
+            MANV = Functions.GetFieldValues(sql);
         }
 
         // mở 1 form con
@@ -98,7 +110,7 @@ namespace HQTCSDL
         // chức năng xem hợp đồng chưa duyệt
         private void btn_hopdongchuaduyet_NV_Click(object sender, EventArgs e)
         {
-            openChildForm(new HopDongChuaDuyet_NV());
+            openChildForm(new HopDongChuaDuyet_NV(MANV));
             ActivateButton(sender);
         }
 

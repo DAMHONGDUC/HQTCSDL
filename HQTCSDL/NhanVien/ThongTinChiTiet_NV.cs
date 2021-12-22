@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace HQTCSDL
 {
@@ -17,12 +19,20 @@ namespace HQTCSDL
         string TENDANGNHAP;
         string MATKHAU;
         string MAACC_TTCTNV;
+        string MANV;
 
         public ThongTinChiTiet_NV(string tendangnhap, string matkhau)
         {
             InitializeComponent();           
             TENDANGNHAP = tendangnhap;
             MATKHAU = matkhau;
+
+            string sql = "SELECT NV.MANV " +
+                "FROM NHANVIEN NV, ACCOUNT A " +
+                "WHERE A.TENDANGNHAP = '" + TENDANGNHAP + "' " +
+                "AND A.MATKHAU = '" + MATKHAU + "' " +
+                "AND A.MAACC = NV.MAACC";
+            MANV = Functions.GetFieldValues(sql);
         }
 
         private void Init_value1()
@@ -85,6 +95,44 @@ namespace HQTCSDL
             is_changePass = true;
         }
 
+        private void Run_SP_NV_DoiMK(string MAACC_TTCTNV, string matkhaumoi)
+        {
+            SqlCommand cmd = new SqlCommand("Sp_NV_DoiMK", Functions.Con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            // set kiểu dữ liệu
+            cmd.Parameters.Add("@MAACC", SqlDbType.VarChar, 50);
+            cmd.Parameters.Add("@MATKHAU", SqlDbType.VarChar, 50);        
+
+            // set giá trị
+            cmd.Parameters["@MAACC"].Value = MAACC_TTCTNV;
+            cmd.Parameters["@MATKHAU"].Value = matkhaumoi;
+
+            cmd.ExecuteNonQuery();
+        }
+
+        private void Run_SP_NV_DoiThongTinTK(string manv, string tennv, string sdt, string diachi, string email)
+        {
+            SqlCommand cmd = new SqlCommand("Sp_NV_DoiThongTinTK", Functions.Con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            // set kiểu dữ liệu
+            cmd.Parameters.Add("@MANV", SqlDbType.VarChar, 15);
+            cmd.Parameters.Add("@TENNV", SqlDbType.NVarChar, 50);
+            cmd.Parameters.Add("@SDT", SqlDbType.VarChar, 15);
+            cmd.Parameters.Add("@DIACHI", SqlDbType.VarChar, 50);
+            cmd.Parameters.Add("@EMAIL", SqlDbType.VarChar, 50);         
+
+            // set giá trị
+            cmd.Parameters["@MANV"].Value = manv;
+            cmd.Parameters["@TENNV"].Value = tennv;
+            cmd.Parameters["@SDT"].Value = sdt;
+            cmd.Parameters["@DIACHI"].Value = diachi; 
+            cmd.Parameters["@EMAIL"].Value = email;
+
+            cmd.ExecuteNonQuery();
+        }
+
         private void btn_luu_TTCTNV_Click(object sender, EventArgs e)
         {
             // TH người dùng chưa nhập đầy đủ dữ liệu chưa
@@ -120,18 +168,13 @@ namespace HQTCSDL
             // nếu đã thỏa hết các điều kiện ở trên
             try
             {
-                string sql = "UPDATE ACCOUNT " +
-                "SET MATKHAU = '" + txtBox_mkmoi_TTCTNV.Text.Trim() + "' " +
-                "WHERE MAACC = '" + MAACC_TTCTNV + "'";
-                Functions.RunSQL(sql);
-
-                sql = "UPDATE NHANVIEN " +
-                    "SET TENNV = N'" + txtBox_hoten_TTCTNV.Text.Trim() + "', " +
-                    "SDT = '" + txtBox_sdt_TTCTNV.Text.Trim() + "', " +
-                    "DIACHI = N'" + txtBox_diachi_TTCTNV.Text.Trim() + "', " +
-                    "EMAIL = '" + txtBox_email_TTCTNV.Text.Trim() + "' " +
-                    "WHERE MAACC = '" + MAACC_TTCTNV + "'";
-                Functions.RunSQL(sql);
+                string sql = "";
+                if (is_changePass)
+                    Run_SP_NV_DoiMK(MAACC_TTCTNV, txtBox_mkmoi_TTCTNV.Text.Trim());
+               
+                Run_SP_NV_DoiThongTinTK(MANV, txtBox_hoten_TTCTNV.Text.Trim(),
+                    txtBox_sdt_TTCTNV.Text.Trim(), txtBox_diachi_TTCTNV.Text.Trim(),
+                    txtBox_email_TTCTNV.Text.Trim());
 
                 MessageBox.Show("Cập nhật thông tin thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
