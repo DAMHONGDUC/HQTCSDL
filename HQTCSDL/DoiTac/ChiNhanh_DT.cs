@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Data;
 
 namespace HQTCSDL
 {
@@ -75,12 +77,30 @@ namespace HQTCSDL
                 int maso = Int32.Parse(elements[1]) + 1;
                 macn = "CN" + maso.ToString();
 
-                sql = "INSERT INTO CHINHANH VALUES ( " +
-                "'" + macn + "','" +
-                txtBox_tenchinhanh_CN.Text.Trim() + "','" +
-                dt.Trim() + "','" +
-                txtBox_diachi_CN.Text.Trim() + "')";
-                Functions.RunSQL(sql);
+                //sql = "INSERT INTO CHINHANH VALUES ( " +
+                //"'" + macn + "','" +
+                //txtBox_tenchinhanh_CN.Text.Trim() + "','" +
+                //dt.Trim() + "','" +
+                //txtBox_diachi_CN.Text.Trim() + "')";
+                //Functions.RunSQL(sql);
+
+                SqlCommand cmd = new SqlCommand("sp_DT_ThemChiNhanh", Functions.Con);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+                // set kiểu dữ liệu
+                cmd.Parameters.Add("@MADT", SqlDbType.VarChar, 15);
+                cmd.Parameters.Add("@MACHINHANH", SqlDbType.VarChar, 15);
+                cmd.Parameters.Add("@DIACHI", SqlDbType.NVarChar, 50);
+                cmd.Parameters.Add("@TEN", SqlDbType.NVarChar, 50);
+        
+                // set giá trị
+
+                cmd.Parameters["@MADT"].Value = dt.Trim();
+                cmd.Parameters["@MACHINHANH"].Value = macn.Trim();
+                cmd.Parameters["@DIACHI"].Value = txtBox_diachi_CN.Text.Trim();
+                cmd.Parameters["@TEN"].Value = txtBox_tenchinhanh_CN.Text.Trim();
+
+                cmd.ExecuteNonQuery();
 
                 MessageBox.Show("Cập nhật thông tin thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
