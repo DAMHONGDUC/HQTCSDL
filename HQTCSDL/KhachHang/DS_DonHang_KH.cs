@@ -13,33 +13,36 @@ namespace HQTCSDL
     public partial class DS_DonHang_KH : Form
     {
         DataTable tbl_DSDonhang_KH;
-        public DS_DonHang_KH()
+        private string maacc;
+        public DS_DonHang_KH(string tendangnhap)
         {
+            this.maacc = tendangnhap;
             InitializeComponent();
+            
         }
 
         private void LoadData_DSDonhang() // tải dữ liệu vào DataGridView
         {
-            string sql = "SELECT SP.TENSP, DH.SOLUONGSP, DH.NGAYLAP, DH.TONGPHI, DH.TINHTRANG, DH. PHIVANCHUYEN, DH.HINHTHUCTHANHTOAN, DH. TONGPHISP, CT.SOLUONG, CT.THANHTIEN" +
-                " FROM SANPHAM SP, DONHANG DH, CT_DONHANG CT" +
-                " WHERE DH.MADH = CT.MADH" +
-                " AND CT.MASP = SP.MASP" +
-                " AND DH.MAKH = 'KH001'";//'" + X + "'";//X(với X là mã của thằng khách hàng đang thao tác)";
+            string sql = "SELECT DH.MADH, DH.SOLUONGSP,DH.DIACHIGH, DH.PHIVANCHUYEN," +
+                " DH.TONGPHI, DH.HINHTHUCTHANHTOAN, DH.NGAYLAP, DH.TINHTRANG " +
+                "FROM DONHANG DH " +
+                "WHERE DH.MAKH = '"+maacc+"'";
+                
+                
             tbl_DSDonhang_KH = Functions.GetDataToTable(sql);
             dGv_KH_DSDonhang.DataSource = tbl_DSDonhang_KH;
 
             // set Font cho tên cột
             dGv_KH_DSDonhang.Font = new Font("Time New Roman", 13);
-            dGv_KH_DSDonhang.Columns[0].HeaderText = "Tên Sản Phẩm";
+            dGv_KH_DSDonhang.Columns[0].HeaderText = "Mã sản phẩm";
             dGv_KH_DSDonhang.Columns[1].HeaderText = "Số lượng sản phẩm đơn hàng";
-            dGv_KH_DSDonhang.Columns[2].HeaderText = "Ngày mua";
-            dGv_KH_DSDonhang.Columns[3].HeaderText = "Tổng tiền";
-            dGv_KH_DSDonhang.Columns[4].HeaderText = "Tình trạng đơn hàng";
-            dGv_KH_DSDonhang.Columns[5].HeaderText = "Phí vận chuyển";
-            dGv_KH_DSDonhang.Columns[6].HeaderText = "Hình thức thanh toán";
-            dGv_KH_DSDonhang.Columns[7].HeaderText = "Tổng phí sản phẩm";
-            dGv_KH_DSDonhang.Columns[8].HeaderText = "Số lượng sản phẩm chi tiết";
-            dGv_KH_DSDonhang.Columns[9].HeaderText = "Thành tiền sản phẩm";
+            dGv_KH_DSDonhang.Columns[2].HeaderText = "Địa chỉ giao hàng";
+            dGv_KH_DSDonhang.Columns[3].HeaderText = "Phí vận chuyển";
+            dGv_KH_DSDonhang.Columns[4].HeaderText = "Tổng phí";
+            dGv_KH_DSDonhang.Columns[5].HeaderText = "Hình thức thanh toán";
+            dGv_KH_DSDonhang.Columns[6].HeaderText = "Ngày lập";
+            dGv_KH_DSDonhang.Columns[7].HeaderText = "Tình trạng";
+            
 
             // set Font cho dữ liệu hiển thị trong cột
             dGv_KH_DSDonhang.DefaultCellStyle.Font = new Font("Time New Roman", 12);
@@ -53,8 +56,7 @@ namespace HQTCSDL
             dGv_KH_DSDonhang.Columns[5].Width = 220;
             dGv_KH_DSDonhang.Columns[6].Width = 220;
             dGv_KH_DSDonhang.Columns[7].Width = 220;
-            dGv_KH_DSDonhang.Columns[8].Width = 220;
-            dGv_KH_DSDonhang.Columns[9].Width = 220;
+           
 
             //Không cho người dùng thêm dữ liệu trực tiếp
             dGv_KH_DSDonhang.AllowUserToAddRows = false;
@@ -63,6 +65,7 @@ namespace HQTCSDL
 
         private void DS_DonHang_KH_Load(object sender, EventArgs e)
         {
+    
             LoadData_DSDonhang();
         }
 
@@ -76,16 +79,50 @@ namespace HQTCSDL
             }
 
             // set giá trị cho các mục 
-            txtBox_TenSP_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["TENSP"].Value.ToString();
-            txtBox_GIABAN_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["GIABAN"].Value.ToString();
-            txtBox_SL_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["SOLUONG"].Value.ToString();
-            txtBox_ThanhTien_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["THANHTIEN"].Value.ToString();
-            txtBox_HTTT_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["HINHTHUCTHANHTOAN"].Value.ToString();
-            txtBox_TongTien_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["TONGPHI"].Value.ToString();
-            txtBox_PhiVanChuyen_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["PHIVANCHUYEN"].Value.ToString();
+            txtBox_MaDH_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["MADH"].Value.ToString();
+            txtBox_SL_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["SOLUONGSP"].Value.ToString();
             txtBox_DIACHI_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["DIACHIGH"].Value.ToString();
+            txtBox_PhiVanChuyen_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["PHIVANCHUYEN"].Value.ToString();
+            txtBox_TongTien_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["TONGPHI"].Value.ToString();
+            string httt = "";
+            if(dGv_KH_DSDonhang.CurrentRow.Cells["HINHTHUCTHANHTOAN"].Value.ToString() == "0")
+            {
+                httt = "Tiền mặt";
+            }
+            if (dGv_KH_DSDonhang.CurrentRow.Cells["HINHTHUCTHANHTOAN"].Value.ToString() == "1")
+            {
+                httt = "Ví điện tử";
+            }
+            if (dGv_KH_DSDonhang.CurrentRow.Cells["HINHTHUCTHANHTOAN"].Value.ToString() == "2")
+            {
+                httt = "Thẻ ngân hàng";
+            }
+            txtBox_HTTT_KH_xemDH.Text = httt;
             dTp_NGAYLAP_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["NGAYLAP"].Value.ToString();
-            txtBox_TTDH_KH_xemDH.Text = dGv_KH_DSDonhang.CurrentRow.Cells["TINHTRANG"].Value.ToString();
+            string tinhtrang = "";
+            if(dGv_KH_DSDonhang.CurrentRow.Cells["TINHTRANG"].Value.ToString() == "0")
+            {
+                tinhtrang = "Chưa nhận";
+            }
+            if (dGv_KH_DSDonhang.CurrentRow.Cells["TINHTRANG"].Value.ToString() == "1")
+            {
+                tinhtrang = "Đã nhận";
+            }
+            if (dGv_KH_DSDonhang.CurrentRow.Cells["TINHTRANG"].Value.ToString() == "2")
+            {
+                tinhtrang = "Đang giao";
+            }
+
+            if (dGv_KH_DSDonhang.CurrentRow.Cells["TINHTRANG"].Value.ToString() == "3")
+            {
+                tinhtrang = "Đã giao";
+            }
+            if (dGv_KH_DSDonhang.CurrentRow.Cells["TINHTRANG"].Value.ToString() == "4")
+            {
+                tinhtrang = "Giao chưa thành công";
+            }
+            txtBox_TTDH_KH_xemDH.Text = tinhtrang;
+            
         }
     }
   

@@ -7,7 +7,7 @@ namespace HQTCSDL
     public partial class Form_DangNhap : Form
     {
         public int user_type = -2;
-        String MAACC;
+        string MAACC;
         string tendangnhap;
         string matkhau;
 
@@ -103,7 +103,7 @@ namespace HQTCSDL
                     }
                 case 1:
                     {
-                        Application.Run(new FormMain_KhachHang());
+                        Application.Run(new FormMain_KhachHang(MAACC));
                         break;
                     }
                 case 2:
