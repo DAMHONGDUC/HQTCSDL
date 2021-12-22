@@ -361,3 +361,4 @@ C:\Users\User\source\repos\HQTCSDL\pull\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.csproj
 C:\Users\User\source\repos\HQTCSDL\pull\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.csproj.CoreCompileInputs.cache
 C:\Users\User\source\repos\HQTCSDL\pull\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.exe
 C:\Users\User\source\repos\HQTCSDL\pull\HQTCSDL\HQTCSDL\obj\Debug\HQTCSDL.pdb
+C:\Users\Dam Hong Duc\Desktop\HQTCSDL-master\HQTCSDL\obj\Debug\HQTCSDL.ChiNhanh_ThuocHopDong.resources
