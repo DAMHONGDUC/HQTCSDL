@@ -161,7 +161,7 @@ namespace HQTCSDL
                 //Functions.RunSQL(sql);
 
                 Run_SP_DuyetHopDong(today.ToString("MM/dd/yyyy"), Get_ngayketthuc(today.ToString(), txtBox_thoihanhd_HHCDNV.Text.Trim().ToString())
-                    , txtBox_mahd_HHCDNV.Text.Trim().ToString(), MANV);
+                    , MANV, txtBox_mahd_HHCDNV.Text.Trim().ToString());
 
                 MessageBox.Show("Duyệt hợp đồng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadData_HDCD();
@@ -171,6 +171,22 @@ namespace HQTCSDL
             {
                 MessageBox.Show("Duyệt hợp đồng Thất bại, mã lỗi: " + ex.Message); // This will display all the error in your statement.
             }
+        }
+
+        private void Run_SP_LoaiBoHopDong(string manv, string mahd)
+        {
+            SqlCommand cmd = new SqlCommand("Sp_NV_LoaiBoHopDong", Functions.Con);
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
+            // set kiểu dữ liệu        
+            cmd.Parameters.Add("@MANV", SqlDbType.VarChar, 15);
+            cmd.Parameters.Add("@MAHD", SqlDbType.VarChar, 15);
+
+            // set giá trị        
+            cmd.Parameters["@MANV"].Value = manv;
+            cmd.Parameters["@MAHD"].Value = mahd;
+
+            int result = cmd.ExecuteNonQuery();
         }
 
         private void btn_loaibohd_HHCDNV_Click(object sender, EventArgs e) // xử lí loại bỏ hợp đồng
@@ -192,11 +208,8 @@ namespace HQTCSDL
 
             // nếu đã thỏa hết các điều kiện 
             try
-            {              
-                string sql = "UPDATE HOPDONG " +
-                "SET DADUYET = '2' " +              
-                "WHERE MAHD = '" + txtBox_mahd_HHCDNV.Text.Trim().ToString() + "'";
-                Functions.RunSQL(sql);
+            {            
+                Run_SP_LoaiBoHopDong(MANV, txtBox_mahd_HHCDNV.Text.Trim().ToString());
 
                 MessageBox.Show("Loại bỏ hợp đồng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 LoadData_HDCD();
