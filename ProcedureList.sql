@@ -199,18 +199,18 @@ GO
 
 ----PROCEDURE CỦA MINH
 --PROCEDURE ĐỐI TÁC THÊM CHI NHÁNH
-CREATE PROCEDURE sp_DT_ThemChiNhanh @madt VARCHAR(15), @machinhanh VARCHAR(15), @diachi NVARCHAR(50), @ten NVARCHAR(50), @res int output
+CREATE PROCEDURE sp_DT_ThemChiNhanh @madt VARCHAR(15), @machinhanh VARCHAR(15), @diachi NVARCHAR(50), @ten NVARCHAR(50)
 AS
 	--Kiểm tra địa chỉ có trùng hay không
 	IF(EXISTS(SELECT * FROM CHINHANH WHERE MADT = @MADT AND DIACHI = @diachi))
-			RETURN @res = -1
+			RETURN  -1
 
 	-- Kiểm tra mã chi nhánh có trùng hay không
 	IF(EXISTS(SELECT * FROM CHINHANH WHERE MACHINHANH = @machinhanh))
-			RETURN @res = -1
+			RETURN -1
 	
 	INSERT INTO CHINHANH(MACHINHANH, MADT, TENCHINHANH, DIACHI)
 	VALUES
 		(@machinhanh, @madt, @ten, @diachi)
-	return @res = 1
+	return 1
 GO
