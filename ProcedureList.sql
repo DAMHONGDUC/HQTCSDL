@@ -1,4 +1,4 @@
-﻿USE QL_DH_GH
+USE QL_DH_GH
 GO
 
 --DROP PROC Sp_DangNhap
@@ -86,7 +86,6 @@ GO
 
 -- Nhân viên loại bỏ hợp đồng (không duyệt hợp đồng)
 CREATE 
-
 PROC Sp_NV_LoaiBoHopDong	
 	@MANV VARCHAR(15),
 	@MAHD VARCHAR(15)
@@ -141,6 +140,7 @@ BEGIN
 END
 GO
 
+
 --Đổi thông tin tài khoản nhân viên
 CREATE PROC Sp_NV_DoiThongTinTK
 	@MANV VARCHAR(15),
@@ -167,6 +167,36 @@ BEGIN
 END
 GO
 
+--------------------PROCEDURE-PHẦN CỦA Huy
+--Khách hàng mua sản phẩm
+CREATE 
+--ALTER
+PROC Sp_KH_MUASP
+	@MASP VARCHAR(15),
+	@SOLUONG INT
+AS
+	DECLARE @SOLUONGTON INT = (SELECT SOLUONG
+							FROM SANPHAM 
+							WHERE MASP = @MASP)
+	IF (@SOLUONGTON >= @SOLUONG)
+	BEGIN
+		SET @SOLUONGTON = @SOLUONGTON - @SOLUONG
+	END
+		ELSE
+	BEGIN
+		PRINT N'SỐ LƯỢNG SẢN PHẨM CÒN LẠI KHÔNG ĐỦ'
+		RETURN 0;
+	END
+	
+	BEGIN
+		UPDATE SANPHAM
+		SET SOLUONG = @SOLUONGTON
+		WHERE MASP = @MASP
+		RETURN 1;
+	END 
+
+GO
+
 ----PROCEDURE CỦA MINH
 --PROCEDURE ĐỐI TÁC THÊM CHI NHÁNH
 CREATE PROCEDURE sp_DT_ThemChiNhanh @madt VARCHAR(15), @machinhanh VARCHAR(15), @diachi NVARCHAR(50), @ten NVARCHAR(50), @res int output
@@ -184,28 +214,3 @@ AS
 		(@machinhanh, @madt, @ten, @diachi)
 	return @res = 1
 GO
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

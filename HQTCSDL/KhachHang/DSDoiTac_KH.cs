@@ -13,20 +13,23 @@ namespace HQTCSDL
     public partial class DSDoiTac_KH : Form
     {
         DataTable tbl_DSDoitac_KH;
-        public DSDoiTac_KH()
+        private string MAACC;
+        string maDT;
+        public DSDoiTac_KH(string MAACC)
         {
+            this.MAACC = MAACC;
             InitializeComponent();
         }
 
         private void btn_XemSP_KH_Click(object sender, EventArgs e)
         {
-            DS_SanPham_KH ds_sanpham = new DS_SanPham_KH();
+            DS_SanPham_KH ds_sanpham = new DS_SanPham_KH(MAACC,maDT);
             ds_sanpham.Show();
         }
 
         private void LoadData_DSDT() // tải dữ liệu vào DataGridView
         {
-            string sql = "SELECT TENDT, DIACHI, SOCHINHANH, LOAIHANG" +
+            string sql = "SELECT TENDT, DIACHI, SOCHINHANH, LOAIHANG, MADT" +
                 " FROM DOITAC";
             tbl_DSDoitac_KH = Functions.GetDataToTable(sql);
             dGv_KH_DSDT.DataSource = tbl_DSDoitac_KH;
@@ -46,6 +49,7 @@ namespace HQTCSDL
             dGv_KH_DSDT.Columns[1].Width = 220;
             dGv_KH_DSDT.Columns[2].Width = 220;
             dGv_KH_DSDT.Columns[3].Width = 230;
+            dGv_KH_DSDT.Columns[4].Width = 0;
 
             //Không cho người dùng thêm dữ liệu trực tiếp
             dGv_KH_DSDT.AllowUserToAddRows = false;
@@ -70,7 +74,7 @@ namespace HQTCSDL
             txtBox_DiaChi_KH_xemDT.Text = dGv_KH_DSDT.CurrentRow.Cells["DIACHI"].Value.ToString();
             txtBox_ChiNhanh_KH_xemDT.Text = dGv_KH_DSDT.CurrentRow.Cells["SOCHINHANH"].Value.ToString();
             txtBox_LoaiHang_KH_xemDT.Text = dGv_KH_DSDT.CurrentRow.Cells["LOAIHANG"].Value.ToString();
-
+            maDT = dGv_KH_DSDT.CurrentRow.Cells["MADT"].Value.ToString();
         }
     }
 }
