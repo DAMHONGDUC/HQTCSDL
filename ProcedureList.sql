@@ -86,6 +86,7 @@ GO
 
 -- Nhân viên loại bỏ hợp đồng (không duyệt hợp đồng)
 CREATE 
+
 PROC Sp_NV_LoaiBoHopDong	
 	@MANV VARCHAR(15),
 	@MAHD VARCHAR(15)
@@ -166,169 +167,45 @@ BEGIN
 END
 GO
 
+----PROCEDURE CỦA MINH
+--PROCEDURE ĐỐI TÁC THÊM CHI NHÁNH
+CREATE PROCEDURE sp_DT_ThemChiNhanh @madt VARCHAR(15), @machinhanh VARCHAR(15), @diachi NVARCHAR(50), @ten NVARCHAR(50), @res int output
+AS
+	--Kiểm tra địa chỉ có trùng hay không
+	IF(EXISTS(SELECT * FROM CHINHANH WHERE MADT = @MADT AND DIACHI = @diachi))
+			RETURN @res = -1
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----- Đối tác lấy số lượng tất cả đơn hàng
---CREATE PROC Sp_DT_LayTatCaDonHang
---	@MADT VARCHAR(15), 
---	@TATCA_DH1 VARCHAR(15) OUTPUT, 
---	@TATCA_DH2 VARCHAR(15) OUTPUT
---AS
---BEGIN
---	SET @TATCA_DH1 = '0'
---	SET @TATCA_DH2 = '0'
---	IF NOT EXISTS (SELECT * 
---				FROM DOITAC
---				WHERE MADT = @MADT) 			
---	BEGIN
---		PRINT CAST(@MADT AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
+	-- Kiểm tra mã chi nhánh có trùng hay không
+	IF(EXISTS(SELECT * FROM CHINHANH WHERE MACHINHANH = @machinhanh))
+			RETURN @res = -1
 	
---	-- xử lí lấy số lượng tất cả đơn hàng lần 1	
---	SET @TATCA_DH1 = (SELECT COUNT(*)
---				FROM DONHANG
---				WHERE MADT = @MADT
---				GROUP BY MADT)
+	INSERT INTO CHINHANH(MACHINHANH, MADT, TENCHINHANH, DIACHI)
+	VALUES
+		(@machinhanh, @madt, @ten, @diachi)
+	return @res = 1
+GO
 
---	-- xử lí lấy số lượng tất cả đơn hàng lần 2	
---	SET @TATCA_DH2 = (SELECT COUNT(*)
---				FROM DONHANG
---				WHERE MADT = @MADT
---				GROUP BY MADT)
---RETURN 1
---END 
---GO
 
----- Khách hàng thêm đơn hàng mới
---CREATE PROC Sp_KH_ThemDonHang
---	@MADH VARCHAR(15),
---	@MADT VARCHAR(15),
---	@MAKH VARCHAR(15),
---	@SOLUONGSP INT,
---	@HINHTHUCTHANHTOAN INT,
---	@DIACHIGH NVARCHAR(50),
---	@NGAYLAP DATETIME,
---	@TONGPHISP DECIMAL(19,4),
---	@PHIVANCHUYEN DECIMAL(19,4),
---	@TONGPHI DECIMAL(19,4) ,
---	@TINHTRANG INT
---AS
---BEGIN	
---	IF NOT EXISTS (SELECT * 
---				FROM DOITAC
---				WHERE MADT = @MADT) 			
---	BEGIN
---		PRINT CAST(@MADT AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
 
---	IF NOT EXISTS (SELECT * 
---				FROM KHACHHANG
---				WHERE MAKH = @MAKH) 			
---	BEGIN
---		PRINT CAST(@MAKH AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
-	
---	-- xử lí thêm đơn hàng
---	INSERT INTO DONHANG(MADH,MADT,MAKH,SOLUONGSP,HINHTHUCTHANHTOAN, DIACHIGH, NGAYLAP, TONGPHISP, PHIVANCHUYEN, TONGPHI, TINHTRANG)
---	VALUES
---		(@MADH,@MADT,@MAKH,@SOLUONGSP,@HINHTHUCTHANHTOAN, @DIACHIGH, @NGAYLAP, @TONGPHISP, @PHIVANCHUYEN, @TONGPHI, @TINHTRANG)
---	RETURN 1
---END
---GO
 
----- Khách hàng thêm chi tiết đơn hàng
---CREATE PROC Sp_KH_ThemCT_DonHang
---	@MADT VARCHAR(15),
---	@MADH VARCHAR(15),	
---	@MASP VARCHAR(15),
---	@SOLUONG INT,	
---	@THANHTIEN DECIMAL(19,4)
---AS
---BEGIN	
---	IF NOT EXISTS (SELECT * 
---				FROM DOITAC
---				WHERE MADT = @MADT) 			
---	BEGIN
---		PRINT CAST(@MADT AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
 
---	IF NOT EXISTS (SELECT * 
---				FROM DONHANG
---				WHERE MADH = @MADH) 			
---	BEGIN
---		PRINT CAST(@MADH AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
 
---	IF NOT EXISTS (SELECT * 
---				FROM SANPHAM
---				WHERE MASP = @MASP) 			
---	BEGIN
---		PRINT CAST(@MASP AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
 
---	-- xử lí thêm chi tiết đơn hàng
---	INSERT INTO CT_DONHANG(MADT,MADH,MASP,SOLUONG,THANHTIEN)
---	VALUES
---		(@MADT,@MADH,@MASP,@SOLUONG,@THANHTIEN)
---	RETURN 1
---END
---GO
 
----- Khách hàng thêm xử lí đơn hàng
---CREATE PROC Sp_KH_ThemXULI_DONHANG	
---	@MADH VARCHAR(15),	
---	@MATX VARCHAR(15),
---	@NGAYTXNHAN DATE,
---	@NGAYKHNHAN DATE
---AS
---BEGIN	
---	IF NOT EXISTS (SELECT * 
---				FROM DONHANG
---				WHERE MADH = @MADH) 			
---	BEGIN
---		PRINT CAST(@MADH AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
 
---	IF NOT EXISTS (SELECT * 
---				FROM TAIXE
---				WHERE MATX = @MATX) 			
---	BEGIN
---		PRINT CAST(@MATX AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
 
---	-- xử lí thêm chi tiết đơn hàng
---	INSERT INTO XULI_DONHANG(MADH,MATX,NGAYTXNHAN,NGAYKHNHAN)
---	VALUES
---		(@MADH,@MATX,@NGAYTXNHAN,@NGAYKHNHAN)
---	RETURN 1
---END
---GO
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
