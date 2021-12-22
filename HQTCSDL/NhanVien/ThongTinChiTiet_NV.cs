@@ -171,15 +171,7 @@ namespace HQTCSDL
                 string sql = "";
                 if (is_changePass)
                     Run_SP_NV_DoiMK(MAACC_TTCTNV, txtBox_mkmoi_TTCTNV.Text.Trim());
-
-                sql = "UPDATE NHANVIEN " +
-                    "SET TENNV = N'" + txtBox_hoten_TTCTNV.Text.Trim() + "', " +
-                    "SDT = '" + txtBox_sdt_TTCTNV.Text.Trim() + "', " +
-                    "DIACHI = N'" + txtBox_diachi_TTCTNV.Text.Trim() + "', " +
-                    "EMAIL = '" + txtBox_email_TTCTNV.Text.Trim() + "' " +
-                    "WHERE MAACC = '" + MAACC_TTCTNV + "'";
-                Functions.RunSQL(sql);
-
+               
                 Run_SP_NV_DoiThongTinTK(MANV, txtBox_hoten_TTCTNV.Text.Trim(),
                     txtBox_sdt_TTCTNV.Text.Trim(), txtBox_diachi_TTCTNV.Text.Trim(),
                     txtBox_email_TTCTNV.Text.Trim());
