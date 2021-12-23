@@ -6,6 +6,7 @@ GO
 --DROP PROC Sp_NV_LoaiBoHopDong
 --DROP PROC Sp_NV_DoiMK
 --DROP PROC Sp_NV_DoiThongTinTK
+--DROP PROC DT_UPDATE_GiASP
 
 -- Xử lí đăng nhập tài khoản
 CREATE PROC Sp_DangNhap
@@ -123,7 +124,7 @@ CREATE PROC Sp_NV_DoiMK
 	@MATKHAU VARCHAR(50)
 AS
 BEGIN
-	--kiểm tra mã nhân viên có tồn tại hay không
+	--kiểm tra mã tài khoản có tồn tại hay không
 	IF NOT EXISTS (SELECT * 
 				FROM ACCOUNT
 				WHERE MAACC = @MAACC)
@@ -140,6 +141,36 @@ BEGIN
 END
 GO
 
+--Lấy thông tin tài khoản nhân viên
+CREATE PROC Sp_NV_LayTongTinTK
+	@TENDANGNHAP VARCHAR(15),
+	@MATKHAU VARCHAR(50)
+AS
+BEGIN
+	DECLARE @MAACC VARCHAR(15)	SET @MAACC = 'NULL'	-- xử lí lấy thông tin mã acc
+	SET @MAACC = (SELECT A.MAACC            
+                FROM ACCOUNT A, NHANVIEN NV 
+                WHERE A.TENDANGNHAP = @TENDANGNHAP 
+                AND A.MATKHAU =   @MATKHAU 
+                AND A.MAACC = NV.MAACC)	--ĐỂ TEST
+	WAITFOR DELAY '0:0:5'
+
+	--kiểm tra tài khoản có tồn tại hay không
+	IF (@MAACC = 'NULL')
+	BEGIN
+		PRINT N'Tài Khoản Không Tồn Tại'
+		ROLLBACK TRAN
+		RETURN 0
+	END	
+
+	-- xử lí lấy thông tin
+	SELECT A.TENDANGNHAP, A.MATKHAU, NV.TENNV, NV.DIACHI, NV.SDT, NV.EMAIL, A.MAACC            
+                FROM ACCOUNT A, NHANVIEN NV 
+                WHERE A.TENDANGNHAP = @TENDANGNHAP 
+                AND A.MATKHAU =   @MATKHAU 
+                AND A.MAACC = NV.MAACC
+END
+GO
 
 --Đổi thông tin tài khoản nhân viên
 CREATE PROC Sp_NV_DoiThongTinTK
@@ -195,6 +226,72 @@ AS
 		RETURN 1;
 	END 
 
+GO
+
+--DROP PROC DT_UPDATE_GiASP
+
+-- Đối tác cập nhật giá sản phẩm
+CREATE 
+PROC DT_UPDATE_GiASP
+	@MASP VARCHAR(15),
+	@MADT VARCHAR(15),
+	@GIAMOI DECIMAL(19,4)
+AS
+BEGIN TRAN
+	BEGIN TRY
+		IF NOT EXISTS(SELECT *
+					FROM SANPHAM
+					WHERE MASP = @MASP AND MADT = @MADT)
+		BEGIN
+			PRINT N'SẢN PHẨM KHÔNG TỒN TẠI'
+			ROLLBACK TRAN
+			RETURN 1
+		END
+		
+
+		UPDATE SANPHAM
+		SET GIABAN = @GIAMOI
+		WHERE MASP = @MASP AND MADT= @MADT 
+
+		--ĐỂ TEST
+		WAITFOR DELAY '0:0:20'
+
+		IF @GIAMOI = 0
+		BEGIN
+			ROLLBACK TRAN 
+			RETURN 1
+		END
+		-----
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 1
+	END CATCH
+COMMIT TRAN
+RETURN 0
+GO
+--DROP PROC Sp_KH_XEMSP
+
+-- lấy thông tin sản phẩm
+CREATE 
+PROC Sp_KH_XEMSP
+	@MADT VARCHAR(15)
+AS
+SET TRAN ISOLATION LEVEL READ UNCOMMITTED
+BEGIN TRAN
+	BEGIN TRY
+		SELECT  SP.TENSP, SP.SOLUONG, SP.GIABAN, CN.DIACHI, SP.MASP 
+                FROM SANPHAM SP, CHINHANH CN
+                WHERE SP.CHINHANH = CN.MACHINHANH
+                AND SP.MADT = CN.MADT
+                AND SP.MADT = @MADT
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+	END CATCH
+COMMIT TRAN
 GO
 
 ----PROCEDURE CỦA MINH

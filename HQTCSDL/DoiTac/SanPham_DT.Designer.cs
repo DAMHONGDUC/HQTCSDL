@@ -40,7 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_capnhat_SP_DT = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.dGV_DoiTac_SP = new System.Windows.Forms.DataGridView();
@@ -159,7 +159,7 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.btn_capnhat_SP_DT);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -178,15 +178,16 @@
             this.button4.Text = "Lưu";
             this.button4.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_capnhat_SP_DT
             // 
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.Location = new System.Drawing.Point(993, 28);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(188, 45);
-            this.button3.TabIndex = 54;
-            this.button3.Text = "Cập nhật";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_capnhat_SP_DT.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_capnhat_SP_DT.Location = new System.Drawing.Point(993, 28);
+            this.btn_capnhat_SP_DT.Name = "btn_capnhat_SP_DT";
+            this.btn_capnhat_SP_DT.Size = new System.Drawing.Size(188, 45);
+            this.btn_capnhat_SP_DT.TabIndex = 54;
+            this.btn_capnhat_SP_DT.Text = "Cập nhật";
+            this.btn_capnhat_SP_DT.UseVisualStyleBackColor = true;
+            this.btn_capnhat_SP_DT.Click += new System.EventHandler(this.btn_capnhat_SP_DT_Click);
             // 
             // button1
             // 
@@ -255,7 +256,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dGV_DoiTac_SP;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_capnhat_SP_DT;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
     }

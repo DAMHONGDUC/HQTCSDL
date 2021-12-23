@@ -54,11 +54,7 @@ namespace HQTCSDL
         }
         private void LoadData_DSSP() // tải dữ liệu vào DataGridView
         {
-            string sql = "SELECT  SP.TENSP, SP.SOLUONG, SP.GIABAN, CN.DIACHI, SP.MASP " +
-                " FROM SANPHAM SP, CHINHANH CN" +
-                " WHERE SP.CHINHANH = CN.MACHINHANH" +
-                " AND SP.MADT = CN.MADT" +
-                " AND SP.MADT = '" + maDT +"'";
+            string sql = "Sp_KH_XEMSP '" + maDT + "'";                    
             tbl_DSSP_KH = Functions.GetDataToTable(sql);
             dGv_KH_DSSP.DataSource = tbl_DSSP_KH;
 

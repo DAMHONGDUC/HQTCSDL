@@ -58,13 +58,14 @@ namespace HQTCSDL
 
         private void LoadData()
         {
-            // xử lí lấy dữ liệu
-            string sql = "SELECT A.TENDANGNHAP, A.MATKHAU, NV.TENNV, NV.DIACHI, NV.SDT, NV.EMAIL, A.MAACC " +               
-                "FROM ACCOUNT A, NHANVIEN NV " +
-                "WHERE A.TENDANGNHAP = '" + TENDANGNHAP + "' " +
-                "AND A.MATKHAU =  '" + MATKHAU + "' " +
-                "AND A.MAACC = NV.MAACC";
+            //// xử lí lấy dữ liệu
+            //string sql = "SELECT A.TENDANGNHAP, A.MATKHAU, NV.TENNV, NV.DIACHI, NV.SDT, NV.EMAIL, A.MAACC " +               
+            //    "FROM ACCOUNT A, NHANVIEN NV " +
+            //    "WHERE A.TENDANGNHAP = '" + TENDANGNHAP + "' " +
+            //    "AND A.MATKHAU =  '" + MATKHAU + "' " +
+            //    "AND A.MAACC = NV.MAACC";
 
+            string sql = "Sp_NV_LayTongTinTK '" + TENDANGNHAP + "'," + MATKHAU;        
             tbl_TTCT_NV = Functions.GetDataToTable(sql);
 
             if (tbl_TTCT_NV.Rows.Count == 0)
@@ -86,7 +87,7 @@ namespace HQTCSDL
         private void ThongTinChiTiet_NV_Load(object sender, EventArgs e)
         {
             Init_value1();
-            LoadData();
+            LoadData();          
         }
 
         private void btn_capnhatmk_TTCTNV_Click(object sender, EventArgs e)

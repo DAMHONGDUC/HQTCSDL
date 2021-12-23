@@ -115,7 +115,7 @@ namespace HQTCSDL
         // chức năng quản lí sản phẩm
         private void btn_sanpham_DT_Click(object sender, EventArgs e)
         {
-            openChildForm(new SanPham_DT());
+            openChildForm(new SanPham_DT(madt));
             ActivateButton(sender);
         }
 
