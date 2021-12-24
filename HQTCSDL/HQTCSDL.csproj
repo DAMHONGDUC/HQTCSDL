@@ -96,9 +96,11 @@
     </Compile>
     <Compile Include="KhachHang\DatHang_KH.cs">
       <SubType>Form</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="KhachHang\DatHang_KH.Designer.cs">
       <DependentUpon>DatHang_KH.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Compile>
     <Compile Include="TaiXe\DonHangDaNhan_TX.cs">
       <SubType>Form</SubType>
@@ -255,6 +257,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="KhachHang\DatHang_KH.resx">
       <DependentUpon>DatHang_KH.cs</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
     <EmbeddedResource Include="TaiXe\DonHangDaNhan_TX.resx">
       <DependentUpon>DonHangDaNhan_TX.cs</DependentUpon>
