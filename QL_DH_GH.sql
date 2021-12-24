@@ -311,7 +311,8 @@ VALUES
 	('TX001','lisa','12345',2),
 	('TX111','jennie','12345',2),
 	('AD001','rose','12345',4),
-	('AD111','jisoo','12345',4)	
+	('AD111','jisoo','12345',4),
+	('ACC222','naruto','12345',0)
 GO
 
 INSERT INTO DOITAC(MADT,MAACC, TENDT, NGUOIDAIDIEN, THANHPHO, QUAN, SOCHINHANH, SLDONHANG_MOINGAY,
@@ -320,13 +321,16 @@ VALUES
 	('DT001', 'DT001', N'MixiFood', N'Độ Mixi', N'Hà Nội', N'Yên Lãng', 3, 100, 'food', N'123 Yên Lãng, Tp. Hà Nội', 
 	'0123456789', 'mixifood@gmail.com', 'MST001'),
 	('DT111', 'DT111', N'BlackPink', N'YG', N'Hồ Chí Minh', N'1', 100, 500, 'music', N'1 F1, Q1, Tp. HCM', 
-	'0147852369', 'blackpink@gmail.com', 'MST111')
+	'0147852369', 'blackpink@gmail.com', 'MST111'),
+	('DT222', 'ACC222', N'Làng lá', N'Đức Đàm', N'Đồng Xoài', N'1', 100, 500, 'music', N'1 F1, Q1, Tp. HCM', 
+	'0147852369', 'naruto@gmail.com', 'MST111')
 GO
 
 INSERT INTO HOPDONG(MAHD, MADT, SLCHINHANH, PHIKICHHOAT, PTHOAHONG, NGAYLAP, NGAYKETTHUC, DADUYET, THOIHANHD, NGAYBATDAU)
 VALUES
 	('HD001', 'DT001', 2, 1, 10, '11/22/2020','12/22/2022',1, 2,'12/22/2022'),
-	('HD111', 'DT111', 15, 0, 20, '01/01/2020',null,0, 3, null )	
+	('HD111', 'DT111', 15, 0, 20, '01/01/2020',null,0, 3, null ),
+	('HD222', 'DT222', 10, 0, 20, '01/01/2020',null,0, 3, null )	
 GO
 
 INSERT INTO CHINHANH(MACHINHANH,MADT,TENCHINHANH,DIACHI)

@@ -52,70 +52,112 @@ GO
 
 -- Nhân viên duyệt hợp đồng
 CREATE 
+--ALTER
 PROC Sp_NV_DuyetHopDong
 	@NGAYBATDAU DATE,
 	@NGAYKETTHUC DATE,
 	@MANV VARCHAR(15),
 	@MAHD VARCHAR(15)	
+	
 AS
-BEGIN
-	--kiểm tra mã hợp đồng có tồn tại hay không
-	IF NOT EXISTS (SELECT MAHD 
+BEGIN TRAN
+	BEGIN TRY
+	IF NOT EXISTS (SELECT * 
 				FROM HOPDONG 
 				WHERE MAHD = @MAHD )
 	BEGIN
 		PRINT CAST(@MAHD AS VARCHAR(15)) + N' Không Tồn Tại'
+		ROLLBACK TRAN
 		RETURN 0
 	END
 
-	--kiểm tra mã nhân viên có tồn tại hay không
-	IF NOT EXISTS (SELECT MANV
+	IF NOT EXISTS (SELECT * 
 				FROM NHANVIEN
 				WHERE MANV = @MANV )
 	BEGIN
 		PRINT CAST(@MANV AS VARCHAR(15)) + N' Không Tồn Tại'
+		ROLLBACK TRAN
 		RETURN 0
 	END
+
+	--kiểm tra xem hợp đồng đã được xử lí hay chưa
+	DECLARE @DADUYET INT
+	SET @DADUYET = (SELECT DADUYET FROM HOPDONG WITH (XLOCK) WHERE MAHD = @MAHD )
+	IF (@DADUYET != 0) 
+	BEGIN
+		PRINT N'Hợp đồng đã được xử lí'
+		ROLLBACK TRAN
+		RETURN 0
+	END
+
+	--set tình trạng duyệt
+	SET @DADUYET = 1
 
 	-- duyệt hợp đồng
 	UPDATE HOPDONG
 	SET DADUYET = 1, NGAYBATDAU = @NGAYBATDAU, NGAYKETTHUC = @NGAYKETTHUC, MANV = @MANV
 	WHERE MAHD = @MAHD 	
-	RETURN 1
-END
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 0	
+	END CATCH
+COMMIT TRAN
+RETURN 1
 GO
 
 -- Nhân viên loại bỏ hợp đồng (không duyệt hợp đồng)
 CREATE 
+--ALTER
 PROC Sp_NV_LoaiBoHopDong	
 	@MANV VARCHAR(15),
 	@MAHD VARCHAR(15)
 AS
-BEGIN
-	--kiểm tra mã hợp đồng có tồn tại hay không
+BEGIN TRAN
+	BEGIN TRY
 	IF NOT EXISTS (SELECT * 
 				FROM HOPDONG 
 				WHERE MAHD = @MAHD )
 	BEGIN
 		PRINT CAST(@MAHD AS VARCHAR(15)) + N' Không Tồn Tại'
+		ROLLBACK TRAN
 		RETURN 0
 	END
-
-	--kiểm tra mã nhân viên có tồn tại hay không
 	IF NOT EXISTS (SELECT * 
 				FROM NHANVIEN
 				WHERE MANV = @MANV )
 	BEGIN
 		PRINT CAST(@MANV AS VARCHAR(15)) + N' Không Tồn Tại'
+		ROLLBACK TRAN
 		RETURN 0
 	END
 
-	-- loại bỏ hợp đồng
+	--kiểm tra xem hợp đồng đã được xử lí hay chưa
+	DECLARE @DADUYET INT
+	SET @DADUYET = (SELECT DADUYET FROM HOPDONG WHERE MAHD = @MAHD )
+	IF (@DADUYET != 0) 
+	BEGIN
+		PRINT N'Hợp đồng đã được xử lí'
+		ROLLBACK TRAN
+		RETURN 0
+	END
+
+	--set tình trạng loại bỏ
+	SET @DADUYET = 2
+
+	--Không duyệt hợp đồng	
 	UPDATE HOPDONG
-	SET DADUYET = 2, MANV = @MANV
+	SET DADUYET = @DADUYET
 	WHERE MAHD = @MAHD 	
-	RETURN 1
-END
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 0
+	END CATCH
+COMMIT TRAN
+RETURN 1
 GO
 
 --Đổi mật khẩu tài khoản nhân viên
@@ -123,13 +165,15 @@ CREATE PROC Sp_NV_DoiMK
 	@MAACC VARCHAR(15),
 	@MATKHAU VARCHAR(50)
 AS
-BEGIN
-	--kiểm tra mã tài khoản có tồn tại hay không
+BEGIN TRAN
+	BEGIN TRY
+	--kiểm tra mã nhân viên có tồn tại hay không
 	IF NOT EXISTS (SELECT * 
 				FROM ACCOUNT
 				WHERE MAACC = @MAACC)
 	BEGIN
 		PRINT CAST(@MAACC AS VARCHAR(15)) + N' Không Tồn Tại'
+		ROLLBACK TRAN
 		RETURN 0
 	END	
 
@@ -137,16 +181,25 @@ BEGIN
 	UPDATE ACCOUNT
 	SET MATKHAU = @MATKHAU 
 	WHERE MAACC = @MAACC	
-	RETURN 1
-END
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 0
+	END CATCH
+COMMIT TRAN
+RETURN 1
 GO
 
 --Lấy thông tin tài khoản nhân viên
-CREATE PROC Sp_NV_LayTongTinTK
+CREATE 
+PROC Sp_NV_LayTongTinTK
 	@TENDANGNHAP VARCHAR(15),
 	@MATKHAU VARCHAR(50)
 AS
-BEGIN
+SET TRAN ISOLATION LEVEL REPEATABLE READ
+BEGIN TRAN
+	BEGIN TRY		
 	DECLARE @MAACC VARCHAR(15)
 	SET @MAACC = 'NULL'
 
@@ -156,9 +209,6 @@ BEGIN
                 WHERE A.TENDANGNHAP = @TENDANGNHAP 
                 AND A.MATKHAU =   @MATKHAU 
                 AND A.MAACC = NV.MAACC)
-
-	--ĐỂ TEST
-	WAITFOR DELAY '0:0:5'
 
 	--kiểm tra tài khoản có tồn tại hay không
 	IF (@MAACC = 'NULL')
@@ -174,7 +224,12 @@ BEGIN
                 WHERE A.TENDANGNHAP = @TENDANGNHAP 
                 AND A.MATKHAU =   @MATKHAU 
                 AND A.MAACC = NV.MAACC
-END
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+	END CATCH
+COMMIT TRAN
 GO
 
 --Đổi thông tin tài khoản nhân viên
@@ -211,12 +266,9 @@ PROC Sp_KH_MUASP
 	@MASP VARCHAR(15),
 	@SOLUONG INT
 AS
-BEGIN TRAN
-
 	DECLARE @SOLUONGTON INT = (SELECT SOLUONG
-							FROM SANPHAM WITH(HOLDLOCK)
-							WHERE MASP = @MASP )
-	WAITFOR DELAY '0:0:10'
+							FROM SANPHAM 
+							WHERE MASP = @MASP)
 	IF (@SOLUONGTON >= @SOLUONG)
 	BEGIN
 		SET @SOLUONGTON = @SOLUONGTON - @SOLUONG
@@ -224,23 +276,18 @@ BEGIN TRAN
 		ELSE
 	BEGIN
 		PRINT N'SỐ LƯỢNG SẢN PHẨM CÒN LẠI KHÔNG ĐỦ'
-		ROLLBACK TRAN
-		RETURN
+		RETURN 0;
 	END
-	BEGIN TRY
-		UPDATE SANPHAM WITH(XLOCK)
+	
+	BEGIN
+		UPDATE SANPHAM
 		SET SOLUONG = @SOLUONGTON
 		WHERE MASP = @MASP
-	END TRY
-	BEGIN CATCH 
-		DECLARE @ErrorMsg VARCHAR(2000)
-		SELECT @ErrorMsg = N'Lỗi: ' + ERROR_MESSAGE()
-		RAISERROR(@ErrorMsg, 16,1)
-		ROLLBACK TRAN
-		RETURN
-	END CATCH
-COMMIT TRAN
+		RETURN 1;
+	END 
+
 GO
+
 --DROP PROC DT_UPDATE_GiASP
 
 -- Đối tác cập nhật giá sản phẩm
@@ -265,9 +312,6 @@ BEGIN TRAN
 		UPDATE SANPHAM
 		SET GIABAN = @GIAMOI
 		WHERE MASP = @MASP AND MADT= @MADT 
-
-		--ĐỂ TEST
-		WAITFOR DELAY '0:0:20'
 
 		IF @GIAMOI = 0
 		BEGIN
