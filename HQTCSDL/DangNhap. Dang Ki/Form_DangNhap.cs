@@ -111,12 +111,12 @@ namespace HQTCSDL
             {
                 case 0:
                     {
-                        Application.Run(new FormMain_DoiTac());
+                        Application.Run(new FormMain_DoiTac(MAACC));
                         break;
                     }
                 case 1:
                     {
-                        Application.Run(new FormMain_KhachHang());
+                        Application.Run(new FormMain_KhachHang(MAACC));
                         break;
                     }
                 case 2:

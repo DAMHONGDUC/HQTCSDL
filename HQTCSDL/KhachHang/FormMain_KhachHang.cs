@@ -8,8 +8,10 @@ namespace HQTCSDL
     public partial class FormMain_KhachHang : Form
     {
         Thread t;
-        public FormMain_KhachHang()
+        private string tendangnhap;
+        public FormMain_KhachHang(string tendangnhap)
         {
+            this.tendangnhap = tendangnhap;
             InitializeComponent();
         }
 
@@ -86,23 +88,18 @@ namespace HQTCSDL
         // chức năng đặt hàng
         private void btn_dathang_KH_Click(object sender, EventArgs e)
         {
-            openChildForm(new DSDoiTac_KH());
+            openChildForm(new DSDoiTac_KH(tendangnhap));
             ActivateButton(sender);
         }
 
         // chức năng xem đơn hàng của tôi
         private void btn_donhangcuatoi_KH_Click(object sender, EventArgs e)
         {
-            openChildForm(new DS_DonHang_KH());
+            openChildForm(new DS_DonHang_KH(tendangnhap));
             ActivateButton(sender);
         }
 
-        // chức năng giỏ hàng
-        private void btn_giohang_KH_Click(object sender, EventArgs e)
-        {
-            openChildForm(new DatHang_KH());
-            ActivateButton(sender);
-        }
+     
 
         // chức năng tài khoản
         private void btn_taikhoan_KH_Click_1(object sender, EventArgs e)

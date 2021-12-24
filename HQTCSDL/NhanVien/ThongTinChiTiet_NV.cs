@@ -58,13 +58,14 @@ namespace HQTCSDL
 
         private void LoadData()
         {
-            // xử lí lấy dữ liệu
-            string sql = "SELECT A.TENDANGNHAP, A.MATKHAU, NV.TENNV, NV.DIACHI, NV.SDT, NV.EMAIL, A.MAACC " +               
-                "FROM ACCOUNT A, NHANVIEN NV " +
-                "WHERE A.TENDANGNHAP = '" + TENDANGNHAP + "' " +
-                "AND A.MATKHAU =  '" + MATKHAU + "' " +
-                "AND A.MAACC = NV.MAACC";
+            //// xử lí lấy dữ liệu
+            //string sql = "SELECT A.TENDANGNHAP, A.MATKHAU, NV.TENNV, NV.DIACHI, NV.SDT, NV.EMAIL, A.MAACC " +               
+            //    "FROM ACCOUNT A, NHANVIEN NV " +
+            //    "WHERE A.TENDANGNHAP = '" + TENDANGNHAP + "' " +
+            //    "AND A.MATKHAU =  '" + MATKHAU + "' " +
+            //    "AND A.MAACC = NV.MAACC";
 
+            string sql = "Sp_NV_LayTongTinTK '" + TENDANGNHAP + "'," + MATKHAU;        
             tbl_TTCT_NV = Functions.GetDataToTable(sql);
 
             if (tbl_TTCT_NV.Rows.Count == 0)
@@ -86,7 +87,7 @@ namespace HQTCSDL
         private void ThongTinChiTiet_NV_Load(object sender, EventArgs e)
         {
             Init_value1();
-            LoadData();
+            LoadData();          
         }
 
         private void btn_capnhatmk_TTCTNV_Click(object sender, EventArgs e)
@@ -171,15 +172,7 @@ namespace HQTCSDL
                 string sql = "";
                 if (is_changePass)
                     Run_SP_NV_DoiMK(MAACC_TTCTNV, txtBox_mkmoi_TTCTNV.Text.Trim());
-
-                sql = "UPDATE NHANVIEN " +
-                    "SET TENNV = N'" + txtBox_hoten_TTCTNV.Text.Trim() + "', " +
-                    "SDT = '" + txtBox_sdt_TTCTNV.Text.Trim() + "', " +
-                    "DIACHI = N'" + txtBox_diachi_TTCTNV.Text.Trim() + "', " +
-                    "EMAIL = '" + txtBox_email_TTCTNV.Text.Trim() + "' " +
-                    "WHERE MAACC = '" + MAACC_TTCTNV + "'";
-                Functions.RunSQL(sql);
-
+               
                 Run_SP_NV_DoiThongTinTK(MANV, txtBox_hoten_TTCTNV.Text.Trim(),
                     txtBox_sdt_TTCTNV.Text.Trim(), txtBox_diachi_TTCTNV.Text.Trim(),
                     txtBox_email_TTCTNV.Text.Trim());

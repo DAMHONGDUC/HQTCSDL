@@ -1,0 +1,5 @@
+﻿USE QL_DH_GH
+GO
+
+EXEC Sp_NV_DoiMK 'NV001','1'
+

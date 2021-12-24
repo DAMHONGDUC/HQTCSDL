@@ -1,4 +1,4 @@
-﻿USE QL_DH_GH
+USE QL_DH_GH
 GO
 
 --DROP PROC Sp_DangNhap
@@ -6,6 +6,7 @@ GO
 --DROP PROC Sp_NV_LoaiBoHopDong
 --DROP PROC Sp_NV_DoiMK
 --DROP PROC Sp_NV_DoiThongTinTK
+--DROP PROC DT_UPDATE_GiASP
 
 -- Xử lí đăng nhập tài khoản
 CREATE PROC Sp_DangNhap
@@ -51,70 +52,112 @@ GO
 
 -- Nhân viên duyệt hợp đồng
 CREATE 
+--ALTER
 PROC Sp_NV_DuyetHopDong
 	@NGAYBATDAU DATE,
 	@NGAYKETTHUC DATE,
 	@MANV VARCHAR(15),
 	@MAHD VARCHAR(15)	
+	
 AS
-BEGIN
-	--kiểm tra mã hợp đồng có tồn tại hay không
-	IF NOT EXISTS (SELECT MAHD 
+BEGIN TRAN
+	BEGIN TRY
+	IF NOT EXISTS (SELECT * 
 				FROM HOPDONG 
 				WHERE MAHD = @MAHD )
 	BEGIN
 		PRINT CAST(@MAHD AS VARCHAR(15)) + N' Không Tồn Tại'
+		ROLLBACK TRAN
 		RETURN 0
 	END
 
-	--kiểm tra mã nhân viên có tồn tại hay không
-	IF NOT EXISTS (SELECT MANV
+	IF NOT EXISTS (SELECT * 
 				FROM NHANVIEN
 				WHERE MANV = @MANV )
 	BEGIN
 		PRINT CAST(@MANV AS VARCHAR(15)) + N' Không Tồn Tại'
+		ROLLBACK TRAN
 		RETURN 0
 	END
+
+	--kiểm tra xem hợp đồng đã được xử lí hay chưa
+	DECLARE @DADUYET INT
+	SET @DADUYET = (SELECT DADUYET FROM HOPDONG WITH (XLOCK) WHERE MAHD = @MAHD )
+	IF (@DADUYET != 0) 
+	BEGIN
+		PRINT N'Hợp đồng đã được xử lí'
+		ROLLBACK TRAN
+		RETURN 0
+	END
+
+	--set tình trạng duyệt
+	SET @DADUYET = 1
 
 	-- duyệt hợp đồng
 	UPDATE HOPDONG
 	SET DADUYET = 1, NGAYBATDAU = @NGAYBATDAU, NGAYKETTHUC = @NGAYKETTHUC, MANV = @MANV
 	WHERE MAHD = @MAHD 	
-	RETURN 1
-END
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 0	
+	END CATCH
+COMMIT TRAN
+RETURN 1
 GO
 
 -- Nhân viên loại bỏ hợp đồng (không duyệt hợp đồng)
 CREATE 
+--ALTER
 PROC Sp_NV_LoaiBoHopDong	
 	@MANV VARCHAR(15),
 	@MAHD VARCHAR(15)
 AS
-BEGIN
-	--kiểm tra mã hợp đồng có tồn tại hay không
+BEGIN TRAN
+	BEGIN TRY
 	IF NOT EXISTS (SELECT * 
 				FROM HOPDONG 
 				WHERE MAHD = @MAHD )
 	BEGIN
 		PRINT CAST(@MAHD AS VARCHAR(15)) + N' Không Tồn Tại'
+		ROLLBACK TRAN
 		RETURN 0
 	END
-
-	--kiểm tra mã nhân viên có tồn tại hay không
 	IF NOT EXISTS (SELECT * 
 				FROM NHANVIEN
 				WHERE MANV = @MANV )
 	BEGIN
 		PRINT CAST(@MANV AS VARCHAR(15)) + N' Không Tồn Tại'
+		ROLLBACK TRAN
 		RETURN 0
 	END
 
-	-- loại bỏ hợp đồng
+	--kiểm tra xem hợp đồng đã được xử lí hay chưa
+	DECLARE @DADUYET INT
+	SET @DADUYET = (SELECT DADUYET FROM HOPDONG WHERE MAHD = @MAHD )
+	IF (@DADUYET != 0) 
+	BEGIN
+		PRINT N'Hợp đồng đã được xử lí'
+		ROLLBACK TRAN
+		RETURN 0
+	END
+
+	--set tình trạng loại bỏ
+	SET @DADUYET = 2
+
+	--Không duyệt hợp đồng	
 	UPDATE HOPDONG
-	SET DADUYET = 2, MANV = @MANV
+	SET DADUYET = @DADUYET
 	WHERE MAHD = @MAHD 	
-	RETURN 1
-END
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 0
+	END CATCH
+COMMIT TRAN
+RETURN 1
 GO
 
 --Đổi mật khẩu tài khoản nhân viên
@@ -122,13 +165,15 @@ CREATE PROC Sp_NV_DoiMK
 	@MAACC VARCHAR(15),
 	@MATKHAU VARCHAR(50)
 AS
-BEGIN
+BEGIN TRAN
+	BEGIN TRY
 	--kiểm tra mã nhân viên có tồn tại hay không
 	IF NOT EXISTS (SELECT * 
 				FROM ACCOUNT
 				WHERE MAACC = @MAACC)
 	BEGIN
 		PRINT CAST(@MAACC AS VARCHAR(15)) + N' Không Tồn Tại'
+		ROLLBACK TRAN
 		RETURN 0
 	END	
 
@@ -136,8 +181,55 @@ BEGIN
 	UPDATE ACCOUNT
 	SET MATKHAU = @MATKHAU 
 	WHERE MAACC = @MAACC	
-	RETURN 1
-END
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 0
+	END CATCH
+COMMIT TRAN
+RETURN 1
+GO
+
+--Lấy thông tin tài khoản nhân viên
+CREATE 
+PROC Sp_NV_LayTongTinTK
+	@TENDANGNHAP VARCHAR(15),
+	@MATKHAU VARCHAR(50)
+AS
+SET TRAN ISOLATION LEVEL REPEATABLE READ
+BEGIN TRAN
+	BEGIN TRY		
+	DECLARE @MAACC VARCHAR(15)
+	SET @MAACC = 'NULL'
+
+	-- xử lí lấy thông tin mã acc
+	SET @MAACC = (SELECT A.MAACC            
+                FROM ACCOUNT A, NHANVIEN NV 
+                WHERE A.TENDANGNHAP = @TENDANGNHAP 
+                AND A.MATKHAU =   @MATKHAU 
+                AND A.MAACC = NV.MAACC)
+
+	--kiểm tra tài khoản có tồn tại hay không
+	IF (@MAACC = 'NULL')
+	BEGIN
+		PRINT N'Tài Khoản Không Tồn Tại'
+		ROLLBACK TRAN
+		RETURN 0
+	END	
+
+	-- xử lí lấy thông tin
+	SELECT A.TENDANGNHAP, A.MATKHAU, NV.TENNV, NV.DIACHI, NV.SDT, NV.EMAIL, A.MAACC            
+                FROM ACCOUNT A, NHANVIEN NV 
+                WHERE A.TENDANGNHAP = @TENDANGNHAP 
+                AND A.MATKHAU =   @MATKHAU 
+                AND A.MAACC = NV.MAACC
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+	END CATCH
+COMMIT TRAN
 GO
 
 --Đổi thông tin tài khoản nhân viên
@@ -166,169 +258,114 @@ BEGIN
 END
 GO
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
----- Đối tác lấy số lượng tất cả đơn hàng
---CREATE PROC Sp_DT_LayTatCaDonHang
---	@MADT VARCHAR(15), 
---	@TATCA_DH1 VARCHAR(15) OUTPUT, 
---	@TATCA_DH2 VARCHAR(15) OUTPUT
---AS
---BEGIN
---	SET @TATCA_DH1 = '0'
---	SET @TATCA_DH2 = '0'
---	IF NOT EXISTS (SELECT * 
---				FROM DOITAC
---				WHERE MADT = @MADT) 			
---	BEGIN
---		PRINT CAST(@MADT AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
+--------------------PROCEDURE-PHẦN CỦA Huy
+--Khách hàng mua sản phẩm
+CREATE 
+--ALTER
+PROC Sp_KH_MUASP
+	@MASP VARCHAR(15),
+	@SOLUONG INT
+AS
+	DECLARE @SOLUONGTON INT = (SELECT SOLUONG
+							FROM SANPHAM 
+							WHERE MASP = @MASP)
+	IF (@SOLUONGTON >= @SOLUONG)
+	BEGIN
+		SET @SOLUONGTON = @SOLUONGTON - @SOLUONG
+	END
+		ELSE
+	BEGIN
+		PRINT N'SỐ LƯỢNG SẢN PHẨM CÒN LẠI KHÔNG ĐỦ'
+		RETURN 0;
+	END
 	
---	-- xử lí lấy số lượng tất cả đơn hàng lần 1	
---	SET @TATCA_DH1 = (SELECT COUNT(*)
---				FROM DONHANG
---				WHERE MADT = @MADT
---				GROUP BY MADT)
+	BEGIN
+		UPDATE SANPHAM
+		SET SOLUONG = @SOLUONGTON
+		WHERE MASP = @MASP
+		RETURN 1;
+	END 
 
---	-- xử lí lấy số lượng tất cả đơn hàng lần 2	
---	SET @TATCA_DH2 = (SELECT COUNT(*)
---				FROM DONHANG
---				WHERE MADT = @MADT
---				GROUP BY MADT)
---RETURN 1
---END 
---GO
+GO
 
----- Khách hàng thêm đơn hàng mới
---CREATE PROC Sp_KH_ThemDonHang
---	@MADH VARCHAR(15),
---	@MADT VARCHAR(15),
---	@MAKH VARCHAR(15),
---	@SOLUONGSP INT,
---	@HINHTHUCTHANHTOAN INT,
---	@DIACHIGH NVARCHAR(50),
---	@NGAYLAP DATETIME,
---	@TONGPHISP DECIMAL(19,4),
---	@PHIVANCHUYEN DECIMAL(19,4),
---	@TONGPHI DECIMAL(19,4) ,
---	@TINHTRANG INT
---AS
---BEGIN	
---	IF NOT EXISTS (SELECT * 
---				FROM DOITAC
---				WHERE MADT = @MADT) 			
---	BEGIN
---		PRINT CAST(@MADT AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
+--DROP PROC DT_UPDATE_GiASP
 
---	IF NOT EXISTS (SELECT * 
---				FROM KHACHHANG
---				WHERE MAKH = @MAKH) 			
---	BEGIN
---		PRINT CAST(@MAKH AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
+-- Đối tác cập nhật giá sản phẩm
+CREATE 
+PROC DT_UPDATE_GiASP
+	@MASP VARCHAR(15),
+	@MADT VARCHAR(15),
+	@GIAMOI DECIMAL(19,4)
+AS
+BEGIN TRAN
+	BEGIN TRY
+		IF NOT EXISTS(SELECT *
+					FROM SANPHAM
+					WHERE MASP = @MASP AND MADT = @MADT)
+		BEGIN
+			PRINT N'SẢN PHẨM KHÔNG TỒN TẠI'
+			ROLLBACK TRAN
+			RETURN 1
+		END
+		
+
+		UPDATE SANPHAM
+		SET GIABAN = @GIAMOI
+		WHERE MASP = @MASP AND MADT= @MADT 
+
+		IF @GIAMOI = 0
+		BEGIN
+			ROLLBACK TRAN 
+			RETURN 1
+		END
+		-----
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+		RETURN 1
+	END CATCH
+COMMIT TRAN
+RETURN 0
+GO
+
+--DROP PROC Sp_KH_XEMSP
+
+-- lấy thông tin sản phẩm
+CREATE 
+PROC Sp_KH_XEMSP
+	@MADT VARCHAR(15)
+AS
+SET TRAN ISOLATION LEVEL READ UNCOMMITTED
+BEGIN TRAN
+	BEGIN TRY
+		SELECT  SP.TENSP, SP.SOLUONG, SP.GIABAN, CN.DIACHI, SP.MASP 
+                FROM SANPHAM SP, CHINHANH CN
+                WHERE SP.CHINHANH = CN.MACHINHANH
+                AND SP.MADT = CN.MADT
+                AND SP.MADT = @MADT
+	END TRY
+	BEGIN CATCH
+		PRINT N'LỖI HỆ THỐNG'
+		ROLLBACK TRAN
+	END CATCH
+COMMIT TRAN
+GO
+
+----PROCEDURE CỦA MINH
+--PROCEDURE ĐỐI TÁC THÊM CHI NHÁNH
+CREATE PROCEDURE sp_DT_ThemChiNhanh @madt VARCHAR(15), @machinhanh VARCHAR(15), @diachi NVARCHAR(50), @ten NVARCHAR(50)
+AS
+	--Kiểm tra địa chỉ có trùng hay không
+	IF(EXISTS(SELECT * FROM CHINHANH WHERE MADT = @MADT AND DIACHI = @diachi))
+			RETURN  -1
+
+	-- Kiểm tra mã chi nhánh có trùng hay không
+	IF(EXISTS(SELECT * FROM CHINHANH WHERE MACHINHANH = @machinhanh))
+			RETURN -1
 	
---	-- xử lí thêm đơn hàng
---	INSERT INTO DONHANG(MADH,MADT,MAKH,SOLUONGSP,HINHTHUCTHANHTOAN, DIACHIGH, NGAYLAP, TONGPHISP, PHIVANCHUYEN, TONGPHI, TINHTRANG)
---	VALUES
---		(@MADH,@MADT,@MAKH,@SOLUONGSP,@HINHTHUCTHANHTOAN, @DIACHIGH, @NGAYLAP, @TONGPHISP, @PHIVANCHUYEN, @TONGPHI, @TINHTRANG)
---	RETURN 1
---END
---GO
-
----- Khách hàng thêm chi tiết đơn hàng
---CREATE PROC Sp_KH_ThemCT_DonHang
---	@MADT VARCHAR(15),
---	@MADH VARCHAR(15),	
---	@MASP VARCHAR(15),
---	@SOLUONG INT,	
---	@THANHTIEN DECIMAL(19,4)
---AS
---BEGIN	
---	IF NOT EXISTS (SELECT * 
---				FROM DOITAC
---				WHERE MADT = @MADT) 			
---	BEGIN
---		PRINT CAST(@MADT AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
-
---	IF NOT EXISTS (SELECT * 
---				FROM DONHANG
---				WHERE MADH = @MADH) 			
---	BEGIN
---		PRINT CAST(@MADH AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
-
---	IF NOT EXISTS (SELECT * 
---				FROM SANPHAM
---				WHERE MASP = @MASP) 			
---	BEGIN
---		PRINT CAST(@MASP AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
-
---	-- xử lí thêm chi tiết đơn hàng
---	INSERT INTO CT_DONHANG(MADT,MADH,MASP,SOLUONG,THANHTIEN)
---	VALUES
---		(@MADT,@MADH,@MASP,@SOLUONG,@THANHTIEN)
---	RETURN 1
---END
---GO
-
----- Khách hàng thêm xử lí đơn hàng
---CREATE PROC Sp_KH_ThemXULI_DONHANG	
---	@MADH VARCHAR(15),	
---	@MATX VARCHAR(15),
---	@NGAYTXNHAN DATE,
---	@NGAYKHNHAN DATE
---AS
---BEGIN	
---	IF NOT EXISTS (SELECT * 
---				FROM DONHANG
---				WHERE MADH = @MADH) 			
---	BEGIN
---		PRINT CAST(@MADH AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
-
---	IF NOT EXISTS (SELECT * 
---				FROM TAIXE
---				WHERE MATX = @MATX) 			
---	BEGIN
---		PRINT CAST(@MATX AS VARCHAR(15)) + N' Không Tồn Tại'
---		RETURN 0
---	END
-
---	-- xử lí thêm chi tiết đơn hàng
---	INSERT INTO XULI_DONHANG(MADH,MATX,NGAYTXNHAN,NGAYKHNHAN)
---	VALUES
---		(@MADH,@MATX,@NGAYTXNHAN,@NGAYKHNHAN)
---	RETURN 1
---END
---GO
+	INSERT INTO CHINHANH(MACHINHANH, MADT, TENCHINHANH, DIACHI)
+	VALUES
+		(@machinhanh, @madt, @ten, @diachi)
+	return 1
+GO
