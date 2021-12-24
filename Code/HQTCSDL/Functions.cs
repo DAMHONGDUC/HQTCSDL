@@ -9,8 +9,8 @@ namespace HQTCSDL
     {
         // server chính xác
         //private static string exactly_server_name = @"DESKTOP-0QKBNDR";     
-        private static string exactly_server_name = @"LTBM-PC";
-        //private static string exactly_server_name = @"(LocalDB)\MSSQLLocalDB";
+        //private static string exactly_server_name = @"LTBM-PC";
+        private static string exactly_server_name = @"(LocalDB)\MSSQLLocalDB";
       
         //Khai báo đối tượng kết nối  
         public static SqlConnection Con;
