@@ -1,0 +1,3 @@
+﻿USE QL_DH_GH
+GO
+Sp_KH_MUASP 'SP001',5

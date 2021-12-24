@@ -34,7 +34,7 @@ namespace HQTCSDL
 
             // set Font cho tên cột
             dGv_KH_DSDonhang.Font = new Font("Time New Roman", 13);
-            dGv_KH_DSDonhang.Columns[0].HeaderText = "Mã sản phẩm";
+            dGv_KH_DSDonhang.Columns[0].HeaderText = "Mã đơn hàng";
             dGv_KH_DSDonhang.Columns[1].HeaderText = "Số lượng sản phẩm đơn hàng";
             dGv_KH_DSDonhang.Columns[2].HeaderText = "Địa chỉ giao hàng";
             dGv_KH_DSDonhang.Columns[3].HeaderText = "Phí vận chuyển";
