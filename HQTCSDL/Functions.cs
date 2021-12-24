@@ -8,8 +8,8 @@ namespace HQTCSDL
     class Functions
     {
         // server chính xác
-        private static string exactly_server_name = @"DESKTOP-0QKBNDR";     
-        //private static string exactly_server_name = @"LTBM-PC";
+        //private static string exactly_server_name = @"DESKTOP-0QKBNDR";     
+        private static string exactly_server_name = @"LTBM-PC";
         //private static string exactly_server_name = @"(LocalDB)\MSSQLLocalDB";
       
         //Khai báo đối tượng kết nối  
@@ -17,8 +17,8 @@ namespace HQTCSDL
         public static void Connect(string ConnectString)
         {
             Con = new SqlConnection();
-            //Con.ConnectionString = ConnectString;
-            Con.ConnectionString = "Data Source=DESKTOP-0QKBNDR;Initial Catalog=QL_DH_GH;Integrated Security=True";
+            Con.ConnectionString = ConnectString;
+            //Con.ConnectionString = "Data Source=DESKTOP-0QKBNDR;Initial Catalog=QL_DH_GH;Integrated Security=True";
             //Mở kết nối
             Con.Open();
 

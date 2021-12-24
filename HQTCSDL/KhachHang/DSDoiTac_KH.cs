@@ -29,8 +29,7 @@ namespace HQTCSDL
 
         private void LoadData_DSDT() // tải dữ liệu vào DataGridView
         {
-            string sql = "SELECT TENDT, DIACHI, SOCHINHANH, LOAIHANG, MADT" +
-                " FROM DOITAC";
+            string sql = "sp_KH_XemDSDoiTac";
             tbl_DSDoitac_KH = Functions.GetDataToTable(sql);
             dGv_KH_DSDT.DataSource = tbl_DSDoitac_KH;
 

@@ -77,13 +77,6 @@ namespace HQTCSDL
                 int maso = Int32.Parse(elements[1]) + 1;
                 macn = "CN" + maso.ToString();
 
-                //sql = "INSERT INTO CHINHANH VALUES ( " +
-                //"'" + macn + "','" +
-                //txtBox_tenchinhanh_CN.Text.Trim() + "','" +
-                //dt.Trim() + "','" +
-                //txtBox_diachi_CN.Text.Trim() + "')";
-                //Functions.RunSQL(sql);
-
                 SqlCommand cmd = new SqlCommand("sp_DT_ThemChiNhanh", Functions.Con);
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
