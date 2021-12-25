@@ -16,6 +16,8 @@ namespace HQTCSDL
     {
         string MANV;
         DataTable tbl_HDCD;
+        string return_value_DuyetHD;
+        string return_value_LoaiBoHD;
         public HopDongChuaDuyet_NV(string manv)
         {
             InitializeComponent();
@@ -124,13 +126,18 @@ namespace HQTCSDL
             cmd.Parameters.Add("@MANV", SqlDbType.VarChar, 15);
             cmd.Parameters.Add("@MAHD", SqlDbType.VarChar, 15);
 
+            var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+
             // set giá trị
             cmd.Parameters["@NGAYBATDAU"].Value = ngaybd;
             cmd.Parameters["@NGAYKETTHUC"].Value = ngaykt;
             cmd.Parameters["@MANV"].Value = manv;
             cmd.Parameters["@MAHD"].Value = mahd;
 
-            int result = cmd.ExecuteNonQuery();          
+            cmd.ExecuteNonQuery();
+
+            return_value_DuyetHD = returnParameter.Value.ToString();          
         }
 
         private void btn_duyethd_HHCDNV_Click(object sender, EventArgs e) // xử lí duyệt hợp đồng
@@ -153,17 +160,15 @@ namespace HQTCSDL
             // nếu đã thỏa hết các điều kiện 
             try
             {
-                DateTime today = DateTime.Today; //yyyy - MM - dd
-                //string sql = "UPDATE HOPDONG " +
-                //"SET DADUYET = '1', NGAYBATDAU = '" + today.ToString("MM/dd/yyyy") + "', " +
-                //"NGAYKETTHUC = '" + Get_ngayketthuc(today.ToString(), txtBox_thoihanhd_HHCDNV.Text.Trim().ToString()) + "' " + 
-                //"WHERE MAHD = '" + txtBox_mahd_HHCDNV.Text.Trim().ToString() + "'";
-                //Functions.RunSQL(sql);
+                DateTime today = DateTime.Today; //yyyy - MM - dd                
 
                 Run_SP_DuyetHopDong(today.ToString("MM/dd/yyyy"), Get_ngayketthuc(today.ToString(), txtBox_thoihanhd_HHCDNV.Text.Trim().ToString())
                     , MANV, txtBox_mahd_HHCDNV.Text.Trim().ToString());
 
-                MessageBox.Show("Duyệt hợp đồng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (return_value_DuyetHD.Equals("0"))
+                    MessageBox.Show("Duyệt hợp đồng thất bại!!!");
+                else MessageBox.Show("Duyệt hợp đồng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 LoadData_HDCD();
                 Reset_value();
             }
@@ -176,17 +181,22 @@ namespace HQTCSDL
         private void Run_SP_LoaiBoHopDong(string manv, string mahd)
         {
             SqlCommand cmd = new SqlCommand("Sp_NV_LoaiBoHopDong", Functions.Con);
-            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;               
 
             // set kiểu dữ liệu        
             cmd.Parameters.Add("@MANV", SqlDbType.VarChar, 15);
             cmd.Parameters.Add("@MAHD", SqlDbType.VarChar, 15);
 
+            var returnParameter = cmd.Parameters.Add("@ReturnVal", SqlDbType.Int);
+            returnParameter.Direction = ParameterDirection.ReturnValue;
+
             // set giá trị        
             cmd.Parameters["@MANV"].Value = manv;
             cmd.Parameters["@MAHD"].Value = mahd;
 
-            int result = cmd.ExecuteNonQuery();
+            cmd.ExecuteNonQuery();
+          
+            return_value_LoaiBoHD = returnParameter.Value.ToString();
         }
 
         private void btn_loaibohd_HHCDNV_Click(object sender, EventArgs e) // xử lí loại bỏ hợp đồng
@@ -211,7 +221,10 @@ namespace HQTCSDL
             {            
                 Run_SP_LoaiBoHopDong(MANV, txtBox_mahd_HHCDNV.Text.Trim().ToString());
 
-                MessageBox.Show("Loại bỏ hợp đồng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                if (return_value_LoaiBoHD.Equals("0"))
+                    MessageBox.Show("Loại bỏ hợp đồng thất bại!!!");
+                else MessageBox.Show("Loại bỏ hợp đồng thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 LoadData_HDCD();
                 Reset_value();
             }
