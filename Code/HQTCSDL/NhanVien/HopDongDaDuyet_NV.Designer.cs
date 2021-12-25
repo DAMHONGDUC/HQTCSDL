@@ -32,6 +32,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtBox_tghieuluc_HHDDNV = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtBox_pthoahong_HHDDNV = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dTP_ngaykt_HHDDNV = new System.Windows.Forms.DateTimePicker();
+            this.label11 = new System.Windows.Forms.Label();
+            this.dTP_ngaybd_HHDDNV = new System.Windows.Forms.DateTimePicker();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtBox_nguoidaidien_HHDDNV = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtBox_tendt_HHDDNV = new System.Windows.Forms.TextBox();
@@ -46,14 +54,7 @@
             this.txtBox_madt_HHDDNV = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.dTP_ngaybd_HHDDNV = new System.Windows.Forms.DateTimePicker();
-            this.label10 = new System.Windows.Forms.Label();
-            this.dTP_ngaykt_HHDDNV = new System.Windows.Forms.DateTimePicker();
-            this.label11 = new System.Windows.Forms.Label();
-            this.txtBox_pthoahong_HHDDNV = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtBox_tghieuluc_HHDDNV = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dGV_HDDD_NV)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +94,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.txtBox_tghieuluc_HHDDNV);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.txtBox_pthoahong_HHDDNV);
@@ -122,6 +124,91 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1282, 429);
             this.panel1.TabIndex = 11;
+            // 
+            // txtBox_tghieuluc_HHDDNV
+            // 
+            this.txtBox_tghieuluc_HHDDNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_tghieuluc_HHDDNV.Location = new System.Drawing.Point(839, 281);
+            this.txtBox_tghieuluc_HHDDNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBox_tghieuluc_HHDDNV.Multiline = true;
+            this.txtBox_tghieuluc_HHDDNV.Name = "txtBox_tghieuluc_HHDDNV";
+            this.txtBox_tghieuluc_HHDDNV.Size = new System.Drawing.Size(228, 30);
+            this.txtBox_tghieuluc_HHDDNV.TabIndex = 79;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label12.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label12.Location = new System.Drawing.Point(834, 254);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(227, 25);
+            this.label12.TabIndex = 78;
+            this.label12.Text = "Thời gian hiệu lực (ngày)";
+            // 
+            // txtBox_pthoahong_HHDDNV
+            // 
+            this.txtBox_pthoahong_HHDDNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txtBox_pthoahong_HHDDNV.Location = new System.Drawing.Point(503, 198);
+            this.txtBox_pthoahong_HHDDNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtBox_pthoahong_HHDDNV.Name = "txtBox_pthoahong_HHDDNV";
+            this.txtBox_pthoahong_HHDDNV.Size = new System.Drawing.Size(228, 30);
+            this.txtBox_pthoahong_HHDDNV.TabIndex = 77;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label3.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label3.Location = new System.Drawing.Point(498, 171);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(220, 25);
+            this.label3.TabIndex = 76;
+            this.label3.Text = "Phần trăm hoa hồng(%)";
+            // 
+            // dTP_ngaykt_HHDDNV
+            // 
+            this.dTP_ngaykt_HHDDNV.CustomFormat = " ";
+            this.dTP_ngaykt_HHDDNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dTP_ngaykt_HHDDNV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dTP_ngaykt_HHDDNV.Location = new System.Drawing.Point(839, 196);
+            this.dTP_ngaykt_HHDDNV.MinimumSize = new System.Drawing.Size(4, 33);
+            this.dTP_ngaykt_HHDDNV.Name = "dTP_ngaykt_HHDDNV";
+            this.dTP_ngaykt_HHDDNV.Size = new System.Drawing.Size(228, 33);
+            this.dTP_ngaykt_HHDDNV.TabIndex = 75;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label11.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label11.Location = new System.Drawing.Point(835, 168);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(131, 25);
+            this.label11.TabIndex = 74;
+            this.label11.Text = "Ngày kết thúc";
+            // 
+            // dTP_ngaybd_HHDDNV
+            // 
+            this.dTP_ngaybd_HHDDNV.CustomFormat = " ";
+            this.dTP_ngaybd_HHDDNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.dTP_ngaybd_HHDDNV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dTP_ngaybd_HHDDNV.Location = new System.Drawing.Point(839, 113);
+            this.dTP_ngaybd_HHDDNV.MinimumSize = new System.Drawing.Size(4, 33);
+            this.dTP_ngaybd_HHDDNV.Name = "dTP_ngaybd_HHDDNV";
+            this.dTP_ngaybd_HHDDNV.Size = new System.Drawing.Size(228, 33);
+            this.dTP_ngaybd_HHDDNV.TabIndex = 73;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label10.ForeColor = System.Drawing.Color.MediumBlue;
+            this.label10.Location = new System.Drawing.Point(835, 85);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(128, 25);
+            this.label10.TabIndex = 72;
+            this.label10.Text = "Ngày bắt đầu";
             // 
             // txtBox_nguoidaidien_HHDDNV
             // 
@@ -265,90 +352,15 @@
             this.label2.TabIndex = 54;
             this.label2.Text = "Mã hợp đồng";
             // 
-            // dTP_ngaybd_HHDDNV
+            // button1
             // 
-            this.dTP_ngaybd_HHDDNV.CustomFormat = " ";
-            this.dTP_ngaybd_HHDDNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dTP_ngaybd_HHDDNV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dTP_ngaybd_HHDDNV.Location = new System.Drawing.Point(839, 113);
-            this.dTP_ngaybd_HHDDNV.MinimumSize = new System.Drawing.Size(4, 33);
-            this.dTP_ngaybd_HHDDNV.Name = "dTP_ngaybd_HHDDNV";
-            this.dTP_ngaybd_HHDDNV.Size = new System.Drawing.Size(228, 33);
-            this.dTP_ngaybd_HHDDNV.TabIndex = 73;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label10.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label10.Location = new System.Drawing.Point(835, 85);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(128, 25);
-            this.label10.TabIndex = 72;
-            this.label10.Text = "Ngày bắt đầu";
-            // 
-            // dTP_ngaykt_HHDDNV
-            // 
-            this.dTP_ngaykt_HHDDNV.CustomFormat = " ";
-            this.dTP_ngaykt_HHDDNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.dTP_ngaykt_HHDDNV.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dTP_ngaykt_HHDDNV.Location = new System.Drawing.Point(839, 196);
-            this.dTP_ngaykt_HHDDNV.MinimumSize = new System.Drawing.Size(4, 33);
-            this.dTP_ngaykt_HHDDNV.Name = "dTP_ngaykt_HHDDNV";
-            this.dTP_ngaykt_HHDDNV.Size = new System.Drawing.Size(228, 33);
-            this.dTP_ngaykt_HHDDNV.TabIndex = 75;
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label11.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label11.Location = new System.Drawing.Point(835, 168);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(131, 25);
-            this.label11.TabIndex = 74;
-            this.label11.Text = "Ngày kết thúc";
-            // 
-            // txtBox_pthoahong_HHDDNV
-            // 
-            this.txtBox_pthoahong_HHDDNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBox_pthoahong_HHDDNV.Location = new System.Drawing.Point(503, 198);
-            this.txtBox_pthoahong_HHDDNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBox_pthoahong_HHDDNV.Name = "txtBox_pthoahong_HHDDNV";
-            this.txtBox_pthoahong_HHDDNV.Size = new System.Drawing.Size(228, 30);
-            this.txtBox_pthoahong_HHDDNV.TabIndex = 77;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label3.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label3.Location = new System.Drawing.Point(498, 171);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(220, 25);
-            this.label3.TabIndex = 76;
-            this.label3.Text = "Phần trăm hoa hồng(%)";
-            // 
-            // txtBox_tghieuluc_HHDDNV
-            // 
-            this.txtBox_tghieuluc_HHDDNV.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txtBox_tghieuluc_HHDDNV.Location = new System.Drawing.Point(839, 281);
-            this.txtBox_tghieuluc_HHDDNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtBox_tghieuluc_HHDDNV.Multiline = true;
-            this.txtBox_tghieuluc_HHDDNV.Name = "txtBox_tghieuluc_HHDDNV";
-            this.txtBox_tghieuluc_HHDDNV.Size = new System.Drawing.Size(228, 30);
-            this.txtBox_tghieuluc_HHDDNV.TabIndex = 79;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label12.ForeColor = System.Drawing.Color.MediumBlue;
-            this.label12.Location = new System.Drawing.Point(834, 254);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(227, 25);
-            this.label12.TabIndex = 78;
-            this.label12.Text = "Thời gian hiệu lực (ngày)";
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.Location = new System.Drawing.Point(845, 339);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(222, 80);
+            this.button1.TabIndex = 80;
+            this.button1.Text = "Gửi thông báo gia hạn";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // HopDongDaDuyet_NV
             // 
@@ -397,5 +409,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtBox_pthoahong_HHDDNV;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }
